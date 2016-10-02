@@ -12,7 +12,7 @@ order: 20
 For most Single Page Applications, it's recommended to use the officially-supported [vue-router library](https://github.com/vuejs/vue-router). For more details, see vue-router's [documentation](http://vuejs.github.io/vue-router/).
 
 <font color="#FF6347">
-对于大多数的单页面应用，建议使用官方提供的[vue-router库](https://github.com/vuejs/vue-router)。有关详细信息，请参阅[文档](http://vuejs.github.io/vue-router/)。
+一般情况下，建议使用官方提供的路由[vue-router](https://github.com/vuejs/vue-router)。有关详细信息，请参阅[文档](http://vuejs.github.io/vue-router/)。
 </font>
 
 ## Simple Routing From Scratch
@@ -64,5 +64,5 @@ Combined with the HTML5 History API, you can build a very basic but fully-functi
 If there's a 3rd-party router you prefer to use, such as [Page.js](https://github.com/visionmedia/page.js) or [Director](https://github.com/flatiron/director), integration is [similarly easy](https://github.com/chrisvfritz/vue-2.0-simple-routing-example/compare/master...pagejs). Here's a [complete example](https://github.com/chrisvfritz/vue-2.0-simple-routing-example/tree/pagejs) using Page.js.
 
 <font color="#FF6347">
-如果你倾向第三方路由，比如[Page.js](https://github.com/visionmedia/page.js) 或者 [Director](https://github.com/flatiron/director), [整合也很容易](https://github.com/chrisvfritz/vue-2.0-simple-routing-example/compare/master...pagejs)。 下面是使用page.js的一个[完整例子](https://github.com/chrisvfritz/vue-2.0-simple-routing-example/tree/pagejs)。
+若要改用第三方路由，比如[Page.js](https://github.com/visionmedia/page.js) 或者 [Director](https://github.com/flatiron/director), 可以参考这段[示例](https://github.com/chrisvfritz/vue-2.0-simple-routing-example/compare/master...pagejs)。 下面是使用page.js实现路由的一个[完整实例](https://github.com/chrisvfritz/vue-2.0-simple-routing-example/tree/pagejs)。
 </font>
