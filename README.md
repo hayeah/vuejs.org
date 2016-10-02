@@ -67,7 +67,7 @@ api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| | **
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
 guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | `翻译中`
 guide/instance |               
-guide/syntax |
+guide/syntax | [baurine](https://github.com/baurine) | | `翻译中`
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | **校对中**                 
 guide/class-and-style |      
 guide/conditional |[MechanicianW](https://github.com/MechanicianW) | hayeah | ~~已完成~~            
