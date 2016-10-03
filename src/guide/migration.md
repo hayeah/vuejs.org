@@ -1826,7 +1826,7 @@ HTML嵌入已经被[弃用 `v-html`](#HTML-Interpolation-deprecated).
 ## 全局API(Global API)
 
 ### `Vue.extend` with `el` <sup>deprecated</sup>
-### `Vue.extend` 中的`el` <sup>弃用</sup>
+### `Vue.extend` 与`el` <sup>弃用</sup>
 
 The el option can no longer be used in `Vue.extend`. It's only valid as an instance creation option.
 el 元素操作不在被使用在`Vue.extend`中。他仅仅在创建实例时可使用。 
