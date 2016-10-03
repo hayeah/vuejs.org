@@ -31,7 +31,11 @@ I'm glad you asked! The answer is no. About 90% of the API is the same and the c
 升级Vue 1到2.0 x应用程序需要多长时间?
 
 It depends on a few factors:
+<<<<<<< HEAD
 这取决于以下几点：
+=======
+这取决于一下几点：
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 - The size of your app (small to medium-sized apps will probably be less than a day)
 应用程序的大小（小到中型的应用程序将花费小于1天的时间）
@@ -40,7 +44,11 @@ It depends on a few factors:
 多少次，你感到心不在焉的，开始玩一个很酷的新特性。 ðŸ˜‰ &nbsp;没有判断，他发生在我们构建2.0时。
 
 - Which deprecated features you're using. Most can be upgraded with find-and-replace, but others might take a few minutes. If you're not currently following best practices, Vue 2.0 will also try harder to force you to. This is a good thing in the long run, but could also mean a significant (though possibly overdue) refactor.
+<<<<<<< HEAD
 那些你仍然在使用的废弃特性。大多数可以通过查找和替换升级，但是其他可能要花费几分钟。如果你目前不是遵循最佳实践，Vue 2.0 会也努力约束你。
+=======
+那些废弃特性你仍然在使用。大多数可以通过查找和替换升级，但是其他可能要花费几分钟。如果你目前不是遵循最佳实践，Vue 2.0 会也努力约束你。
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 
 > If I upgrade to Vue 2, will I also have to upgrade Vuex and Vue-Router?
@@ -58,7 +66,11 @@ As for Vuex, even version 0.8 is compatible with Vue 2, so you're not forced to 
 ### 片段实例 <sup>弃用</sup>
 
 Every component must have exactly one root element. Fragment instances are no longer allowed. If you have a template like this:
+<<<<<<< HEAD
 每个组件必须有一个根元素。不再允许片段实例。如果你有一个模版想如下这样：
+=======
+每个组件必须有一个根元素。不再允许片段实例。如果你有一个模版想如下这样：（Bad）
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 ``` html
 <p>foo</p>
@@ -66,7 +78,11 @@ Every component must have exactly one root element. Fragment instances are no lo
 ```
 
 It's recommended to simply wrap the entire contents in a new element, like this:
+<<<<<<< HEAD
 建议简单包装的完整内容的新元素,像这样:
+=======
+建议简单包装的完整内容的新元素,像这样:(Good)
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 ``` html
 <div>
@@ -82,7 +98,11 @@ It's recommended to simply wrap the entire contents in a new element, like this:
 </div>
 <div class="upgrade-path">
   <h4>升级方法</h4>
+<<<<<<< HEAD
   <p>在升级后，重头到尾运行你的测试用例 或 应用程序 ，查看<strong>控制台警告</strong> 警告关于模版存在多个根元素</p>的信息。
+=======
+  <p>在升级后，重头到尾运行你的测试用例 或 应用程序 ，查看<strong>console warnings</strong> about multiple root elements in a template.</p>的信息。
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 </div>
 {% endraw %}
 
@@ -93,7 +113,11 @@ It's recommended to simply wrap the entire contents in a new element, like this:
 
 
 Use the `created` hook instead.
+<<<<<<< HEAD
 使用 `created`钩子代替
+=======
+使用 `created` 代替
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 {% raw %}
 <div class="upgrade-path">
@@ -127,7 +151,11 @@ Use the new `mounted` hook instead.
 ### `attached` <sup>弃用</sup>
 
 Use a custom in-dom check in other hooks. For example, to replace:
+<<<<<<< HEAD
 在其他钩子使用自定义dom检查。举一个例子,替换:
+=======
+在其他钩子使用自定义dom检查。例如,替换:
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 ``` js
 attached: function () {
@@ -212,13 +240,21 @@ Use the new `beforeCreate` hook instead, which is essentially the same thing. It
 ### `ready` <sup>弃用</sup>
 
 Use the new `mounted` hook instead. It should be noted though that with `mounted`, there's no guarantee to be in-document. For that, also include `Vue.nextTick`/`vm.$nextTick`. For example:
+<<<<<<< HEAD
 使用新的钩子 `mounted` 代替。应该注意 `mounted`，这里并没有保证在文档内。因此，包含`Vue.nextTick`/`vm.$nextTick`。举个例子：
+=======
+使用新的钩子 `mounted` 代替。应该注意 `mounted`，这里并没有保证文档内。
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 ``` js
 mounted: function () {
   this.$nextTick(function () {
     // code that assumes this.$el is in-document
+<<<<<<< HEAD
     // 代码假定 this.$el 在 DOM上
+=======
+    // 代码假定 this.$el 在 dom上
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
   })
 }
 ```
@@ -249,7 +285,11 @@ When including an `index`, the argument order for arrays used to be `(index, val
 </div>
 <div class="upgrade-path">
   <h4>升级方法</h4>
+<<<<<<< HEAD
   <p>在代码库运行<a href="https://github.com/vuejs/vue-migration-helper">migration helper</a>找到如，被废弃的参数顺序。注意，是否你的name 和 index 参数有些不寻常的，像<code>position</code> or <code>num</code>,<a href="https://github.com/vuejs/vue-migration-helper">migration helper</a>不会识别到他们。</p>
+=======
+  <p>在代码库运行<a href="https://github.com/vuejs/vue-migration-helper">migration helper</a>找到如，被废弃的参数顺序。注意，是否你的name 和 index 参数有些不寻常的，像<code>position</code> or <code>num</code>,<a href="https://github.com/vuejs/vue-migration-helper">migration helper</a>不会识别到他们</p>
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 </div>
 {% endraw %}
 
@@ -274,7 +314,11 @@ When including a `key`, the argument order for objects used to be `(key, value)`
 ### `$index` 和 `$key` <sup>弃用</sup>
 
 The implicitly assigned `$index` and `$key` variables have been deprecated in favor of explicitly defining them in `v-for`. This makes the code easier to read for developers less experienced with Vue and also results in much clearer behavior when dealing with nested loops.
+<<<<<<< HEAD
 隐式分配，`$index` 和 `$key` 变量 已经被弃用了，在 `v-for` 中已经明确地定义了它们。这样对那些缺乏经验的Vue开发者来说，代码更加容易阅读，处理嵌套循环时，也会让处理行为产生更加清晰的结果。
+=======
+隐式分配，`$index` 和 `$key` 变量 已经被废弃了，在 `v-for` 中已经明确地定义了它们。这样对那些缺乏经验的Vue开发者来说，代码更加容易阅读，处理嵌套循环时，也会让处理行为产生更加清晰的结果。
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 {% raw %}
 <div class="upgrade-path">
@@ -283,7 +327,11 @@ The implicitly assigned `$index` and `$key` variables have been deprecated in fa
 </div>
 <div class="upgrade-path">
   <h4>升级方法</h4>
+<<<<<<< HEAD
   <p>在代码库运行<a href="https://github.com/vuejs/vue-migration-helper">migration helper</a>找到如，被废弃的变量. 如果你犯错了, 你应该看到 <strong>浏览器控制台输出异常</strong> 例如: <code>Uncaught ReferenceError: $index is not defined</code>这样的信息。</p>
+=======
+  <p>在代码库运行<a href="https://github.com/vuejs/vue-migration-helper">migration helper</a>找到如，被废弃的变量. 如果你犯错了, 你应该看到 <strong>浏览器控制台输出异常</strong> 例如: <code>Uncaught ReferenceError: $index is not defined</code></p>
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 </div>
 {% endraw %}
 
@@ -316,7 +364,10 @@ You would now write:
 {% endraw %}
 
 ### `v-for` Range Values
+<<<<<<< HEAD
 ### `v-for` 值的范围
+=======
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 Previously, `v-for="number in 10"` would have `number` starting at 0 and ending at 9. Now it starts at 1 and ends at 10.
 以前，`v-for="number in 10"`是让`number`从0开始，在9结束。现在他从1开始，结束为10。 
@@ -485,6 +536,7 @@ On root Vue instances (i.e. instances created with `new Vue({ ... })`), you must
 
 ### Truthiness/Falsiness with `v-bind`
 ### `v-bind` 与 真/假 
+
 
 
 When used with `v-bind`, the only falsy values are now: `null`, `undefined`, and `false`. This means `0` and empty strings will render as truthy. So for example, `v-bind:draggable="''"` will render as `draggable="true"`.
@@ -830,7 +882,11 @@ On the other hand, `$refs` are designed primarily for programmatic access in Jav
 </div>
 <div class="upgrade-path">
   <h4>升级方法</h4>
+<<<<<<< HEAD
   <p>在你的代码库中运行<a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> 找到代码样例为<code>v-el</code>和<code>v-ref</code>的代码.</p>
+=======
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>v-el</code> and <code>v-ref</code>.</p>
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 </div>
 {% endraw %}
 
@@ -861,7 +917,11 @@ You can use:
 </div>
 <div class="upgrade-path">
   <h4>升级方法</h4>
+<<<<<<< HEAD
   <p>在你的代码库中运行 <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> 找到代码为 带 <code>v-show</code>的<code>v-else</code>代码。</p>
+=======
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>v-else</code> with <code>v-show</code>.</p>
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 </div>
 {% endraw %}
 
@@ -916,8 +976,11 @@ Vue的转换系统已经被完全改变了，现在使用`<transition>` 和 `<tr
 {% endraw %}
 
 ### `Vue.transition` for Reusable Transitions <sup>deprecated</sup>
+<<<<<<< HEAD
 ### 可重用的`Vue.transition` <sup>弃用</sup>
 
+=======
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 With the new transition system, you can now just [use components for reusable transitions](http://rc.vuejs.org/guide/transitions.html#Reusable-Transitions).
 现在新的转换系统，你只能[适应组件重用转化](http://rc.vuejs.org/guide/transitions.html#Reusable-Transitions).
@@ -1124,7 +1187,11 @@ For more on the advantages of this strategy, see [the example here with `v-model
 #### Replacing the `limitBy` Filter
 
 Instead of:
+<<<<<<< HEAD
 而不是这样：
+=======
+而不是：
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 ``` html
 <p v-for="item in items | limitBy 10">{{ item }}</p>
@@ -1148,7 +1215,11 @@ computed: {
 #### Replacing the `filterBy` Filter
 
 Instead of:
+<<<<<<< HEAD
 不再是这样：
+=======
+不再是：
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 ``` html
 <p v-for="user in users | filterBy searchQuery in 'name'">{{ user.name }}</p>
 ```
@@ -1603,9 +1674,12 @@ Just retrieve reactive data directly.
 {% endraw %}
 
 ## DOM聚焦实例化方法（DOM-Focused Instance Methods）
+<<<<<<< HEAD
 
 ### `vm.$appendTo`<sup>deprecated</sup>
 ### `vm.$appendTo`<sup>弃用</sup>
+=======
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 
 Use the native DOM API:
@@ -1810,7 +1884,11 @@ This has been reworked as a [component-level option](/api/#delimiters). This all
 
 
 HTML interpolation has been [deprecated in favor of `v-html`](#HTML-Interpolation-deprecated).
+<<<<<<< HEAD
 HTML嵌入已经被[弃用 `v-html`](#HTML-Interpolation-deprecated).
+=======
+HTML 拦截器已经被[弃用 `v-html`](#HTML-Interpolation-deprecated).
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 
 {% raw %}
 <div class="upgrade-path">
@@ -1838,7 +1916,11 @@ el 元素操作不在被使用在`Vue.extend`中。他仅仅在创建实例时�
 </div>
 <div class="upgrade-path">
   <h4>升级方法</h4>
+<<<<<<< HEAD
   <p>在升级后从头到尾运行你的测试用例或应用程序，查看 <strong>控制台警告</strong> 关于<code>el</code> 在<code>Vue.extend</code>下的操作警告。</p>
+=======
+  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about the <code>el</code> option with <code>Vue.extend</code>.</p>
+>>>>>>> 56526b49071e9d37ed02848ec0e33bb4a0797331
 </div>
 {% endraw %}
 
