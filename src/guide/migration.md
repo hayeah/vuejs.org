@@ -42,7 +42,6 @@ It depends on a few factors:
 - Which deprecated features you're using. Most can be upgraded with find-and-replace, but others might take a few minutes. If you're not currently following best practices, Vue 2.0 will also try harder to force you to. This is a good thing in the long run, but could also mean a significant (though possibly overdue) refactor.
 那些你仍然在使用的废弃特性。大多数可以通过查找和替换升级，但是其他可能要花费几分钟。如果你目前不是遵循最佳实践，Vue 2.0 会也努力约束你。
 
-
 > If I upgrade to Vue 2, will I also have to upgrade Vuex and Vue-Router?
 如果我升级到 Vue 2，我也要有升级 Vuex 和 Vue 路由器？
 
@@ -83,6 +82,8 @@ It's recommended to simply wrap the entire contents in a new element, like this:
 <div class="upgrade-path">
   <h4>升级方法</h4>
   <p>在升级后，重头到尾运行你的测试用例 或 应用程序 ，查看<strong>控制台警告</strong> 警告关于模版存在多个根元素</p>的信息。
+  <p>在升级后，重头到尾运行你的测试用例 或 应用程序 ，查看<strong>控制台警告</strong> 警告关于模版存在多个根元素</p>的信息。
+  <p>在升级后，重头到尾运行你的测试用例 或 应用程序 ，查看<strong>console warnings</strong> about multiple root elements in a template.</p>的信息。
 </div>
 {% endraw %}
 
@@ -214,6 +215,7 @@ Use the new `beforeCreate` hook instead, which is essentially the same thing. It
 Use the new `mounted` hook instead. It should be noted though that with `mounted`, there's no guarantee to be in-document. For that, also include `Vue.nextTick`/`vm.$nextTick`. For example:
 使用新的钩子 `mounted` 代替。应该注意 `mounted`，这里并没有保证在文档内。因此，包含`Vue.nextTick`/`vm.$nextTick`。举个例子：
 
+
 ``` js
 mounted: function () {
   this.$nextTick(function () {
@@ -317,6 +319,7 @@ You would now write:
 
 ### `v-for` Range Values
 ### `v-for` 值的范围
+
 
 Previously, `v-for="number in 10"` would have `number` starting at 0 and ending at 9. Now it starts at 1 and ends at 10.
 以前，`v-for="number in 10"`是让`number`从0开始，在9结束。现在他从1开始，结束为10。 
@@ -918,7 +921,6 @@ Vue的转换系统已经被完全改变了，现在使用`<transition>` 和 `<tr
 ### `Vue.transition` for Reusable Transitions <sup>deprecated</sup>
 ### 可重用的`Vue.transition` <sup>弃用</sup>
 
-
 With the new transition system, you can now just [use components for reusable transitions](http://rc.vuejs.org/guide/transitions.html#Reusable-Transitions).
 现在新的转换系统，你只能[适应组件重用转化](http://rc.vuejs.org/guide/transitions.html#Reusable-Transitions).
 
@@ -1126,6 +1128,7 @@ For more on the advantages of this strategy, see [the example here with `v-model
 Instead of:
 而不是这样：
 
+
 ``` html
 <p v-for="item in items | limitBy 10">{{ item }}</p>
 ```
@@ -1149,6 +1152,7 @@ computed: {
 
 Instead of:
 不再是这样：
+
 ``` html
 <p v-for="user in users | filterBy searchQuery in 'name'">{{ user.name }}</p>
 ```
@@ -1606,7 +1610,6 @@ Just retrieve reactive data directly.
 
 ### `vm.$appendTo`<sup>deprecated</sup>
 ### `vm.$appendTo`<sup>弃用</sup>
-
 
 Use the native DOM API:
 使用简单的DOM API:
