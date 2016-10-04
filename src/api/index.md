@@ -1767,13 +1767,21 @@ type: api
 
 ### key
 
-- **Expects:** `string`
+- **Expects:** `string` 
+- **特性：** `string`
 
   The `key` special attribute is primarily used as a hint for Vue's virtual DOM algorithm to identify VNodes when diffing the new list of nodes against the old list. Without keys, Vue uses an algorithm that minimizes element movement and tries to patch/reuse elements of the same type in-place as much as possible. With keys, it will reorder elements based on the order change of keys, and elements with keys that are no longer present will always be removed/destroyed.
 
+  当 Vue 的虚拟 DOM 算法差分计算新的节点列表和旧的节点列表，来识别 VNodes 时，key 这个特殊属性会为该算法提供线索。在不使用 keys 的情况下，Vue 会使用一个算法来减少元素的移动，并且尽可能在适当的位置，来修补/重新使用相同类型的元素。在使用 keys 的情况下，Vue 会基于 keys 的变化顺序来重新排列元素，那些包含 keys 但不再出现的元素通常将被移除/销毁。
+  
   Children of the same common parent must have **unique keys**. Duplicate keys will cause render errors.
 
+  具有相同父元素的子元素必须使用唯一 keys。重复 keys 会导致渲染报错。
+
   The most common use case is combined with `v-for`:
+
+  最常见的用例是结合 `v-for` 一起使用。
+
 
   ``` html
   <ul>
@@ -1783,8 +1791,13 @@ type: api
 
   It can also be used to force replacement of an element/component instead of reusing it. This can be useful when you want to:
 
+  也可以使用 key 属性来强行替换一个元素/组件而不是重新使用元素/组件。这种做法会很有用，当你想尝试以下做法：
+
   - Properly trigger lifecycle hooks of a component
   - Trigger transitions
+
+  - 适当地触发一个组件的生命周期钩子
+  - 触发过渡
 
   For example:
 
@@ -1796,11 +1809,17 @@ type: api
 
   When `text` changes, the `<span>` will always be replaced instead of patched, so a transition will be triggered.
 
+  当 text 变化时，<span> 元素也会跟着一起被替换而不是被修补，因此会触发一个过渡。
+
 ### ref
 
 - **Expects:** `string`
+- **特性：** `string`
+
 
   `ref` is used to register a reference to an element or a child component. The reference will be registered under the parent component's `$refs` object. If used on a plain DOM element, the reference will be that element; if used on a child component, the reference will be component instance:
+
+  使用 ref 属性来注册一个元素和子组件的引用。该引用被挂载到父组件的 `$refs` 对象下。如果在一个原生 DOM 元素上使用 ref ，该引用将会变成该元素；如果在一个子元素上使用 ref ,这个引用会变成该组件的实例：
 
   ``` html
   <!-- vm.$refs.p will the DOM node -->
@@ -1810,21 +1829,44 @@ type: api
   <child-comp ref="child"></child-comp>
   ```
 
+
+  ``` html
+  <!-- vm.$refs.p 将会变成 DOM 节点 -->
+  <p ref="p">hello</p>
+  <!-- vm.$refs.child 将会变成子元素的实例 -->
+  <child-comp ref="child"></child-comp>
+  ```
+
   When used on elements/components with `v-for`, the registered reference will be an Array containing DOM nodes or component instances.
+
+  当在含有 v-for 的元素/组件上使用 ref 属性时，被注册的引用会变成一个包含各 DOM 节点或者组件实例的数组。
 
   An important note about the ref registration timing: because the refs themselves are created as a result of the render function, you cannot access them on the initial render - they don't exist yet! `$refs` is also non-reactive, therefore you should not attempt to use it in templates for data-binding.
 
+  需要注意的一点是关于 ref 的注册时间点： 因为 refs 自身是作为 render 函数执行完后所创造的一个结果值，所以开发者不能再初始 render 时去使用它们，因为 refs 还不存在。$refs 也是不可交互的，因此开发者不要尝试在模板中为了数据绑定去使用它。
+
 - **See also:** [Child Component Refs](/guide/components.html#Child-Component-Refs)
+- **另见：** [Child Component Refs](/guide/components.html#Child-Component-Refs)
 
 ### slot
 
 - **Expects:** `string`
+- **特性：** `string`
+
 
   Used on content inserted into child components to indicate which named slot the content belongs to.
 
+  在插入到子组件的内容上使用 slot 属性，来表明哪个命名的 slot 是归该内容所属。
+
+
   For detailed usage, see the guide section linked below.
 
+  想知道更详细的用法，可参考以下链接
+
+
 - **See also:** [Named Slots](/guide/components.html#Named-Slots)
+- **另见：**[Named Slots](/guide/components.html#Named-Slots)
+
 
 ## Built-In Components
 ## 内置组件
