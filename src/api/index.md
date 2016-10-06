@@ -1,4 +1,4 @@
-﻿---
+---
 type: api
 ---
 ---
@@ -1843,7 +1843,7 @@ type: api
 
   An important note about the ref registration timing: because the refs themselves are created as a result of the render function, you cannot access them on the initial render - they don't exist yet! `$refs` is also non-reactive, therefore you should not attempt to use it in templates for data-binding.
 
-  需要注意的一点是关于 ref 的注册时间点： 因为 refs 自身是作为 render 函数执行完后所创造的一个结果值，所以开发者不能再初始 render 时去使用它们，因为 refs 还不存在。$refs 也是不可交互的，因此开发者不要尝试在模板中为了数据绑定去使用它。
+  需要注意的一点是关于 ref 的注册时间点： 因为 refs 自身是作为 render 函数执行完后所创造的一个结果值，所以开发者不能再初始 render 时去使用它们，因为 refs 还不存在。`$refs` 也是不可交互的，因此开发者不要尝试在模板中为了数据绑定去使用它。
 
 - **See also:** [Child Component Refs](/guide/components.html#Child-Component-Refs)
 - **另见：** [Child Component Refs](/guide/components.html#Child-Component-Refs)
