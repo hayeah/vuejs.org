@@ -23,7 +23,7 @@ For most Single Page Applications, it's recommended to use the officially-suppor
 If you just need very simple routing, you can do so by dynamically rendering a page-level component like this:
 
 <font color="#FF6347">
-如果你只需要一个简单的路由，你可以这样写：
+如果只需要一个简单的路由，可以这样写：
 </font>
 
 ``` js
@@ -53,7 +53,7 @@ new Vue({
 Combined with the HTML5 History API, you can build a very basic but fully-functional client-side router. To see that in practice, check out [this example app](https://github.com/chrisvfritz/vue-2.0-simple-routing-example).
 
 <font color="#FF6347">
-结合HTML5 History API，你可以构建一个小而全的客户端路由。查看实例，[点这里](https://github.com/chrisvfritz/vue-2.0-simple-routing-example).
+结合HTML5 History API，可以构建一个小而全的客户端路由。查看实例，[点这里](https://github.com/chrisvfritz/vue-2.0-simple-routing-example).
 </font>
 
 ## Integrating 3rd-Party Routers
