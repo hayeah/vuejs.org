@@ -101,7 +101,7 @@ We'll explore the arguments passed into these hooks (i.e. `el`, `binding`, `vnod
 ## <font color="#FF6347">钩子函数的参数</font>
 
 Directive hooks are passed these arguments:
-<font color="#FF6347"></font>
+<font color="#FF6347">指令中的参数：</font>
 
 - **el**: The element the directive is bound to. This can be used to directly manipulate the DOM.
 - <font color="#FF6347">**el**: 被绑定的元素，可用来直接操作DOM。</font>
