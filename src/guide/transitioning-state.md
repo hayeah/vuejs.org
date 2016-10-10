@@ -5,13 +5,19 @@ order: 13
 ---
 
 Vue's transition system offers many simple ways to animate entering, leaving, and lists, but what about animating your data itself? For example:
+Vue 的过渡系统提供了非常多简单的方法设置进入、离开和列表的动效。那么对于数据元素本身的动效呢，比如：
 
 - numbers and calculations
+- 数字和运算
 - colors displayed
+- 颜色的显示
 - the positions of SVG nodes
+- SVG 节点的位置
 - the sizes and other properties of elements
+- 元素的大小和其他的属性
 
 All of these are either already stored as raw numbers or can be converted into numbers. Once we do that, we can animate these state changes using 3rd-party libraries to tween state, in combination with Vue's reactivity and component systems.
+所有的原始数字都被事先存储起来，可以直接转换到数字。做到这一步，我们就可以结合 Vue 的响应式和组件系统，使用第三方库来实现切换元素的过渡状态。
 
 ## Animating State with Watchers
 
