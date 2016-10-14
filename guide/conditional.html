@@ -112,7 +112,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/installation.html" class="sidebar-link">Installation</a>
+                    <a href="/vuejs.org/guide/installation.html" class="sidebar-link">安装 (Installation)</a>
                 </li>
             
                 
@@ -240,7 +240,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">Reactivity in Depth</a>
+                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">深入响应式原理 (Reactivity in Depth)</a>
                 </li>
             
                 
@@ -267,7 +267,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/plugins.html" class="sidebar-link">Plugins</a>
+                    <a href="/vuejs.org/guide/plugins.html" class="sidebar-link">插件 (Plugins)</a>
                 </li>
             
                 
@@ -370,7 +370,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/join.html" class="sidebar-link">Join the Vue.js Community!</a>
+                    <a href="/vuejs.org/guide/join.html" class="sidebar-link">加入 vue.js 社区！ (Join the Vue.js Community!)</a>
                 </li>
             
         </ul>
@@ -393,27 +393,21 @@
     
       <h1>条件渲染 (Conditional Rendering)</h1>
     
-    <h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h2><h2 id="v-if-1"><a href="#v-if-1" class="headerlink" title="v-if"></a>v-if</h2><p>In string templates, for example Handlebars, we would write a conditional block like this:<br>在字符串模板中，我们可以这样写一个 Handlebars 的条件语句代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Handlebars template --&gt;</span></div><div class="line">&#123;&#123;#if ok&#125;&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">&#123;&#123;/if&#125;&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Handlebars 模板 --&gt;</span></div><div class="line">&#123;&#123;#if ok&#125;&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">&#123;&#123;/if&#125;&#125;</div></pre></td></tr></table></figure>
+    <h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h2><p>In string templates, for example Handlebars, we would write a conditional block like this:<br>在字符串模板中，我们可以这样写一个 Handlebars 的条件语句代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Handlebars template --&gt;</span></div><div class="line"><span class="comment">&lt;!-- Handlebars 模板 --&gt;</span></div><div class="line">&#123;&#123;#if ok&#125;&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">&#123;&#123;/if&#125;&#125;</div></pre></td></tr></table></figure>
 <p>In Vue, we use the <code>v-if</code> directive to achieve the same:<br>在 Vue 中，我们可以通过 <code>v-if</code> 指令来实现同一功能：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>It is also possible to add an “else” block with <code>v-else</code>:<br>也可以用 <code>v-else</code> 来添加一个”else”语句块：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>No<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>No<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="Template-v-if"><a href="#Template-v-if" class="headerlink" title="Template v-if"></a>Template v-if</h3><h3 id="Template-v-if-1"><a href="#Template-v-if-1" class="headerlink" title="Template v-if"></a>Template v-if</h3><p>Because <code>v-if</code> is a directive, it has to be attached to a single element. But what if we want to toggle more than one element? In this case we can use <code>v-if</code> on a <code>&lt;template&gt;</code> element, which serves as an invisible wrapper. The final rendered result will not include the <code>&lt;template&gt;</code> element.<br>由于 <code>v-if</code> 是一个指令，它必须添加在单个元素上。但是如果我们想切换多个元素的话要怎么做呢？可以通过让 <code>&lt;template&gt;</code> 元素充当一个不可见的包装元素，并在 <code>&lt;template&gt;</code> 元素上使用 <code>v-if</code> 来实现，最终的渲染结果不会包含<code>&lt;template&gt;</code> 元素。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Paragraph 1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Paragraph 2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Template-v-if"><a href="#Template-v-if" class="headerlink" title="Template v-if"></a>Template v-if</h3><p>Because <code>v-if</code> is a directive, it has to be attached to a single element. But what if we want to toggle more than one element? In this case we can use <code>v-if</code> on a <code>&lt;template&gt;</code> element, which serves as an invisible wrapper. The final rendered result will not include the <code>&lt;template&gt;</code> element.<br>由于 <code>v-if</code> 是一个指令，它必须添加在单个元素上。但是如果我们想切换多个元素的话要怎么做呢？可以通过让 <code>&lt;template&gt;</code> 元素充当一个不可见的包装元素，并在 <code>&lt;template&gt;</code> 元素上使用 <code>v-if</code> 来实现，最终的渲染结果不会包含<code>&lt;template&gt;</code> 元素。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>段落2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h3><h3 id="v-else-1"><a href="#v-else-1" class="headerlink" title="v-else"></a>v-else</h3><p>You can use the <code>v-else</code> directive to indicate an “else block” for <code>v-if</code>:<br>可以用 <code>v-else</code> 指令作为 <code>v-if</code> 的“else语句块”：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"Math.random() &gt; 0.5"</span>&gt;</span></div><div class="line">  Now you see me</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  Now you don't</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h3><p>You can use the <code>v-else</code> directive to indicate an “else block” for <code>v-if</code>:<br>可以用 <code>v-else</code> 指令作为 <code>v-if</code> 的“else语句块”：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"Math.random() &gt; 0.5"</span>&gt;</span></div><div class="line">  Now you see me</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  Now you don't</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>The <code>v-else</code> element must immediately follow the <code>v-if</code> element - otherwise it will not be recognized.<br>‘v-else’元素必须要紧挨着 <code>v-if</code> 元素，否则它将无法被识别。</p>
 <h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><p>Another option for conditionally displaying an element is the <code>v-show</code> directive. The usage is largely the same:<br>另一个可以用来根据条件显示元素的指令是 <code>v-show</code> 指令，它的使用方法与 <code>v-if</code> 大致相同。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">"ok"</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">"ok"</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>The difference is that an element with <code>v-show</code> will always be rendered and remain in the DOM; <code>v-show</code> simply toggles the <code>display</code> CSS property of the element.<br>区别在于使用 ‘v-show’ 指令的元素始终会被渲染，存在于DOM中；’v-show’ 指令仅仅切换了元素的CSS属性 <code>display</code>。</p>
-<p class="tip">Note that <code>v-show</code> doesn’t support the <code>&lt;template&gt;</code> syntax, nor does it work with <code>v-else</code>.</p><br><p class="tip">注意 <code>v-show</code> 不支持 <code>&lt;template&gt;</code> 语法， 在其后使用 <code>v-else</code> 指令也不会生效.</p>
+<p class="tip">Note that <code>v-show</code> doesn’t support the <code>&lt;template&gt;</code> syntax, nor does it work with <code>v-else</code>.<br>注意 <code>v-show</code> 不支持 <code>&lt;template&gt;</code> 语法， 在其后使用 <code>v-else</code> 指令也不会生效。</p>
 
 <h2 id="v-if-vs-v-show"><a href="#v-if-vs-v-show" class="headerlink" title="v-if vs. v-show"></a>v-if vs. v-show</h2><p><code>v-if</code> is “real” conditional rendering because it ensures that event listeners and child components inside the conditional block are properly destroyed and re-created during toggles.<br><code>v-if</code> 是真实的条件渲染，因为它会确保条件块在切换过程中合适地销毁与重建条件块内的事件监听器和子组件。</p>
 <p><code>v-if</code> is also <strong>lazy</strong>: if the condition is false on initial render, it will not do anything - the conditional block won’t be rendered until the condition becomes true for the first time.<br><code>v-if</code> 也是 <strong>惰性的</strong>：如果在初始渲染时条件为假，则什么也不做，直到条件第一次变为真时才开始渲染。</p>

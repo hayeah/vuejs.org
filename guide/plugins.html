@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Plugins - vue.js</title>
+        <title>插件 (Plugins) - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -112,7 +112,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/installation.html" class="sidebar-link">Installation</a>
+                    <a href="/vuejs.org/guide/installation.html" class="sidebar-link">安装 (Installation)</a>
                 </li>
             
                 
@@ -240,7 +240,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">Reactivity in Depth</a>
+                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">深入响应式原理 (Reactivity in Depth)</a>
                 </li>
             
                 
@@ -267,7 +267,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/plugins.html" class="sidebar-link current">Plugins</a>
+                    <a href="/vuejs.org/guide/plugins.html" class="sidebar-link current">插件 (Plugins)</a>
                 </li>
             
                 
@@ -370,7 +370,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/join.html" class="sidebar-link">Join the Vue.js Community!</a>
+                    <a href="/vuejs.org/guide/join.html" class="sidebar-link">加入 vue.js 社区！ (Join the Vue.js Community!)</a>
                 </li>
             
         </ul>
@@ -391,11 +391,9 @@
 
     
     
-      <h1>Plugins</h1>
+      <h1>插件 (Plugins)</h1>
     
-    <hr>
-<p>标题: 插件<br>类型: 指南</p>
-<h2 id="排序-18"><a href="#排序-18" class="headerlink" title="排序: 18"></a>排序: 18</h2><h2 id="Writing-a-Plugin"><a href="#Writing-a-Plugin" class="headerlink" title="Writing a Plugin"></a>Writing a Plugin</h2><h2 id="开发插件"><a href="#开发插件" class="headerlink" title="开发插件"></a>开发插件</h2><p>Plugins usually add global-level functionality to Vue. There is no strictly defined scope for a plugin - there are typically several types of plugins you can write:<br>插件通常会为 Vue 添加全局功能。插件的范围没有严格的限制——通常是下面几种：</p>
+    <h2 id="开发插件-Writing-a-Plugin"><a href="#开发插件-Writing-a-Plugin" class="headerlink" title="开发插件 (Writing a Plugin)"></a>开发插件 (Writing a Plugin)</h2><p>Plugins usually add global-level functionality to Vue. There is no strictly defined scope for a plugin - there are typically several types of plugins you can write:<br>插件通常会为 Vue 添加全局功能。插件的范围没有严格的限制——通常是下面几种：</p>
 <ol>
 <li>Add some global methods or properties. e.g. <a href="https://github.com/vuejs/vue-element" target="_blank" rel="external">vue-element</a></li>
 <li>添加全局方法或属性，如 vue-element(<a href="https://github.com/vuejs/vue-element" target="_blank" rel="external">https://github.com/vuejs/vue-element</a>)</li>
@@ -412,11 +410,14 @@
 </ol>
 <p>A Vue.js plugin should expose an <code>install</code> method. The method will be called with the <code>Vue</code> constructor as the first argument, along with possible options:<br>Vue.js 的插件应当有一个公开方法 install 。这个方法的第一个参数是 Vue 构造器，第二个参数是一个可选的选项对象：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">MyPlugin.install = <span class="function"><span class="keyword">function</span> (<span class="params">Vue, options</span>) </span>&#123;</div><div class="line">  <span class="comment">// 1. add global method or property</span></div><div class="line">  <span class="comment">//添加全局方法或属性</span></div><div class="line">  Vue.myGlobalMethod = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// something logic ...</span></div><div class="line">    <span class="comment">// 逻辑代码</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 2. add a global asset</span></div><div class="line"> <span class="comment">// 添加全局资源</span></div><div class="line">  Vue.directive(<span class="string">'my-directive'</span>, &#123;</div><div class="line">    bind (el, binding, vnode, oldVnode) &#123;</div><div class="line">      <span class="comment">// something logic ...</span></div><div class="line">      <span class="comment">// 逻辑代码</span></div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="comment">// 3. inject some component options</span></div><div class="line"> <span class="comment">// 添加组件对象</span></div><div class="line">  Vue.mixin(&#123;</div><div class="line">    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// something logic ...</span></div><div class="line">      <span class="comment">// 逻辑代码</span></div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="comment">// 4. add an instance method</span></div><div class="line">       <span class="comment">// 添加实例方法</span></div><div class="line">  Vue.prototype.$myMethod = <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</div><div class="line">    <span class="comment">// something logic ...</span></div><div class="line">    <span class="comment">// 逻辑代码</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Using-a-Plugin"><a href="#Using-a-Plugin" class="headerlink" title="Using a Plugin"></a>Using a Plugin</h2><h2 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h2><p>Use plugins by calling the <code>Vue.use()</code> global method:<br>通过 Vue.use() 全局方法使用插件：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// calls `MyPlugin.install(Vue)`</span></div><div class="line"><span class="comment">// 调用 `MyPlugin.install(Vue)`</span></div><div class="line">Vue.use(MyPlugin)</div></pre></td></tr></table></figure></p>
-<p>You can optionally pass in some options:<br>你可以传入一个选项对象：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.use(MyPlugin, &#123; <span class="attr">someOption</span>: <span class="literal">true</span> &#125;)</div></pre></td></tr></table></figure></p>
-<p><code>Vue.use</code> automatically prevents you from using the same plugin more than once, so calling it multiple times on the same plugin will install the plugin only once.<br><code>Vue.use</code> 自动阻止你使用相同的插件超过一次，所以当你重复的使用这个插件时，你只能安装一次。<br>Some plugins provided by Vue.js official plugins such as <code>vue-router</code> automatically calls <code>Vue.use()</code> if <code>Vue</code> is available as a global variable. However in a module environment such as CommonJS, you always need to call <code>Vue.use()</code> explicitly:<br>如果 Vue 加载成为全局变量，那么某些官方插件，比如 vue-router， 会自动调用 Vue.use。但是在一个模块运行环境，比如 CommonJS，你必须明文调用 Vue.use()：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// When using CommonJS via Browserify or Webpack</span></div><div class="line"><span class="comment">// 通过 Browserify 或 Webpack 使用 CommonJS 兼容模块</span></div><div class="line"><span class="keyword">var</span> Vue = <span class="built_in">require</span>(<span class="string">'vue'</span>)</div><div class="line"><span class="keyword">var</span> VueRouter = <span class="built_in">require</span>(<span class="string">'vue-router'</span>)</div><div class="line"></div><div class="line"><span class="comment">// Don't forget to call this</span></div><div class="line"><span class="comment">// 不要忘了调用此方法</span></div><div class="line">Vue.use(VueRouter)</div></pre></td></tr></table></figure></p>
-<p>Checkout <a href="https://github.com/vuejs/awesome-vue#libraries--plugins" target="_blank" rel="external">awesome-vue</a> for a huge collection of community-contributed plugins and libraries.</p>
-<p>访问 awesome-vue (<a href="https://github.com/vuejs/awesome-vue#libraries--plugins" target="_blank" rel="external">https://github.com/vuejs/awesome-vue#libraries--plugins</a>) 获得大量社区贡献的插件和资料。</p>
+<h2 id="使用插件-Using-a-Plugin"><a href="#使用插件-Using-a-Plugin" class="headerlink" title="使用插件 (Using a Plugin)"></a>使用插件 (Using a Plugin)</h2><p>Use plugins by calling the <code>Vue.use()</code> global method:<br>通过 Vue.use() 全局方法使用插件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// calls `MyPlugin.install(Vue)`</span></div><div class="line"><span class="comment">// 调用 `MyPlugin.install(Vue)`</span></div><div class="line">Vue.use(MyPlugin)</div></pre></td></tr></table></figure>
+<p>You can optionally pass in some options:<br>你可以传入一个选项对象：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.use(MyPlugin, &#123; <span class="attr">someOption</span>: <span class="literal">true</span> &#125;)</div></pre></td></tr></table></figure>
+<p><code>Vue.use</code> automatically prevents you from using the same plugin more than once, so calling it multiple times on the same plugin will install the plugin only once.<br><code>Vue.use</code> 自动阻止你使用相同的插件超过一次，所以当你重复的使用这个插件时，你只能安装一次。</p>
+<p>Some plugins provided by Vue.js official plugins such as <code>vue-router</code> automatically calls <code>Vue.use()</code> if <code>Vue</code> is available as a global variable. However in a module environment such as CommonJS, you always need to call <code>Vue.use()</code> explicitly:<br>如果 Vue 加载成为全局变量，那么某些官方插件，比如 vue-router， 会自动调用 Vue.use。但是在一个模块运行环境，比如 CommonJS，你必须明文调用 Vue.use()：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// When using CommonJS via Browserify or Webpack</span></div><div class="line"><span class="comment">// 通过 Browserify 或 Webpack 使用 CommonJS 兼容模块</span></div><div class="line"><span class="keyword">var</span> Vue = <span class="built_in">require</span>(<span class="string">'vue'</span>)</div><div class="line"><span class="keyword">var</span> VueRouter = <span class="built_in">require</span>(<span class="string">'vue-router'</span>)</div><div class="line"></div><div class="line"><span class="comment">// Don't forget to call this</span></div><div class="line"><span class="comment">// 不要忘了调用此方法</span></div><div class="line">Vue.use(VueRouter)</div></pre></td></tr></table></figure>
+<p>Checkout <a href="https://github.com/vuejs/awesome-vue#libraries--plugins" target="_blank" rel="external">awesome-vue</a> for a huge collection of community-contributed plugins and libraries.<br>访问 awesome-vue (<a href="https://github.com/vuejs/awesome-vue#libraries--plugins" target="_blank" rel="external">https://github.com/vuejs/awesome-vue#libraries--plugins</a>) 获得大量社区贡献的插件和资料。</p>
 
     
       <div class="guide-links">
