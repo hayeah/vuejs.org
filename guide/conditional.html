@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>条件渲染 (Conditional Rendering) - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'>
+        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="icon" href="/vuejs.org/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "guide"
+        </script>
+        <link rel="stylesheet" href="/vuejs.org/css/page.css">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="/vuejs.org/js/vue.js"></script>
+    </head>
+    <body class="docs">        <div id="mobile-bar" >
+            <a class="menu-button"></a>
+            <a class="logo" href="/vuejs.org/"></a>
+        </div>
+        <div id="header">
+  <a id="logo" href="/vuejs.org/">
+    <img src="/vuejs.org/images/logo.png">
+    <span>Vue.js</span>
+  </a>
+  <ul id="nav">
+    <li>
+  <form id="search-form">
+    <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+  </form>
+</li>
+<li><a href="/vuejs.org/guide/" class="nav-link current">教程</a></li>
+<li><a href="/vuejs.org/api/" class="nav-link">API</a></li>
+<li><a href="/vuejs.org/examples/" class="nav-link">示例</a></li>
+<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">博客</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+  </ul>
+</div>
+
+        
+            <div id="main" class="fix-sidebar">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+  <form id="search-form">
+    <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
+  </form>
+</li>
+<li><a href="/vuejs.org/guide/" class="nav-link current">教程</a></li>
+<li><a href="/vuejs.org/api/" class="nav-link">API</a></li>
+<li><a href="/vuejs.org/examples/" class="nav-link">示例</a></li>
+<li><a href="https://medium.com/the-vue-point" target="_blank" class="nav-link">博客</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/vuejs.org/images/patreon.png">
+              <a href="/vuejs.org/support-vuejs" title="Support Vue.js">Support Vue.js</a>
+            </span>
+        </div>
+        <h2>
+            Guide
+            <select class="version-select">
+                <option value="SELF" selected>2.0</option>
+                <option value="v1">1.0</option>
+                <option value="012">0.12</option>
+                <option value="011">0.11</option>
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+                
+                
+                  <li><h3>Essentials</h3></li>
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/installation.html" class="sidebar-link">Installation</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/index.html" class="sidebar-link">Introduction</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/instance.html" class="sidebar-link">The Vue Instance</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/syntax.html" class="sidebar-link">模版语法 (Template Syntax)</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/computed.html" class="sidebar-link">计算属性和监视器 (Computed Properties and Watchers)</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/class-and-style.html" class="sidebar-link">Class and Style Bindings</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/conditional.html" class="sidebar-link current">条件渲染 (Conditional Rendering)</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/list.html" class="sidebar-link">List Rendering</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/events.html" class="sidebar-link">Event Handling</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/forms.html" class="sidebar-link">表单控件绑定 (Form Input Bindings)</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/components.html" class="sidebar-link">Components</a>
+                </li>
+            
+                
+                
+                
+                  <li><h3>Advanced</h3></li>
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/transitions.html" class="sidebar-link">Transition Effects</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/transitioning-state.html" class="sidebar-link">Transitioning State</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/render-function.html" class="sidebar-link">Render Functions</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">Reactivity in Depth</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/custom-directive.html" class="sidebar-link">Custom Directives</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/mixins.html" class="sidebar-link">Mixins</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/plugins.html" class="sidebar-link">Plugins</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/single-file-components.html" class="sidebar-link">Single File Components</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/deployment.html" class="sidebar-link">Deploying For Production</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/routing.html" class="sidebar-link">Routing</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/state-management.html" class="sidebar-link">State Management</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/unit-testing.html" class="sidebar-link">单元测试 (Unit Testing)</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/ssr.html" class="sidebar-link">Server-Side Rendering</a>
+                </li>
+            
+                
+                
+                
+                
+                  <li><h3>Migrating</h3></li>
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/migration.html" class="sidebar-link">Migration from Vue 1.x</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/migration-vue-router.html" class="sidebar-link">Migration from Vue Router 0.7.x</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/migration-vuex.html" class="sidebar-link">Migration from Vuex 0.6.x to 1.0</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                  <li><h3>Meta</h3></li>
+                
+                <li>
+                    <a href="/vuejs.org/guide/comparison.html" class="sidebar-link">Comparison with Other Frameworks</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/join.html" class="sidebar-link">Join the Vue.js Community!</a>
+                </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="content guide with-sidebar conditional-guide">
+    
+      <div id="ad">
+  <span>Sponsored By</span><br>
+  <a href="http://www.thedifferenceengine.io/" target="_blank"
+    style="background-color: rgba(0,0,0,.85); padding: 10px 0">
+    <img src="/vuejs.org/images/tde.png">
+  </a>
+  <!-- <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script> -->
+</div>
+
+    
+    
+      <h1>条件渲染 (Conditional Rendering)</h1>
+    
+    <h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h2><h2 id="v-if-1"><a href="#v-if-1" class="headerlink" title="v-if"></a>v-if</h2><p>In string templates, for example Handlebars, we would write a conditional block like this:<br>在字符串模板中，我们可以这样写一个 Handlebars 的条件语句代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Handlebars template --&gt;</span></div><div class="line">&#123;&#123;#if ok&#125;&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">&#123;&#123;/if&#125;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Handlebars 模板 --&gt;</span></div><div class="line">&#123;&#123;#if ok&#125;&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">&#123;&#123;/if&#125;&#125;</div></pre></td></tr></table></figure>
+<p>In Vue, we use the <code>v-if</code> directive to achieve the same:<br>在 Vue 中，我们可以通过 <code>v-if</code> 指令来实现同一功能：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>It is also possible to add an “else” block with <code>v-else</code>:<br>也可以用 <code>v-else</code> 来添加一个”else”语句块：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>No<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>No<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Template-v-if"><a href="#Template-v-if" class="headerlink" title="Template v-if"></a>Template v-if</h3><h3 id="Template-v-if-1"><a href="#Template-v-if-1" class="headerlink" title="Template v-if"></a>Template v-if</h3><p>Because <code>v-if</code> is a directive, it has to be attached to a single element. But what if we want to toggle more than one element? In this case we can use <code>v-if</code> on a <code>&lt;template&gt;</code> element, which serves as an invisible wrapper. The final rendered result will not include the <code>&lt;template&gt;</code> element.<br>由于 <code>v-if</code> 是一个指令，它必须添加在单个元素上。但是如果我们想切换多个元素的话要怎么做呢？可以通过让 <code>&lt;template&gt;</code> 元素充当一个不可见的包装元素，并在 <code>&lt;template&gt;</code> 元素上使用 <code>v-if</code> 来实现，最终的渲染结果不会包含<code>&lt;template&gt;</code> 元素。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Paragraph 1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Paragraph 2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>段落2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h3><h3 id="v-else-1"><a href="#v-else-1" class="headerlink" title="v-else"></a>v-else</h3><p>You can use the <code>v-else</code> directive to indicate an “else block” for <code>v-if</code>:<br>可以用 <code>v-else</code> 指令作为 <code>v-if</code> 的“else语句块”：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"Math.random() &gt; 0.5"</span>&gt;</span></div><div class="line">  Now you see me</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  Now you don't</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"Math.random() &gt; 0.5"</span>&gt;</span></div><div class="line">  Now you see me</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  Now you don't</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The <code>v-else</code> element must immediately follow the <code>v-if</code> element - otherwise it will not be recognized.<br>‘v-else’元素必须要紧挨着 <code>v-if</code> 元素，否则它将无法被识别。</p>
+<h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><p>Another option for conditionally displaying an element is the <code>v-show</code> directive. The usage is largely the same:<br>另一个可以用来根据条件显示元素的指令是 <code>v-show</code> 指令，它的使用方法与 <code>v-if</code> 大致相同。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">"ok"</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">"ok"</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The difference is that an element with <code>v-show</code> will always be rendered and remain in the DOM; <code>v-show</code> simply toggles the <code>display</code> CSS property of the element.<br>区别在于使用 ‘v-show’ 指令的元素始终会被渲染，存在于DOM中；’v-show’ 指令仅仅切换了元素的CSS属性 <code>display</code>。</p>
+<p class="tip">Note that <code>v-show</code> doesn’t support the <code>&lt;template&gt;</code> syntax, nor does it work with <code>v-else</code>.</p><br><p class="tip">注意 <code>v-show</code> 不支持 <code>&lt;template&gt;</code> 语法， 在其后使用 <code>v-else</code> 指令也不会生效.</p>
+
+<h2 id="v-if-vs-v-show"><a href="#v-if-vs-v-show" class="headerlink" title="v-if vs. v-show"></a>v-if vs. v-show</h2><p><code>v-if</code> is “real” conditional rendering because it ensures that event listeners and child components inside the conditional block are properly destroyed and re-created during toggles.<br><code>v-if</code> 是真实的条件渲染，因为它会确保条件块在切换过程中合适地销毁与重建条件块内的事件监听器和子组件。</p>
+<p><code>v-if</code> is also <strong>lazy</strong>: if the condition is false on initial render, it will not do anything - the conditional block won’t be rendered until the condition becomes true for the first time.<br><code>v-if</code> 也是 <strong>惰性的</strong>：如果在初始渲染时条件为假，则什么也不做，直到条件第一次变为真时才开始渲染。</p>
+<p>In comparison, <code>v-show</code> is much simpler - the element is always rendered regardless of initial condition, with just simple CSS-based toggling.<br>相比之下， <code>v-show</code> 简单得多。元素始终会被渲染，只是简单地通过 CSS 来切换显示与否。</p>
+<p>Generally speaking, <code>v-if</code> has higher toggle costs while <code>v-show</code> has higher initial render costs. So prefer <code>v-show</code> if you need to toggle something very often, and prefer <code>v-if</code> if the condition is unlikely to change at runtime.<br>一般来说，<code>v-if</code> 有更高的切换消耗，<code>v-show</code> 有更高的初始渲染消耗。因此，如果需要经常切换的话使用<code>v-show</code>更好，如果在运行中条件很少会改变的话，<code>v-if</code>是更好的选择。</p>
+
+    
+      <div class="guide-links">
+        
+          <span>← <a href="/vuejs.org/guide/class-and-style.html">Class and Style Bindings</a></span>
+        
+        
+          <span style="float:right"><a href="/vuejs.org/guide/list.html">List Rendering</a> →</span>
+        
+      </div>
+    
+    <div class="footer">
+      Caught a mistake or want to contribute to the documentation?
+      <a href="https://github.com/vuejs/vuejs.org/blob/master/src/guide/conditional.md" target="_blank">
+        Edit this page on Github!
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+            <script src="/vuejs.org/js/smooth-scroll.min.js"></script>
+            <script src="/vuejs.org/js/common.js"></script>
+        
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>
