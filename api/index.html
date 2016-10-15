@@ -1380,15 +1380,14 @@
 <p>The <code>key</code> special attribute is primarily used as a hint for Vue’s virtual DOM algorithm to identify VNodes when diffing the new list of nodes against the old list. Without keys, Vue uses an algorithm that minimizes element movement and tries to patch/reuse elements of the same type in-place as much as possible. With keys, it will reorder elements based on the order change of keys, and elements with keys that are no longer present will always be removed/destroyed.<br>当 Vue 的虚拟 DOM 算法差分计算新的节点列表和旧的节点列表，来识别 VNodes 时，key 这个特殊属性会为该算法提供线索。在不使用 keys 的情况下，Vue 会使用一个算法来减少元素的移动，并且尽可能在适当的位置，来修补/重新使用相同类型的元素。在使用 keys 的情况下，Vue 会基于 keys 的变化顺序来重新排列元素，那些包含 keys 但不再出现的元素通常将被移除/销毁。</p>
 <p>Children of the same common parent must have <strong>unique keys</strong>. Duplicate keys will cause render errors.<br>具有相同父元素的子元素必须使用唯一 keys。重复 keys 会导致渲染报错。</p>
 <p>The most common use case is combined with <code>v-for</code>:<br>最常见的用例是结合 <code>v-for</code> 一起使用。</p>
-</li>
-</ul>
-  <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>  It can also be used to force replacement of an element/component instead of reusing it. This can be useful when you want to:<br>  也可以使用 key 属性来强行替换一个元素/组件而不是重新使用元素/组件。这种做法会很有用，当你想尝试以下做法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>It can also be used to force replacement of an element/component instead of reusing it. This can be useful when you want to:<br>也可以使用 key 属性来强行替换一个元素/组件而不是重新使用元素/组件。这种做法会很有用，当你想尝试以下做法：</p>
 <ul>
 <li>Properly trigger lifecycle hooks of a component</li>
 <li>适当地触发一个组件的生命周期钩子</li>
 <li>Trigger transitions</li>
-<li><p>触发过渡</p>
+<li>触发过渡</li>
+</ul>
 <p>For example:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">:key</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>When <code>text</code> changes, the <code>&lt;span&gt;</code> will always be replaced instead of patched, so a transition will be triggered.<br>当 text 变化时，<span> 元素也会跟着一起被替换而不是被修补，因此会触发一个过渡。</span></p>
