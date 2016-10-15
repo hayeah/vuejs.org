@@ -973,71 +973,75 @@
 <li><p><strong>另见：</strong> <a href="#Vue-delete">Vue.delete</a></p>
 </li>
 </ul>
-<h2 id="Instance-Methods-Events"><a href="#Instance-Methods-Events" class="headerlink" title="Instance Methods / Events"></a>Instance Methods / Events</h2><h3 id="vm-on">vm.$on( event, callback )</h3>
+<h2 id="实例方法-事件-Instance-Methods-Events"><a href="#实例方法-事件-Instance-Methods-Events" class="headerlink" title="实例方法/事件 (Instance Methods / Events)"></a>实例方法/事件 (Instance Methods / Events)</h2><h3 id="vm-on">vm.$on( event, callback )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数：</strong></p>
 <ul>
 <li><code>{string} event</code></li>
 <li><code>{Function} callback</code></li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Listen for a custom event on the current vm. Events can be triggered by <code>vm.$emit</code>. The callback will receive all the additional arguments passed into these event-triggering methods.</p>
+<li><p><strong>用法：</strong></p>
+<p>Listen for a custom event on the current vm. Events can be triggered by <code>vm.$emit</code>. The callback will receive all the additional arguments passed into these event-triggering methods.<br>监听当前实例上的自定义事件。事件可以由 <code>vm.$emit</code>触发。这些触发事件的方法所接收到的额外参数，都会传递给回调 <code>callback</code>。</p>
 </li>
-<li><p><strong>Example:</strong></p>
+<li><p><strong>示例：</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">vm.$on(<span class="string">'test'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">msg</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(msg)</div><div class="line">&#125;)</div><div class="line">vm.$emit(<span class="string">'test'</span>, <span class="string">'hi'</span>)</div><div class="line"><span class="comment">// -&gt; "hi"</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="vm-once">vm.$once( event, callback )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数：</strong></p>
 <ul>
 <li><code>{string} event</code></li>
 <li><code>{Function} callback</code></li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Listen for a custom event, but only once. The listener will be removed once it triggers for the first time.</p>
+<li><p><strong>用法：</strong></p>
+<p>Listen for a custom event, but only once. The listener will be removed once it triggers for the first time.<br>监听自定义事件，但这是一次性的。当自定义事件被触发一次后，监听器就会被移除。</p>
 </li>
 </ul>
 <h3 id="vm-off">vm.$off( [event, callback] )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数：</strong></p>
 <ul>
 <li><code>{string} [event]</code></li>
 <li><code>{Function} [callback]</code></li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Remove event listener(s).</p>
+<li><p><strong>用法：</strong></p>
+<p>Remove event listener(s).<br>删除事件监听器。</p>
 <ul>
-<li><p>If no arguments are provided, remove all event listeners;</p>
+<li>If no arguments are provided, remove all event listeners;</li>
+<li><p>如果没有参数，则删除所有的监听器;</p>
 </li>
 <li><p>If only the event is provided, remove all listeners for that event;</p>
 </li>
+<li><p>如果只提供了事件，则删除这个事件所有的监听器;</p>
+</li>
 <li><p>If both event and callback are given, remove the listener for that specific callback only.</p>
 </li>
+<li>如果同时提供了事件与回调，则只删除这个回调。</li>
 </ul>
 </li>
 </ul>
 <h3 id="vm-emit">vm.$emit( event, […args] )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数:</strong></p>
 <ul>
 <li><code>{string} event</code></li>
 <li><code>[...args]</code></li>
 </ul>
-<p>Trigger an event on the current instance. Any additional arguments will be passed into the listener’s callback function.</p>
+<p>Trigger an event on the current instance. Any additional arguments will be passed into the listener’s callback function.<br>在当前实例上触发事件。所有的额外参数都会传给监听器的回调函数。</p>
 </li>
 </ul>
-<h2 id="Instance-Methods-Lifecycle"><a href="#Instance-Methods-Lifecycle" class="headerlink" title="Instance Methods / Lifecycle"></a>Instance Methods / Lifecycle</h2><h3 id="vm-mount">vm.$mount( [elementOrSelector] )</h3>
+<h2 id="实例方法-生命周期-Instance-Methods-Lifecycle"><a href="#实例方法-生命周期-Instance-Methods-Lifecycle" class="headerlink" title="实例方法/生命周期 (Instance Methods / Lifecycle)"></a>实例方法/生命周期 (Instance Methods / Lifecycle)</h2><h3 id="vm-mount">vm.$mount( [elementOrSelector] )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数：</strong></p>
 <ul>
 <li><code>{Element | string} [elementOrSelector]</code></li>
 <li><code>{boolean} [hydrating]</code></li>
@@ -1045,15 +1049,17 @@
 </li>
 <li><p><strong>Returns:</strong> <code>vm</code> - the instance itself</p>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>If a Vue instance didn’t receive the <code>el</code> option at instantiation, it will be in “unmounted” state, without an associated DOM element. <code>vm.$mount()</code> can be used to manually start the mounting of an unmounted Vue instance.</p>
-<p>If <code>elementOrSelector</code> argument is not provided, the template will be rendered as an off-document element, and you will have to use native DOM API to insert it into the document yourself.</p>
-<p>The method returns the instance itself so you can chain other instance methods after it.</p>
+<li><p><strong>返回值：</strong> <code>vm</code> —— 实例自身</p>
 </li>
-<li><p><strong>Example:</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> MyComponent = Vue.extend(&#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;Hello!&lt;/div&gt;'</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// create and mount to #app (will replace #app)</span></div><div class="line"><span class="keyword">new</span> MyComponent().$mount(<span class="string">'#app'</span>)</div><div class="line"></div><div class="line"><span class="comment">// the above is the same as:</span></div><div class="line"><span class="keyword">new</span> MyComponent(&#123; <span class="attr">el</span>: <span class="string">'#app'</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// or, render off-document and append afterwards:</span></div><div class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> MyComponent().$mount()</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'app'</span>).appendChild(component.$el)</div></pre></td></tr></table></figure>
+<li><p><strong>用法：</strong></p>
+<p>If a Vue instance didn’t receive the <code>el</code> option at instantiation, it will be in “unmounted” state, without an associated DOM element. <code>vm.$mount()</code> can be used to manually start the mounting of an unmounted Vue instance.<br>如果 Vue 实例在实例化时没有接收 <code>el</code> 选项, 则它处于“未挂载”状态，没有关联的 DOM 元素。这时，可以使用 <code>vm.$mount()</code> 手动挂载。</p>
+<p>If <code>elementOrSelector</code> argument is not provided, the template will be rendered as an off-document element, and you will have to use native DOM API to insert it into the document yourself.<br>如果没提供 <code>elementOrSelector</code> 参数，模板渲染出来的元素不会被插入到文档中。你将需要使用原生的 DOM API 来将它插入文档中。</p>
+<p>The method returns the instance itself so you can chain other instance methods after it.<br>这个方法返回实例自身，因而可以链式调用其它实例方法。</p>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>示例：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> MyComponent = Vue.extend(&#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;Hello!&lt;/div&gt;'</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// create and mount to #app (will replace #app)</span></div><div class="line"><span class="comment">// 创建一个 Vue 实例并将它挂载到 #app （会替换掉 #app 的内容）</span></div><div class="line"><span class="keyword">new</span> MyComponent().$mount(<span class="string">'#app'</span>)</div><div class="line"></div><div class="line"><span class="comment">// the above is the same as:</span></div><div class="line"><span class="comment">// 跟上面的代码一样的效果：</span></div><div class="line"><span class="keyword">new</span> MyComponent(&#123; <span class="attr">el</span>: <span class="string">'#app'</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// or, render off-document and append afterwards:</span></div><div class="line"><span class="comment">// 或者，先在文档外渲染，之后再将它插入文档：</span></div><div class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> MyComponent().$mount()</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'app'</span>).appendChild(component.$el)</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>另见:</strong></p>
 <ul>
 <li><a href="/guide/instance.html#Lifecycle-Diagram">Lifecycle Diagram</a></li>
 <li><a href="/guide/ssr.html">Server-Side Rendering</a></li>
@@ -1063,94 +1069,112 @@
 <h3 id="vm-forceUpdate">vm.$forceUpdate()</h3>
 
 <ul>
-<li><p><strong>Usage:</strong></p>
-<p>Force the Vue instance to re-render. Note it does not affect all child components, only the instance itself and child components with inserted slot content.</p>
+<li><p><strong>用法:</strong></p>
+<p>Force the Vue instance to re-render. Note it does not affect all child components, only the instance itself and child components with inserted slot content.<br>强制 Vue 实例重新渲染。这个方法不会影响所有的子组件，它只会让实例自身，还有那些带有插槽内容的子组件重新渲染。</p>
 </li>
 </ul>
 <h3 id="vm-nextTick">vm.$nextTick( callback )</h3>
 
 <ul>
-<li><p><strong>Arguments:</strong></p>
+<li><p><strong>参数:</strong></p>
 <ul>
 <li><code>{Function} callback</code></li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Defer the callback to be executed after the next DOM update cycle. Use it immediately after you’ve changed some data to wait for the DOM update. This is the same as the global <code>Vue.nextTick</code>, except that the callback’s <code>this</code> context is automatically bound to the instance calling this method.</p>
+<li><p><strong>用法:</strong></p>
+<p>Defer the callback to be executed after the next DOM update cycle. Use it immediately after you’ve changed some data to wait for the DOM update. This is the same as the global <code>Vue.nextTick</code>, except that the callback’s <code>this</code> context is automatically bound to the instance calling this method.<br>将回调推迟到下一个 DOM 更新循环再执行。在你修改数据之后立即使用这个方法，等待 DOM 更新。这跟全局的 <code>Vue.nextTick</code> 几乎一模一样，唯一不同的是调用这个方法时，回调的 <code>this</code> 自动绑定实例。</p>
 </li>
-<li><p><strong>Example:</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  methods: &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    example: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// modify data</span></div><div class="line">      <span class="keyword">this</span>.message = <span class="string">'changed'</span></div><div class="line">      <span class="comment">// DOM is not updated yet</span></div><div class="line">      <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// DOM is now updated</span></div><div class="line">        <span class="comment">// `this` is bound to the current instance</span></div><div class="line">        <span class="keyword">this</span>.doSomethingElse()</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<li><p><strong>示例:</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  methods: &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    example: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// modify data</span></div><div class="line">      <span class="comment">// 修改数据</span></div><div class="line">      <span class="keyword">this</span>.message = <span class="string">'changed'</span></div><div class="line">      <span class="comment">// DOM is not updated yet</span></div><div class="line">      <span class="comment">// DOM 还没有更新</span></div><div class="line">      <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// DOM is now updated</span></div><div class="line">        <span class="comment">// 到这里 DOM 已经更新了</span></div><div class="line">        <span class="comment">// `this` is bound to the current instance</span></div><div class="line">        <span class="comment">// `this` 已经绑定到当前的实例</span></div><div class="line">        <span class="keyword">this</span>.doSomethingElse()</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>另见:</strong></p>
 <ul>
 <li><a href="#Vue-nextTick">Vue.nextTick</a></li>
 <li><a href="/guide/reactivity.html#Async-Update-Queue">Async Update Queue</a></li>
+<li><a href="/guide/reactivity.html#Async-Update-Queue">异步更新队列</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="vm-destroy">vm.$destroy()</h3>
 
 <ul>
-<li><p><strong>Usage:</strong></p>
-<p>Completely destroy a vm. Clean up its connections with other existing vms, unbind all its directives, turn off all event listeners.</p>
-<p>Triggers the <code>beforeDestroy</code> and <code>destroyed</code> hooks.</p>
-<p class="tip">In normal use cases you shouldn’t have to call this method yourself. Prefer controlling the lifecycle of child components in a data-driven fashion using <code>v-if</code> and <code>v-for</code>.</p>
+<li><p><strong>用法:</strong></p>
+<p>Completely destroy a vm. Clean up its connections with other existing vms, unbind all its directives, turn off all event listeners.<br>完全销毁实例。清理它与其它实例的连接，解绑它的全部指令及事件监听器。</p>
+<p>Triggers the <code>beforeDestroy</code> and <code>destroyed</code> hooks.<br>触发 <code>beforeDestroy</code> 和 <code>destroyed</code> 钩子.</p>
+<p class="tip">In normal use cases you shouldn’t have to call this method yourself. Prefer controlling the lifecycle of child components in a data-driven fashion using <code>v-if</code> and <code>v-for</code>.</p><br><p class="tip">在正常使用情况下，你不应该自己调用这个方法。更好地控制子组件的生命周期，是以数据驱动的方式使用 <code>v-if</code> 和 <code>v-for</code>。</p>
 </li>
 <li><p><strong>See also:</strong> <a href="/guide/instance.html#Lifecycle-Diagram">Lifecycle Diagram</a></p>
 </li>
+<li><strong>另见:</strong> <a href="/guide/instance.html#Lifecycle-Diagram">生命周期图示</a></li>
 </ul>
-<h2 id="Directives"><a href="#Directives" class="headerlink" title="Directives"></a>Directives</h2><h3 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h3><ul>
-<li><p><strong>Expects:</strong> <code>string</code></p>
+<h2 id="指令-Directives"><a href="#指令-Directives" class="headerlink" title="指令 (Directives)"></a>指令 (Directives)</h2><h3 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h3><ul>
+<li><strong>Expects:</strong> <code>string</code></li>
+<li><p><strong>类型:</strong> <code>string</code></p>
 </li>
 <li><p><strong>Details:</strong></p>
-<p>Updates the element’s <code>textContent</code>. If you need to update the part of <code>textContent</code>, you should use <code>{{ Mustache }}</code> interpolations.</p>
 </li>
-<li><p><strong>Example:</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-text</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- same as --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<li><p><strong>详细:</strong></p>
+<p>Updates the element’s <code>textContent</code>. If you need to update the part of <code>textContent</code>, you should use <code>{{ Mustache }}</code> interpolations.<br>更新元素的 <code>textContent</code>。如果你需要更新 <code>textContent</code> 的一部分，你应该使用 <code>{{ Mustache }}</code> 插值。</p>
+</li>
+<li><p><strong>示例:</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-text</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- same as --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 跟上面一样 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>See also:</strong> <a href="/guide/syntax.html#Text">Data Binding Syntax - interpolations</a></p>
 </li>
+<li><strong>另见:</strong> <a href="/guide/syntax.html#Text">数据绑定语法 - 插值</a></li>
 </ul>
 <h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h3><ul>
-<li><p><strong>Expects:</strong> <code>string</code></p>
+<li><strong>Expects:</strong> <code>string</code></li>
+<li><p><strong>类型:</strong> <code>string</code></p>
 </li>
 <li><p><strong>Details:</strong></p>
-<p>Updates the element’s <code>innerHTML</code>. <strong>Note that the contents are inserted as plain HTML - they will not be compiled as Vue templates</strong>. If you find yourself trying to compose templates using <code>v-html</code>, try to rethink the solution by using components instead.</p>
-<p class="tip">Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="external">XSS attacks</a>. Only use <code>v-html</code> on trusted content and <strong>never</strong> on user-provided content.</p>
 </li>
-<li><p><strong>Example:</strong></p>
+<li><p><strong>详细:</strong></p>
+<p>Updates the element’s <code>innerHTML</code>. <strong>Note that the contents are inserted as plain HTML - they will not be compiled as Vue templates</strong>. If you find yourself trying to compose templates using <code>v-html</code>, try to rethink the solution by using components instead.<br>更新元素的 <code>innerHTML</code>。<strong>注意，内容会以普通 HTML 的方式插入 —— 它们将不会被当作 Vue 模板来编译</strong>。如果你想用 <code>v-html</code> 去组合模板，你应该考虑使用组件。</p>
+<p class="tip">Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="external">XSS attacks</a>. Only use <code>v-html</code> on trusted content and <strong>never</strong> on user-provided content.<br>在网站上动态渲染 HTML 是非常危险的，因为容易遭受 <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="external">XSS攻击</a>。请只对可信的内容使用 <code>v-html</code> ，<strong>永远不要</strong> 用在用户提交的内容上。</p>
+</li>
+<li><p><strong>示例:</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">"html"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>See also:</strong> <a href="/guide/syntax.html#Raw-HTML">Data Binding Syntax - interpolations</a></p>
 </li>
+<li><strong>另见:</strong> <a href="/guide/syntax.html#Raw-HTML">数据绑定语法 —— 插值</a></li>
 </ul>
 <h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h3><ul>
-<li><p><strong>Expects:</strong> <code>any</code></p>
+<li><strong>Expects:</strong> <code>any</code></li>
+<li><p><strong>类型:</strong> <code>any</code></p>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Conditionally render the element based on the truthy-ness of the expression value. The element and its contained directives / components are destroyed and re-constructed during toggles. If the element is a <code>&lt;template&gt;</code> element, its content will be extracted as the conditional block.</p>
-<p>This directive triggers transitions when its condition changes.</p>
-</li>
-<li><p><strong>See also:</strong> <a href="/guide/conditional.html">Conditional Rendering - v-if</a></p>
+<li><p><strong>用法:</strong></p>
+<p>Conditionally render the element based on the truthy-ness of the expression value. The element and its contained directives / components are destroyed and re-constructed during toggles. If the element is a <code>&lt;template&gt;</code> element, its content will be extracted as the conditional block.<br>根据表达式的值的条件真假渲染元素。在切换时元素及它的数据绑定 / 组件被销毁并重建。如果元素是 <code>&lt;template&gt;</code>，将提出它的内容作为条件块。</p>
+<p>This directive triggers transitions when its condition changes.<br>当指令条件改变将触发转换。</p>
 </li>
 </ul>
+<ul>
+<li><strong>See also:</strong> <a href="/guide/conditional.html">Conditional Rendering - v-if</a></li>
+<li><strong>另见:</strong> <a href="/guide/conditional.html">条件渲染 - v-if</a></li>
+</ul>
 <h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><ul>
-<li><p><strong>Expects:</strong> <code>any</code></p>
+<li><strong>Expects:</strong> <code>any</code></li>
+<li><p><strong>类型:</strong> <code>any</code></p>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Toggle’s the element’s <code>display</code> CSS property based on the truthy-ness of the expression value.</p>
-<p>This directive triggers transitions when its condition changes.</p>
+<li><p><strong>用法:</strong></p>
+<p>Toggle’s the element’s <code>display</code> CSS property based on the truthy-ness of the expression value.<br>根据表达式的值，切换元素的 <code>display</code> CSS 属性。</p>
+<p>This directive triggers transitions when its condition changes.<br>当条件改变时，该指令将触发转换。</p>
 </li>
 <li><p><strong>See also:</strong> <a href="/guide/conditional.html#v-show">Conditional Rendering - v-show</a></p>
 </li>
+<li><strong>另见:</strong> <a href="/guide/conditional.html#v-show">条件渲染 - v-show</a></li>
 </ul>
 <h3 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h3><ul>
-<li><p><strong>Does not expect expression</strong></p>
+<li><strong>Does not expect expression</strong></li>
+<li><p><strong>不需要表达式</strong></p>
 </li>
 <li><p><strong>Restriction:</strong> previous sibling element must have <code>v-if</code>.</p>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Denote the “else block” for <code>v-if</code>.</p>
+<li><p><strong>限制:</strong> 前一兄弟元素必须有 <code>v-if</code>.</p>
+</li>
+<li><p><strong>用法:</strong></p>
+<p>Denote the “else block” for <code>v-if</code>.<br>表示 <code>v-if</code> 的 “else 块”。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"Math.random() &gt; 0.5"</span>&gt;</span></div><div class="line">  Now you see me</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  Now you don't</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>See also:</strong></p>
@@ -1158,90 +1182,116 @@
 <li><a href="/guide/conditional.html#v-else">Conditional Rendering - v-else</a></li>
 </ul>
 </li>
+<li><strong>另见:</strong><ul>
+<li><a href="/guide/conditional.html#v-else">条件渲染 - v-else</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><ul>
-<li><p><strong>Expects:</strong> <code>Array | Object | number | string</code></p>
+<li><strong>Expects:</strong> <code>Array | Object | number | string</code></li>
+<li><p><strong>类型:</strong> <code>Array | Object | number | string</code></p>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Render the element or template block multiple times based on the source data. The directive’s value must use the special syntax <code>alias in expression</code> to provide an alias for the current element being iterated on:</p>
+<li><p><strong>用法:</strong></p>
+<p>Render the element or template block multiple times based on the source data. The directive’s value must use the special syntax <code>alias in expression</code> to provide an alias for the current element being iterated on:<br>基于源数据将元素或模板块多次渲染。指令的值必须使用特定语法 <code>alias in expression</code>，为当前遍历的元素提供别名：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">  &#123;&#123; item.text &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Alternatively, you can also specify an alias for the index (or the key if used on an Object):</p>
+<p>Alternatively, you can also specify an alias for the index (or the key if used on an Object):<br>另外也可以为数组索引指定别名（如果值是对象可以为键指定别名）：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in items"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(key, val) in object"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(key, val, index) in object"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>The default behavior of <code>v-for</code> will try to patch the elements in-place without moving them. To force it to reorder elements, you need to provide an ordering hint with the <code>key</code> special attribute:</p>
+<p>The default behavior of <code>v-for</code> will try to patch the elements in-place without moving them. To force it to reorder elements, you need to provide an ordering hint with the <code>key</code> special attribute:<br>默认地，<code>v-for</code> 会尝试填补元素位置而不去移动它们。如果要强制给元素排序，你需要使用 <code>key</code> 特殊属性来提供排序的依据：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></div><div class="line">  &#123;&#123; item.text &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>The detailed usage for <code>v-for</code> is explained in the guide section linked below.</p>
+<p>The detailed usage for <code>v-for</code> is explained in the guide section linked below.<br><code>v-for</code> 的详细用法可以在下面链接的教程里找到。</p>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>另见:</strong></p>
 <ul>
 <li><a href="/guide/list.html">List Rendering</a></li>
+<li><a href="/guide/list.html">列表渲染</a></li>
 <li><a href="/guide/list.html#key">key</a></li>
+<li><a href="/guide/list.html#key">键</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><ul>
-<li><p><strong>Shorthand:</strong> <code>@</code></p>
+<li><strong>Shorthand:</strong> <code>@</code></li>
+<li><p><strong>缩写:</strong> <code>@</code></p>
 </li>
 <li><p><strong>Expects:</strong> <code>Function | Inline Statement</code></p>
 </li>
-<li><p><strong>Argument:</strong> <code>event (required)</code></p>
+<li><p><strong>类型:</strong> <code>Function | Inline Statement</code></p>
 </li>
-<li><p><strong>Modifiers:</strong></p>
+<li><p><strong>参数:</strong> <code>event (required)</code></p>
+</li>
+<li><p><strong>修饰符:</strong></p>
 <ul>
 <li><code>.stop</code> - call <code>event.stopPropagation()</code>.</li>
+<li><code>.stop</code> - 调用 <code>event.stopPropagation()</code>.</li>
 <li><code>.prevent</code> - call <code>event.preventDefault()</code>.</li>
+<li><code>.prevent</code> - 调用 <code>event.preventDefault()</code>.</li>
 <li><code>.capture</code> - add event listener in capture mode.</li>
+<li><code>.capture</code> - 添加事件侦听器时使用 capture 模式.</li>
 <li><code>.self</code> - only trigger handler if event was dispatched from this element.</li>
+<li><code>.self</code> - 只当事件是从侦听器绑定的元素本身触发时才触发回调。</li>
 <li><code>.{keyCode | keyAlias}</code> - only trigger handler on certain keys.</li>
+<li><code>.{keyCode | keyAlias}</code> - 只在指定按键上触发回调。</li>
 <li><code>.native</code> - listen for a native event on the root element of component.</li>
+<li><code>.native</code> - 在组件的根元素上监听本地事件。</li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Attaches an event listener to the element. The event type is denoted by the argument. The expression can either be a method name or an inline statement, or simply omitted when there are modifiers present.</p>
-<p>When used on a normal element, it listens to <strong>native DOM events</strong> only. When used on a custom element component, it also listens to <strong>custom events</strong> emitted on that child component.</p>
-<p>When listening to native DOM events, the method receives the native event as the only argument. If using inline statement, the statement has access to the special <code>$event</code> property: <code>v-on:click=&quot;handle(&#39;ok&#39;, $event)&quot;</code>.</p>
+<li><p><strong>用法:</strong></p>
+<p>Attaches an event listener to the element. The event type is denoted by the argument. The expression can either be a method name or an inline statement, or simply omitted when there are modifiers present.<br>为元素绑定事件监听器。事件类型由参数指定。表达式可以是一个方法的名字或一个内联语句，如果有修饰符也可以省略。</p>
+<p>When used on a normal element, it listens to <strong>native DOM events</strong> only. When used on a custom element component, it also listens to <strong>custom events</strong> emitted on that child component.<br>用在普通元素上时，只能监听 <strong>原生 DOM 事件</strong>。用在自定义元素组件上时，还会监听子组件触发的 <strong>自定义事件</strong>。</p>
+<p>When listening to native DOM events, the method receives the native event as the only argument. If using inline statement, the statement has access to the special <code>$event</code> property: <code>v-on:click=&quot;handle(&#39;ok&#39;, $event)&quot;</code>.<br>在监听原生 DOM 事件时，方法以原生事件作为唯一的参数。如果使用内联语句，语句可以访问特殊的 <code>$event</code> 属性：<code>v-on:click=&quot;handle(&#39;ok&#39;,$event)&quot;</code>。</p>
 </li>
-<li><p><strong>Example:</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- method handler --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- inline statement --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"doThat('hello', $event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- shorthand --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- stop propagation --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.stop</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- prevent default --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.prevent</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- prevent default without expression --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- chain modifiers --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.stop.prevent</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- key modifier using keyAlias --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.enter</span>=<span class="string">"onEnter"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- key modifier using keyCode --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.13</span>=<span class="string">"onEnter"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Listening to custom events on a child component (the handler is called when “my-event” is emitted on the child):</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span> @<span class="attr">my-event</span>=<span class="string">"handleThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- inline statement --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> @<span class="attr">my-event</span>=<span class="string">"handleThis(123, $event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- native event on component --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> @<span class="attr">click.native</span>=<span class="string">"onClick"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<li><p><strong>示例:</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- method handler --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 方法名 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- inline statement --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 内联语句 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"doThat('hello', $event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- shorthand --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- stop propagation --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 阻止事件传播 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.stop</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- prevent default --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 禁用事件的默认行为 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.prevent</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- prevent default without expression --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 单纯禁用事件的默认行为 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit.prevent</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- chain modifiers --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 链式修饰符 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click.stop.prevent</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- key modifier using keyAlias --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 键修饰符(键别名) --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.enter</span>=<span class="string">"onEnter"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- key modifier using keyCode --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 键修饰符(键码值) --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.13</span>=<span class="string">"onEnter"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Listening to custom events on a child component (the handler is called when “my-event” is emitted on the child):<br>在子组件上监听自定义事件（当子组件触发 “my-event” 时将调用事件处理器）：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span> @<span class="attr">my-event</span>=<span class="string">"handleThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- inline statement --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 内联语句 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> @<span class="attr">my-event</span>=<span class="string">"handleThis(123, $event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- native event on component --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 组件的原生事件 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> @<span class="attr">click.native</span>=<span class="string">"onClick"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>另见:</strong></p>
 <ul>
 <li><a href="/guide/events.html">Methods and Event Handling</a></li>
+<li><a href="/guide/events.html">方法与事件处理器</a></li>
 <li><a href="/guide/components.html#Custom-Events">Components - Custom Events</a></li>
+<li><a href="/guide/components.html#Custom-Events">组件 —— 自定义事件</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><ul>
-<li><p><strong>Shorthand:</strong> <code>:</code></p>
+<li><p><strong>缩写:</strong> <code>:</code></p>
 </li>
 <li><p><strong>Expects:</strong> <code>any (with argument) | Object (without argument)</code></p>
 </li>
-<li><p><strong>Argument:</strong> <code>attrOrProp (optional)</code></p>
+<li><p><strong>类型:</strong> <code>any (with argument) | Object (without argument)</code></p>
+</li>
+<li><p><strong>参数:</strong> <code>attrOrProp (optional)</code></p>
 </li>
 <li><p><strong>Modifiers:</strong></p>
+</li>
+<li><p><strong>修饰符:</strong></p>
 <ul>
 <li><code>.prop</code> - Used for binding DOM attributes.</li>
+<li><code>.prop</code> - 用于绑定DOM属性。</li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Dynamically bind one or more attributes, or a component prop to an expression.</p>
-<p>When used to bind the <code>class</code> or <code>style</code> attribute, it supports additional value types such as Array or Objects. See linked guide section below for more details.</p>
-<p>When used for prop binding, the prop must be properly declared in the child component.</p>
-<p>When used without an argument, can be used to bind an object containing attribute name-value pairs. Note in this mode <code>class</code> and <code>style</code> does not support Array or Objects.</p>
+<li><p><strong>用法:</strong></p>
+<p>Dynamically bind one or more attributes, or a component prop to an expression.<br>动态绑定元素个属性或组件 prop。</p>
+<p>When used to bind the <code>class</code> or <code>style</code> attribute, it supports additional value types such as Array or Objects. See linked guide section below for more details.<br>在绑定 <code>class</code> 或 <code>style</code> 时，支持其它类型的值，如数组或对象。下面链接的教程里有更详细的介绍。</p>
+<p>When used for prop binding, the prop must be properly declared in the child component.<br>在绑定 prop 时，prop 必须在子组件中声明。</p>
+<p>When used without an argument, can be used to bind an object containing attribute name-value pairs. Note in this mode <code>class</code> and <code>style</code> does not support Array or Objects.<br>没有参数时，可以用来绑定到一个包含键值对的对象。在使用这个方法的时候，<code>class</code> 和 <code>style</code> 绑定不支持数组和对象。</p>
 </li>
-<li><p><strong>Example:</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- bind an attribute --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- shorthand --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- class binding --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"&#123; red: isRed &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, classB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, &#123; classB: isB, classC: isC &#125;]"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- style binding --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"&#123; fontSize: size + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"[styleObjectA, styleObjectB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- binding an object of attributes --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind</span>=<span class="string">"&#123; id: someProp, 'other-attr': otherProp &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- DOM attribute binding with prop modifier --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:text-content.prop</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- prop binding. "prop" must be declared in my-component. --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">:prop</span>=<span class="string">"someThing"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- XLink --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">:xlink:special</span>=<span class="string">"foo"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
+<li><p><strong>示例:</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- bind an attribute --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 绑定一个属性 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- shorthand --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"imageSrc"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- class binding --&gt;</span></div><div class="line"><span class="comment">&lt;!-- class 绑定 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"&#123; red: isRed &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, classB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, &#123; classB: isB, classC: isC &#125;]"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- style binding --&gt;</span></div><div class="line"><span class="comment">&lt;!-- style 绑定 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"&#123; fontSize: size + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"[styleObjectA, styleObjectB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- binding an object of attributes --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 绑定一个对象 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind</span>=<span class="string">"&#123; id: someProp, 'other-attr': otherProp &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- DOM attribute binding with prop modifier --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 用 prop 修饰符绑定 DOM 属性 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:text-content.prop</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- prop binding. "prop" must be declared in my-component. --&gt;</span></div><div class="line"><span class="comment">&lt;!-- prop 绑定。my-component 必须先声明 prop --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">:prop</span>=<span class="string">"someThing"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- XLink --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">:xlink:special</span>=<span class="string">"foo"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>另见:</strong></p>
 <ul>
 <li><a href="/guide/class-and-style.html">Class and Style Bindings</a></li>
+<li><a href="/guide/class-and-style.html">Class 和 Style 绑定</a></li>
 <li><a href="/guide/components.html#Props">Components - Component Props</a></li>
+<li><a href="/guide/components.html#Props">组件 Props</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><ul>
-<li><p><strong>Expects:</strong> varies based on value of form inputs element or output of components</p>
+<li><strong>Expects:</strong> varies based on value of form inputs element or output of components</li>
+<li><p><strong>类型:</strong> 随着表单输入控件的值的不同或组件输出的不同而不同</p>
 </li>
 <li><p><strong>Limited to:</strong></p>
 <ul>
@@ -1251,56 +1301,76 @@
 <li>components</li>
 </ul>
 </li>
-<li><p><strong>Modifiers:</strong></p>
+<li><p><strong>限制:</strong></p>
 <ul>
-<li><a href="/guide/forms.html#lazy"><code>.lazy</code></a> - listen to <code>change</code> events instead of <code>input</code></li>
-<li><a href="/guide/forms.html#number"><code>.number</code></a> - cast input string to numbers</li>
-<li><a href="/guild/forms.html#trim"><code>.trim</code></a> - trim input</li>
+<li><code>&lt;input&gt;</code></li>
+<li><code>&lt;select&gt;</code></li>
+<li><code>&lt;textarea&gt;</code></li>
+<li>组件</li>
 </ul>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>Create a two-way binding on a form input element or a component. For detailed usage, see guide section linked below.</p>
+<li><p><strong>修饰符:</strong></p>
+<ul>
+<li><a href="/guide/forms.html#lazy"><code>.lazy</code></a> - listen to <code>change</code> events instead of <code>input</code></li>
+<li><a href="/guide/forms.html#lazy"><code>.lazy</code></a> - 监听 <code>change</code> 事件而不是<code>input</code>事件</li>
+<li><a href="/guide/forms.html#number"><code>.number</code></a> - cast input string to numbers</li>
+<li><a href="/guide/forms.html#number"><code>.number</code></a> - 将输入的字符串转换成数值</li>
+<li><a href="/guild/forms.html#trim"><code>.trim</code></a> - trim input</li>
+<li><a href="/guild/forms.html#trim"><code>.trim</code></a> - 去除输入内容的首位空格</li>
+</ul>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>用法:</strong></p>
+<p>Create a two-way binding on a form input element or a component. For detailed usage, see guide section linked below.<br>在组件或表单控件上创建一个双向绑定。下面链接的教程中有更详细的用法。</p>
+</li>
+<li><p><strong>另见:</strong></p>
 <ul>
 <li><a href="/guide/forms.html">Form Input Bindings</a></li>
+<li><a href="/guide/forms.html">表单控件绑定</a></li>
 <li><a href="/guide/components.html#Form-Input-Components-using-Custom-Events">Components - Form Input Components using Custom Events</a></li>
+<li><a href="/guide/components.html#Form-Input-Components-using-Custom-Events">组件 —— 表单控件组件使用自定义事件</a></li>
 </ul>
 </li>
 </ul>
 <h3 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h3><ul>
-<li><p><strong>Does not expect expression</strong></p>
+<li><strong>Does not expect expression</strong></li>
+<li><p><strong>不需要表达式</strong></p>
 </li>
-<li><p><strong>Usage</strong></p>
-<p>Skip compilation for this element and all its children. You can use this for displaying raw mustache tags. Skipping large numbers of nodes with no directives on them can also speed up compilation.</p>
+<li><p><strong>用法</strong></p>
+<p>Skip compilation for this element and all its children. You can use this for displaying raw mustache tags. Skipping large numbers of nodes with no directives on them can also speed up compilation.<br>不去编译这个元素和它的子元素。可以用来显示原生 Mustache 标签。跳过大量没有指令的节点会加快编译。</p>
 </li>
-<li><p><strong>Example:</strong></p>
+<li><p><strong>示例:</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-pre</span>&gt;</span>&#123;&#123; this will not be compiled &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h3><ul>
-<li><p><strong>Does not expect expression</strong></p>
+<li><strong>Does not expect expression</strong></li>
+<li><p><strong>不需要表达式</strong></p>
 </li>
-<li><p><strong>Usage:</strong></p>
-<p>This directive will remain on the element until the associated Vue instance finishes compilation. Combined with CSS rules such as <code>[v-cloak] { display: none }</code>, this directive can be used to hide un-compiled mustache bindings until the Vue instance is ready.</p>
+<li><p><strong>用法:</strong></p>
+<p>This directive will remain on the element until the associated Vue instance finishes compilation. Combined with CSS rules such as <code>[v-cloak] { display: none }</code>, this directive can be used to hide un-compiled mustache bindings until the Vue instance is ready.<br>直到关联实例完成编译，这个指令都会保持在元素上。如果和像 <code>[v-cloak] { display: none }</code> 这样的 CSS 规则一起使用时，这个指令可以隐藏未编译的 Mustache 标签，直到实例完成编译。</p>
 </li>
-<li><p><strong>Example:</strong></p>
+<li><p><strong>示例:</strong></p>
 <figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-attr">[v-cloak]</span> &#123;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-cloak</span>&gt;</span></div><div class="line">  &#123;&#123; message &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>The <code>&lt;div&gt;</code> will not be visible until the compilation is done.</p>
+<p>The <code>&lt;div&gt;</code> will not be visible until the compilation is done.<br><code>&lt;div&gt;</code> 不会显示，直到编译完成。</p>
 </li>
 </ul>
 <h3 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h3><ul>
-<li><p><strong>Does not expect expression</strong></p>
+<li><strong>Does not expect expression</strong></li>
+<li><p><strong>不需要表达式</strong></p>
 </li>
 <li><p><strong>Details:</strong></p>
-<p>Render the element and component <strong>once</strong> only. On subsequent re-renders, the element/component and all its children will be treated as static content and skipped. This can be used to optimize update performance.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- single element --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-once</span>&gt;</span>This will never change: &#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- the element have children --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-once</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>comment<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- component --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-once</span> <span class="attr">:comment</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- v-for directive --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"i in list"</span> <span class="attr">v-once</span>&gt;</span>&#123;&#123;i&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>See also:</strong></p>
+<li><p><strong>详细:</strong></p>
+<p>Render the element and component <strong>once</strong> only. On subsequent re-renders, the element/component and all its children will be treated as static content and skipped. This can be used to optimize update performance.<br>只渲染元素和组件 <strong>一次</strong>。在后面的重新渲染中，这个元素/组件以及它们所有的子元素都会被当作静态内容去忽略掉。这个指令可以用来优化更新的性能。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- single element --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 单个元素 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-once</span>&gt;</span>This will never change: &#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- the element have children --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 带有子元素的元素 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-once</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>comment<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- component --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 组件 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-once</span> <span class="attr">:comment</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- v-for directive --&gt;</span></div><div class="line"><span class="comment">&lt;!-- v-for 指令 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"i in list"</span> <span class="attr">v-once</span>&gt;</span>&#123;&#123;i&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>另见:</strong></p>
 <ul>
 <li><a href="/guide/syntax.html#Text">Data Binding Syntax - interpolations</a></li>
+<li><a href="/guide/syntax.html#Text">数据绑定语法 —— 插值</a></li>
 <li><a href="/guide/components.html#Cheap-Static-Components-with-v-once">Components - Cheap Static Components with v-once</a></li>
+<li><a href="/guide/components.html#Cheap-Static-Components-with-v-once">组件 —— 使用v-once的轻量级静态组件</a></li>
 </ul>
 </li>
 </ul>
