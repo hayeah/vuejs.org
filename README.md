@@ -22,6 +22,13 @@ reactive | 响应式的
 (single) source of truth | (单一)数据源
 mutation | 突变
 fallback content | 替换内容 | 根据 MDN 文档
+virtual DOM | 虚拟 DOM
+core | 内核
+companion library | 插件库
+overhead | 额外开销
+benchmark | 测试基准
+learning curve | 学习曲线
+non-trivial app | 正常应用
 
 参考 [vuejs-1.0 中文文档](http://cn.vuejs.org/)
 
