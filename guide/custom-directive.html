@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Custom Directives - vue.js</title>
+        <title>自定义指令 (Custom Directives) - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -250,7 +250,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/custom-directive.html" class="sidebar-link current">Custom Directives</a>
+                    <a href="/vuejs.org/guide/custom-directive.html" class="sidebar-link current">自定义指令 (Custom Directives)</a>
                 </li>
             
                 
@@ -295,7 +295,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/routing.html" class="sidebar-link">Routing</a>
+                    <a href="/vuejs.org/guide/routing.html" class="sidebar-link">路由 (Routing)</a>
                 </li>
             
                 
@@ -394,9 +394,9 @@
 
     
     
-      <h1>Custom Directives</h1>
+      <h1>自定义指令 (Custom Directives)</h1>
     
-    <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>In addition to the default set of directives shipped in core (<code>v-model</code> and <code>v-show</code>), Vue also allows you to register your own custom directives. Note that in Vue 2.0, the primary form of code reuse and abstraction is components - however there may be cases where you just need some low-level DOM access on plain elements, and this is where custom directives would still be useful. An example would be focusing on an input element, like this one:</p>
+    <h2 id="简介-Intro"><a href="#简介-Intro" class="headerlink" title="简介 (Intro)"></a>简介 (Intro)</h2><p>In addition to the default set of directives shipped in core (<code>v-model</code> and <code>v-show</code>), Vue also allows you to register your own custom directives. Note that in Vue 2.0, the primary form of code reuse and abstraction is components - however there may be cases where you just need some low-level DOM access on plain elements, and this is where custom directives would still be useful. An example would be focusing on an input element, like this one:<br>除了 Vue 默认提供的指令（如：<code>v-model</code>，<code>v-show</code>），Vue 也支持自定义指令。Vue 2.0 主要通过组件来进行代码重用和抽象，但有时需要对网页元素做一些底层的 DOM 操作，此时自定义指令仍会非常有用。比如说，把焦点定位到 input 元素，代码如下：</p>
 
 <div id="simplest-directive-example" class="demo">
   <input v-focus="">
@@ -412,44 +412,62 @@ new Vue({
 })
 </script>
 
-<p>When the page loads, that element gains focus. In fact, if you haven’t clicked on anything else since visiting this page, the input above should be focused now. Now let’s build the directive that accomplishes this:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Register a global custom directive called v-focus</span></div><div class="line">Vue.directive(<span class="string">'focus'</span>, &#123;</div><div class="line">  <span class="comment">// When the bound element is inserted into the DOM...</span></div><div class="line">  inserted: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</div><div class="line">    <span class="comment">// Focus the element</span></div><div class="line">    el.focus()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>If you want to register a directive locally instead, components also accept a <code>directives</code> option:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">directives: &#123;</div><div class="line">  <span class="attr">focus</span>: &#123;</div><div class="line">    <span class="comment">// directive definition</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Then in a template, you can use the new <code>v-focus</code> attribute on any element, like this:</p>
+<p>When the page loads, that element gains focus. In fact, if you haven’t clicked on anything else since visiting this page, the input above should be focused now. Now let’s build the directive that accomplishes this:<br>当页面加载时，焦点会定位到该元素。实际上，如果你进入本页面之后没有点击任何东西，焦点应该已经定位到上面的输入控件了。现在，让我们来完成这个指令：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Register a global custom directive called v-focus</span></div><div class="line"><span class="comment">// 注册一个全局的自定义指令： v-focus</span></div><div class="line">Vue.directive(<span class="string">'focus'</span>, &#123;</div><div class="line">  <span class="comment">// When the bound element is inserted into the DOM...</span></div><div class="line">  <span class="comment">// 当绑定的元素被插入到 DOM 时...</span></div><div class="line">  inserted: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</div><div class="line">    <span class="comment">// Focus the element</span></div><div class="line">    <span class="comment">// 将焦点定位到元素</span></div><div class="line">    el.focus()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>If you want to register a directive locally instead, components also accept a <code>directives</code> option:<br>如果你要注册一个本地指令，组件也接受 <code>directives</code> 选项：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">directives: &#123;</div><div class="line">  <span class="attr">focus</span>: &#123;</div><div class="line">    <span class="comment">// directive definition</span></div><div class="line">    <span class="comment">// 指令定义</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Then in a template, you can use the new <code>v-focus</code> attribute on any element, like this:<br>然后在模版中，在元素上使用新建的 <code>v-foucs</code> 属性：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-focus</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="Hook-Functions"><a href="#Hook-Functions" class="headerlink" title="Hook Functions"></a>Hook Functions</h2><p>A directive definition object can provide several hook functions (all optional):</p>
+<h2 id="钩子函数-Hook-Functions"><a href="#钩子函数-Hook-Functions" class="headerlink" title="钩子函数 (Hook Functions)"></a>钩子函数 (Hook Functions)</h2><p>A directive definition object can provide several hook functions (all optional):<br>定义一个指令时，支持多种钩子函数（全部可选项）：</p>
 <ul>
-<li><p><code>bind</code>: called only once, when the directive is first bound to the element. This is where you can do one-time setup work.</p>
+<li><code>bind</code>: called only once, when the directive is first bound to the element. This is where you can do one-time setup work.</li>
+<li><p><code>bind</code>：只触发一次，当指令初次绑定到元素时触发。此处可以做些一次性的配置。</p>
 </li>
 <li><p><code>inserted</code>: called when the bound element has been inserted into its parent node (this only guarantees parent node presence, not necessarily in-document).</p>
 </li>
+<li><p><code>inserted</code>: 当元素被插入其父元素时触发（只需保证父元素存在，不要求父元素必须在网页文档中）</p>
+</li>
 <li><p><code>update</code>: called after the containing component has updated, <strong>but possibly before its children have updated</strong>. The directive’s value may or may not have changed, but you can skip unnecessary updates by comparing the binding’s current and old values (see below on hook arguments).</p>
+</li>
+<li><p><code>update</code>：当所包含的组件更新时触发，<strong>但有可能是在它的子组件更新之前</strong>。该指令的值可能改变也可能不改变。可以通过比较当前值是否变化来略过不必要的更新操作。（详见下文钩子参数）</p>
 </li>
 <li><p><code>componentUpdated</code>: called after the containing component <strong>and its children</strong> have updated.</p>
 </li>
+<li><p><code>componentUpdated</code>：包含的组件<strong>以及它的子组件</strong>完成更新后触发。</p>
+</li>
 <li><p><code>unbind</code>: called only once, when the directive is unbound from the element.</p>
 </li>
+<li><code>unbind</code>：只触发一次，当指令解除绑定时触发。</li>
 </ul>
-<p>We’ll explore the arguments passed into these hooks (i.e. <code>el</code>, <code>binding</code>, <code>vnode</code>, and <code>oldVnode</code>) in the next section.</p>
-<h2 id="Directive-Hook-Arguments"><a href="#Directive-Hook-Arguments" class="headerlink" title="Directive Hook Arguments"></a>Directive Hook Arguments</h2><p>Directive hooks are passed these arguments:</p>
+<p>We’ll explore the arguments passed into these hooks (i.e. <code>el</code>, <code>binding</code>, <code>vnode</code>, and <code>oldVnode</code>) in the next section.<br>下一节我们将探讨以上这些钩子函数（即 <code>el</code>、<code>binding</code>、<code>vnode</code> 和 <code>oldVnode</code>）的参数。</p>
+<h2 id="钩子函数的参数-Directive-Hook-Arguments"><a href="#钩子函数的参数-Directive-Hook-Arguments" class="headerlink" title="钩子函数的参数 (Directive Hook Arguments)"></a>钩子函数的参数 (Directive Hook Arguments)</h2><p>Directive hooks are passed these arguments:<br>指令中的参数：</p>
 <ul>
 <li><strong>el</strong>: The element the directive is bound to. This can be used to directly manipulate the DOM.</li>
-<li><strong>binding</strong>: An object containing the following properties.<ul>
+<li><strong>el</strong>: 被绑定的元素，可用来直接操作 DOM。</li>
+<li><strong>binding</strong>: An object containing the following properties.</li>
+<li><strong>binding</strong>: 一个包含下列属性的对象。<ul>
 <li><strong>name</strong>: The name of the directive, without the <code>v-</code> prefix.</li>
+<li><strong>name</strong>: 指令的名称，没有 <code>v-</code> 前缀。</li>
 <li><strong>value</strong>: The value passed to the directive. For example in <code>v-my-directive=&quot;1 + 1&quot;</code>, the value would be <code>2</code>.</li>
+<li><strong>value</strong>L: 传递给指令的值。比如：<code>v-my-directive=&quot;1 + 1&quot;</code>，指令的值就是 2。</li>
 <li><strong>oldValue</strong>: The previous value, only available in <code>update</code> and <code>componentUpdated</code>. It is available whether or not the value has changed.</li>
+<li><strong>oldValue</strong>: 前一个值，仅于 <code>update</code> 和 <code>componentUpdated</code> 事件中提供。无论值是否改变，oldValue 都会传递。</li>
 <li><strong>expression</strong>: The expression of the binding as a string. For example in <code>v-my-directive=&quot;1 + 1&quot;</code>, the expression would be <code>&quot;1 + 1&quot;</code>.</li>
+<li><strong>expression</strong>: 字符串类型，指令中传入的表达式，比如 <code>v-my-directive=&quot;1 + 1&quot;</code>，表达式是 <code>&quot;1 + 1&quot;</code></li>
 <li><strong>arg</strong>: The argument passed to the directive, if any. For example in <code>v-my-directive:foo</code>, the arg would be <code>&quot;foo&quot;</code>.</li>
+<li><strong>arg</strong>: 传递给指令的参数，可空。比如：<code>v-my-directive:foo</code>，则 arg 为 <code>&quot;foo&quot;</code>。</li>
 <li><strong>modifiers</strong>: An object containing modifiers, if any. For example in <code>v-my-directive.foo.bar</code>, the modifiers object would be <code>{ foo: true, bar: true }</code>.</li>
+<li><strong>modifiers</strong>: 一个包含修饰符（如果有）的对象。比如在 <code>v-my-directive.foo.bar</code> 中，修饰符对象就是 <code>{ foo: true, bar: true }</code>。</li>
 </ul>
 </li>
 <li><strong>vnode</strong>: The virtual node produced by Vue’s compiler. See the <a href="/api/#VNode-Interface">VNode API</a> for full details.</li>
+<li><strong>vnode</strong>: Vue 的编译器生成的虚拟节点。详情参考 <a href="/api/#VNode-Interface">VNode API</a>。</li>
 <li><strong>oldVnode</strong>: The previous virtual node, only available in the <code>update</code> and <code>componentUpdated</code> hooks.</li>
+<li><strong>oldVnode</strong>: 上一个虚拟节点， 仅在 <code>update</code> 和 <code>componentUpdated</code> 事件中提供。</li>
 </ul>
-<p class="tip">Apart from <code>el</code>, you should treat these arguments as read-only and never modify them. If you need to share information across hooks, it is recommended to do so through element’s <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset" target="_blank" rel="external">dataset</a>.</p>
+<p class="tip">Apart from <code>el</code>, you should treat these arguments as read-only and never modify them. If you need to share information across hooks, it is recommended to do so through element’s <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset" target="_blank" rel="external">dataset</a>.<br>除了<code>el</code>，其它参数应被视作只读，不应被更改或编辑。若钩子函数之间需要通信，建议使用 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset" target="_blank" rel="external">dataset</a>。</p>
 
-<p>An example of a custom directive using some of these properties:</p>
+<p>An example of a custom directive using some of these properties:<br>下面是一个调试指令参数的示例：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"hook-arguments-example"</span> <span class="attr">v-demo:hello.a.b</span>=<span class="string">"message"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.directive(<span class="string">'demo'</span>, &#123;</div><div class="line">  <span class="attr">bind</span>: <span class="function"><span class="keyword">function</span> (<span class="params">el, binding, vnode</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> s = <span class="built_in">JSON</span>.stringify</div><div class="line">    el.innerHTML =</div><div class="line">      <span class="string">'name: '</span>       + s(binding.name) + <span class="string">'&lt;br&gt;'</span> +</div><div class="line">      <span class="string">'value: '</span>      + s(binding.value) + <span class="string">'&lt;br&gt;'</span> +</div><div class="line">      <span class="string">'expression: '</span> + s(binding.expression) + <span class="string">'&lt;br&gt;'</span> +</div><div class="line">      <span class="string">'argument: '</span>   + s(binding.arg) + <span class="string">'&lt;br&gt;'</span> +</div><div class="line">      <span class="string">'modifiers: '</span>  + s(binding.modifiers) + <span class="string">'&lt;br&gt;'</span> +</div><div class="line">      <span class="string">'vnode keys: '</span> + <span class="built_in">Object</span>.keys(vnode).join(<span class="string">', '</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#hook-arguments-example'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">message</span>: <span class="string">'hello!'</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
@@ -475,9 +493,9 @@ new Vue({
 })
 </script>
 
-<h2 id="Function-Shorthand"><a href="#Function-Shorthand" class="headerlink" title="Function Shorthand"></a>Function Shorthand</h2><p>In many cases, you may want the same behavior on <code>bind</code> and <code>update</code>, but don’t care about the other hooks. For example:</p>
+<h2 id="简略的写法-Function-Shorthand"><a href="#简略的写法-Function-Shorthand" class="headerlink" title="简略的写法 (Function Shorthand)"></a>简略的写法 (Function Shorthand)</h2><p>In many cases, you may want the same behavior on <code>bind</code> and <code>update</code>, but don’t care about the other hooks. For example:<br>如果指令只需要处理<code>bind</code>和<code>update</code>事件，可以简写为如下形式：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.directive(<span class="string">'color-swatch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">el, binding</span>) </span>&#123;</div><div class="line">  el.style.backgroundColor = binding.value</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h2 id="Object-Literals"><a href="#Object-Literals" class="headerlink" title="Object Literals"></a>Object Literals</h2><p>If your directive needs multiple values, you can also pass in a JavaScript object literal. Remember, directives can take any valid JavaScript expression.</p>
+<h2 id="对象字面量-Object-Literals"><a href="#对象字面量-Object-Literals" class="headerlink" title="对象字面量 (Object Literals)"></a>对象字面量 (Object Literals)</h2><p>If your directive needs multiple values, you can also pass in a JavaScript object literal. Remember, directives can take any valid JavaScript expression.<br>如果指令需要多个值，可以传入一个 JavaScript 对象字面量，亦可以是任何有效的 JavaScript 表达式。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-demo</span>=<span class="string">"&#123; color: 'white', text: 'hello!' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.directive(<span class="string">'demo'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">el, binding</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(binding.value.color) <span class="comment">// =&gt; "white"</span></div><div class="line">  <span class="built_in">console</span>.log(binding.value.text)  <span class="comment">// =&gt; "hello!"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Routing - vue.js</title>
+        <title>路由 (Routing) - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -250,7 +250,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/custom-directive.html" class="sidebar-link">Custom Directives</a>
+                    <a href="/vuejs.org/guide/custom-directive.html" class="sidebar-link">自定义指令 (Custom Directives)</a>
                 </li>
             
                 
@@ -295,7 +295,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/routing.html" class="sidebar-link current">Routing</a>
+                    <a href="/vuejs.org/guide/routing.html" class="sidebar-link current">路由 (Routing)</a>
                 </li>
             
                 
@@ -394,13 +394,13 @@
 
     
     
-      <h1>Routing</h1>
+      <h1>路由 (Routing)</h1>
     
-    <h2 id="Official-Router"><a href="#Official-Router" class="headerlink" title="Official Router"></a>Official Router</h2><p>For most Single Page Applications, it’s recommended to use the officially-supported <a href="https://github.com/vuejs/vue-router" target="_blank" rel="external">vue-router library</a>. For more details, see vue-router’s <a href="http://vuejs.github.io/vue-router/" target="_blank" rel="external">documentation</a>.</p>
-<h2 id="Simple-Routing-From-Scratch"><a href="#Simple-Routing-From-Scratch" class="headerlink" title="Simple Routing From Scratch"></a>Simple Routing From Scratch</h2><p>If you just need very simple routing and do not wish to involve a full-featured router library, you can do so by dynamically rendering a page-level component like this:</p>
+    <h2 id="官方路由-Official-Router"><a href="#官方路由-Official-Router" class="headerlink" title="官方路由 (Official Router)"></a>官方路由 (Official Router)</h2><p>For most Single Page Applications, it’s recommended to use the officially-supported <a href="https://github.com/vuejs/vue-router" target="_blank" rel="external">vue-router library</a>. For more details, see vue-router’s <a href="http://vuejs.github.io/vue-router/" target="_blank" rel="external">documentation</a>.<br>对于大多数单页应用，建议使用官方提供的路由库 <a href="https://github.com/vuejs/vue-router" target="_blank" rel="external">vue-router</a>。详情请参考 vue-router 的<a href="http://vuejs.github.io/vue-router/" target="_blank" rel="external">文档</a>。</p>
+<h2 id="开始建立简单的路由-Simple-Routing-From-Scratch"><a href="#开始建立简单的路由-Simple-Routing-From-Scratch" class="headerlink" title="开始建立简单的路由 (Simple Routing From Scratch)"></a>开始建立简单的路由 (Simple Routing From Scratch)</h2><p>If you just need very simple routing and do not wish to involve a full-featured router library, you can do so by dynamically rendering a page-level component like this:<br>如果你只需要一个简单的路由，而不想引入一个全功能的路有库，可以像这样动态渲染一个页级组件：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> NotFound = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;Page not found&lt;/p&gt;'</span> &#125;</div><div class="line"><span class="keyword">const</span> Home = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;home page&lt;/p&gt;'</span> &#125;</div><div class="line"><span class="keyword">const</span> About = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;about page&lt;/p&gt;'</span> &#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> routes = &#123;</div><div class="line">  <span class="string">'/'</span>: Home,</div><div class="line">  <span class="string">'/about'</span>: About</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">currentRoute</span>: <span class="built_in">window</span>.location.pathname</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">computed</span>: &#123;</div><div class="line">    ViewComponent () &#123;</div><div class="line">      <span class="keyword">return</span> routes[<span class="keyword">this</span>.currentRoute] || NotFound</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  render (h) &#123; <span class="keyword">return</span> h(<span class="keyword">this</span>.ViewComponent) &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>Combined with the HTML5 History API, you can build a very basic but fully-functional client-side router. To see that in practice, check out <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example" target="_blank" rel="external">this example app</a>.</p>
-<h2 id="Integrating-3rd-Party-Routers"><a href="#Integrating-3rd-Party-Routers" class="headerlink" title="Integrating 3rd-Party Routers"></a>Integrating 3rd-Party Routers</h2><p>If there’s a 3rd-party router you prefer to use, such as <a href="https://github.com/visionmedia/page.js" target="_blank" rel="external">Page.js</a> or <a href="https://github.com/flatiron/director" target="_blank" rel="external">Director</a>, integration is <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/compare/master...pagejs" target="_blank" rel="external">similarly easy</a>. Here’s a <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/tree/pagejs" target="_blank" rel="external">complete example</a> using Page.js.</p>
+<p>Combined with the HTML5 History API, you can build a very basic but fully-functional client-side router. To see that in practice, check out <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example" target="_blank" rel="external">this example app</a>.<br>结合 HTML5 History API，可以构建一个基本但功能齐全的客户端路由。可以查看这个<a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example" target="_blank" rel="external">示例应用</a>。</p>
+<h2 id="整合第三方路由-Integrating-3rd-Party-Routers"><a href="#整合第三方路由-Integrating-3rd-Party-Routers" class="headerlink" title="整合第三方路由 (Integrating 3rd-Party Routers)"></a>整合第三方路由 (Integrating 3rd-Party Routers)</h2><p>If there’s a 3rd-party router you prefer to use, such as <a href="https://github.com/visionmedia/page.js" target="_blank" rel="external">Page.js</a> or <a href="https://github.com/flatiron/director" target="_blank" rel="external">Director</a>, integration is <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/compare/master...pagejs" target="_blank" rel="external">similarly easy</a>. Here’s a <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/tree/pagejs" target="_blank" rel="external">complete example</a> using Page.js.<br>若要改用第三方路由，比如 <a href="https://github.com/visionmedia/page.js" target="_blank" rel="external">Page.js</a> 或者 <a href="https://github.com/flatiron/director" target="_blank" rel="external">Director</a>, 整合过程也是<a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/compare/master...pagejs" target="_blank" rel="external">同样简单</a>。这里有一个使用 page.js 实现路由的<a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/tree/pagejs" target="_blank" rel="external">完整示例</a>。</p>
 
     
       <div class="guide-links">
