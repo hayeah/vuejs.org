@@ -90,7 +90,7 @@
         <div id="donate" style="margin-bottom: 20px">
             <span class="wrapper" style="width: 110px">
               <img src="/vuejs.org/images/patreon.png">
-              <a href="/vuejs.org/support-vuejs" title="Support Vue.js">Support Vue.js</a>
+              <a href="/vuejs.org/support-vuejs" title="支持 Vue.js">支持 Vue.js</a>
             </span>
         </div>
         <a class="github-button" href="https://github.com/hayeah/vuejs.org/issues" data-count-api="/repos/hayeah/vuejs.org#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue hayeah/vuejs.org on GitHub">给翻译组提意见</a>
@@ -107,7 +107,7 @@
             
                 
                 
-                  <li><h3>Essentials</h3></li>
+                  <li><h3>核心</h3></li>
                 
                 
                 
@@ -218,7 +218,7 @@
                 
                 
                 
-                  <li><h3>Advanced</h3></li>
+                  <li><h3>进阶</h3></li>
                 
                 
                 
@@ -329,7 +329,7 @@
                 
                 
                 
-                  <li><h3>Migrating</h3></li>
+                  <li><h3>迁移</h3></li>
                 
                 
                 <li>
@@ -359,7 +359,7 @@
                 
                 
                 
-                  <li><h3>Meta</h3></li>
+                  <li><h3>更多</h3></li>
                 
                 <li>
                     <a href="/vuejs.org/guide/comparison.html" class="sidebar-link">Comparison with Other Frameworks</a>
@@ -415,7 +415,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// `this` points to the vm instance</span></div><div class="line">    <span class="comment">// `this` 指向 vm 实例</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a is: '</span> + <span class="keyword">this</span>.a)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="comment">// -&gt; "a is: 1"</span></div></pre></td></tr></table></figure>
 <p>There are also other hooks which will be called at different stages of the instance’s lifecycle, for example <code>mounted</code>, <code>updated</code>, and <code>destroyed</code>. All lifecycle hooks are called with their <code>this</code> context pointing to the Vue instance invoking it. Some users may have been wondering where the concept of “controllers” lives in the Vue world and the answer is: there are no controllers. Your custom logic for a component would be split among these lifecycle hooks.<br>在实例生命周期的不同阶段，还会调用其它的钩子，如 <code>mounted</code>、 <code>updated</code>、<code>destroyed</code>。钩子的 <code>this</code> 指向调用它的 Vue 实例。一些开发者可能会问，Vue 里面没有“控制器”吗？答案是，没有。组件的自定义逻辑会分布在这些生命周期的钩子中。</p>
 <h2 id="生命周期图示-Lifecycle-Diagram"><a href="#生命周期图示-Lifecycle-Diagram" class="headerlink" title="生命周期图示 (Lifecycle Diagram)"></a>生命周期图示 (Lifecycle Diagram)</h2><p>Below is a diagram for the instance lifecycle. You don’t need to fully understand everything going on right now, but this diagram will be helpful in the future.<br>下图解释了 Vue 实例的生命周期。如果你现在还不能完全理解它，没有关系，总有一天它会派上用场。</p>
-<img src="/images/lifecycle.png" title="Lifecycle">
+<img src="/vuejs.org/images/lifecycle.png" title="Lifecycle">
 
     
       <div class="guide-links">
