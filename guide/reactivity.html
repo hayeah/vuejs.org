@@ -176,7 +176,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/list.html" class="sidebar-link">List Rendering</a>
+                    <a href="/vuejs.org/guide/list.html" class="sidebar-link">列表渲染 (List Rendering)</a>
                 </li>
             
                 
@@ -203,7 +203,16 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/components.html" class="sidebar-link">Components</a>
+                    <a href="/vuejs.org/guide/components.html" class="sidebar-link">组件 (Components)</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link current">深入响应式原理 (Reactivity in Depth)</a>
                 </li>
             
                 
@@ -233,15 +242,6 @@
                 
                 <li>
                     <a href="/vuejs.org/guide/render-function.html" class="sidebar-link">Render Functions</a>
-                </li>
-            
-                
-                
-                
-                
-                
-                <li>
-                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link current">深入响应式原理 (Reactivity in Depth)</a>
                 </li>
             
                 
@@ -304,7 +304,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/state-management.html" class="sidebar-link">State Management</a>
+                    <a href="/vuejs.org/guide/state-management.html" class="sidebar-link">状态管理 (State Management)</a>
                 </li>
             
                 
@@ -410,7 +410,7 @@
 <p>Sometimes you may want to assign a number of properties to an existing object, for example using <code>Object.assign()</code> or <code>_.extend()</code>. However, new properties added to the object will not trigger changes. In such cases, create a fresh object with properties from both the original object and the mixin object:<br>有些时候你可能希望添加多个属性到一个已存在的对象中，例如使用 <code>Object.assign()</code> 或者 <code>_.extend()</code>。然而，新增的属性并不能被触发更新。在这种情况下，应该使用原始对象和新增属性创建一个新的对象：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// instead of `Object.assign(this.someObject, &#123; a: 1, b: 2 &#125;)`</span></div><div class="line"><span class="comment">// 替代 `Object.assign(this.someObject, &#123; a: 1, b: 2 &#125;)`</span></div><div class="line"><span class="keyword">this</span>.someObject = <span class="built_in">Object</span>.assign(&#123;&#125;, <span class="keyword">this</span>.someObject, &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;)</div></pre></td></tr></table></figure>
 <p>There are also a few array-related caveats, which were discussed earlier in the <a href="/guide/list.html#Caveats">list rendering section</a>.<br>还有一些数组相关的问题，之前已经在<a href="/guide/list.html#">列表渲染章节</a>中讨论过了。</p>
-<h2 id="声明响应式属性-Declaring-Reactive-Properties"><a href="#声明响应式属性-Declaring-Reactive-Properties" class="headerlink" title="声明响应式属性 (Declaring Reactive Properties)"></a>声明响应式属性 (Declaring Reactive Properties)</h2><p>Since Vue doesn’t allow dynamically adding root-level reactive properties, this means you have to initialize you instances by declaring all root-level reactive data properties upfront, even just with an empty value:<br>由于 Vue 不允许动态添加根级响应式属性，这意味着你必须事先声明所有根级响应式属性，即使该属性的值为空：</p>
+<h2 id="声明响应式属性-Declaring-Reactive-Properties"><a href="#声明响应式属性-Declaring-Reactive-Properties" class="headerlink" title="声明响应式属性 (Declaring Reactive Properties)"></a>声明响应式属性 (Declaring Reactive Properties)</h2><p>Since Vue doesn’t allow dynamically adding root-level reactive properties, you have to initialize Vue instances by declaring all root-level reactive data properties upfront, even just with an empty value:<br>由于 Vue 不允许动态添加根级响应式属性，你必须在初始化 Vue 实例时，事先声明所有根级响应式属性，即使该属性的值为空：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="comment">// declare message with an empty value</span></div><div class="line">    <span class="comment">// 用空字符串声明 message</span></div><div class="line">    message: <span class="string">''</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;&#123;&#123; message &#125;&#125;&lt;/div&gt;'</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">// set `message` later</span></div><div class="line"><span class="comment">// 后续设置 `message` 的值</span></div><div class="line">vm.message = <span class="string">'Hello!'</span></div></pre></td></tr></table></figure>
 <p>If you don’t declare <code>message</code> in the data option, Vue will warn you that the render function is trying to access a property that doesn’t exist.<br>如果你没有在 data 选项中声明 <code>message</code>，Vue 会发出警告：render 函数尝试访问一个不存在的属性。</p>
 <p>There are technical reasons behind this restriction - it eliminates a class of edge cases in the dependency tracking system, and also makes Vue instances play nicer with type checking systems. But there is also an important consideration in terms of code maintainability: the <code>data</code> object is like the schema for your component’s state. Declaring all reactive properties upfront makes the component code easier to understand when revisited later or read by another developer.<br>这个限制是出于技术角度的考量——这样设计消除了依赖追踪系统中一些边缘情况，同时也使 Vue 实例更好的与类型检查系统协作。除此之外还有一个出于代码维护方面的重要考虑：<code>data</code> 被视作组件状态的结构描述（schema）。事先声明所有响应式属性可以让组件代码在之后重读或者他人阅读时更易于理解。</p>
@@ -423,10 +423,10 @@
     
       <div class="guide-links">
         
-          <span>← <a href="/vuejs.org/guide/render-function.html">Render Functions</a></span>
+          <span>← <a href="/vuejs.org/guide/components.html">组件 (Components)</a></span>
         
         
-          <span style="float:right"><a href="/vuejs.org/guide/custom-directive.html">Custom Directives</a> →</span>
+          <span style="float:right"><a href="/vuejs.org/guide/transitions.html">Transition Effects</a> →</span>
         
       </div>
     

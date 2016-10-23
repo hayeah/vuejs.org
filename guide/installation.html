@@ -176,7 +176,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/list.html" class="sidebar-link">List Rendering</a>
+                    <a href="/vuejs.org/guide/list.html" class="sidebar-link">列表渲染 (List Rendering)</a>
                 </li>
             
                 
@@ -203,7 +203,16 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/components.html" class="sidebar-link">Components</a>
+                    <a href="/vuejs.org/guide/components.html" class="sidebar-link">组件 (Components)</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">深入响应式原理 (Reactivity in Depth)</a>
                 </li>
             
                 
@@ -233,15 +242,6 @@
                 
                 <li>
                     <a href="/vuejs.org/guide/render-function.html" class="sidebar-link">Render Functions</a>
-                </li>
-            
-                
-                
-                
-                
-                
-                <li>
-                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">深入响应式原理 (Reactivity in Depth)</a>
                 </li>
             
                 
@@ -304,7 +304,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/state-management.html" class="sidebar-link">State Management</a>
+                    <a href="/vuejs.org/guide/state-management.html" class="sidebar-link">状态管理 (State Management)</a>
                 </li>
             
                 
@@ -401,10 +401,10 @@
 <h2 id="独立版本-Standalone"><a href="#独立版本-Standalone" class="headerlink" title="独立版本 (Standalone)"></a>独立版本 (Standalone)</h2><p>Simply download and include with a script tag. <code>Vue</code> will be registered as a global variable.<br>直接下载并用 <code>&lt;script&gt;</code> 标签引入，<code>Vue</code> 会被注册为一个全局变量。</p>
 <p class="tip">Don’t use the minified version during development. You will miss out all the nice warnings for common mistakes!<br>重要提示：在开发时请用开发版本，遇到常见错误它会给出友好的警告。</p>
 
-<div id="downloads"><br><a class="button" href="/js/vue.js" download="">Development Version</a><span class="light info">With full warnings and debug mode</span><br><a class="button" href="/js/vue.js" download="">开发版本</a><span class="light info">包含完整的警告和调试模式</span><br><br><a class="button" href="/js/vue.min.js" download="">Production Version</a><span class="light info">Warnings stripped, 22.58kb min+gzip</span><br><a class="button" href="/js/vue.min.js" download="">生产版本</a><span class="light info">删除了警告，22.58kb min+gzip</span><br></div>
+<div id="downloads"><br><a class="button" href="/js/vue.js" download="">Development Version</a><span class="light info">With full warnings and debug mode</span><br><a class="button" href="/js/vue.js" download="">开发版本</a><span class="light info">包含完整的警告和调试模式</span><br><br><a class="button" href="/js/vue.min.js" download="">Production Version</a><span class="light info">Warnings stripped, 22.86kb min+gzip</span><br><a class="button" href="/js/vue.min.js" download="">生产版本</a><span class="light info">删除了警告，22.86kb min+gzip</span><br></div>
 
 <h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>Recommended: <a href="https://unpkg.com/vue/dist/vue.js" target="_blank" rel="external">unpkg</a>, which will reflect the latest version as soon as it is published to npm. You can also browse the source of the npm package at <a href="https://unpkg.com/vue/" target="_blank" rel="external">unpkg.com/vue/</a>.<br>推荐使用 <a href="https://unpkg.com/vue/dist/vue.min.js" target="_blank" rel="external">unpkg</a>，它是 npm 上的最新版本。你也可以在 <a href="https://unpkg.com/vue/" target="_blank" rel="external">unpkg.com/vue/</a> 上浏览 npm 包的源代码。</p>
-<p>Also available on <a href="//cdn.jsdelivr.net/vue/2.0.1/vue.js">jsdelivr</a> or <a href="//cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.js">cdnjs</a>, but these two services take some time to sync so the latest release may not be available yet.<br>你还可以从 <a href="//cdn.jsdelivr.net/vue/2.0.1/vue.min.js">jsdelivr</a> 或 <a href="//cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js">cdnjs</a> 获取（版本更新可能略滞后）。</p>
+<p>Also available on <a href="//cdn.jsdelivr.net/vue/2.0.3/vue.js">jsdelivr</a> or <a href="//cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js">cdnjs</a>, but these two services take some time to sync so the latest release may not be available yet.<br>你还可以从 <a href="//cdn.jsdelivr.net/vue/2.0.3/vue.min.js">jsdelivr</a> 或 <a href="//cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.min.js">cdnjs</a> 获取（版本更新可能略滞后）。</p>
 <h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><p>NPM is the recommended installation method when building large scale applications with Vue. It pairs nicely with module bundlers such as <a href="http://webpack.github.io/" target="_blank" rel="external">Webpack</a> or <a href="http://browserify.org/" target="_blank" rel="external">Browserify</a>. Vue also provides accompanying tools for authoring <a href="single-file-components.html">Single File Components</a>.<br>当使用 Vue 来构建大型应用时，我们推荐使用 NPM 来安装 Vue。它跟像 <a href="http://webpack.github.io/" target="_blank" rel="external">Webpack</a> 或者 <a href="http://browserify.org/" target="_blank" rel="external">Browserify</a> 这样的模块打包器配合得很好。Vue 同时还提供配套工具来开发 <a href="single-file-components.html">单文件组件</a>。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># latest stable</span></div><div class="line"><span class="comment"># 最新稳定版本</span></div><div class="line">$ npm install vue</div></pre></td></tr></table></figure>
 <h3 id="独立版本和运行时版本-Standalone-vs-Runtime-only-Build"><a href="#独立版本和运行时版本-Standalone-vs-Runtime-only-Build" class="headerlink" title="独立版本和运行时版本 (Standalone vs. Runtime-only Build)"></a>独立版本和运行时版本 (Standalone vs. Runtime-only Build)</h3><p>There are two builds available, the standalone build and the runtime-only build.<br>Vue.js 有两个版本：独立版本和运行时版本。</p>

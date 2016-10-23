@@ -176,7 +176,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/list.html" class="sidebar-link">List Rendering</a>
+                    <a href="/vuejs.org/guide/list.html" class="sidebar-link">列表渲染 (List Rendering)</a>
                 </li>
             
                 
@@ -203,7 +203,16 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/components.html" class="sidebar-link">Components</a>
+                    <a href="/vuejs.org/guide/components.html" class="sidebar-link">组件 (Components)</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">深入响应式原理 (Reactivity in Depth)</a>
                 </li>
             
                 
@@ -233,15 +242,6 @@
                 
                 <li>
                     <a href="/vuejs.org/guide/render-function.html" class="sidebar-link">Render Functions</a>
-                </li>
-            
-                
-                
-                
-                
-                
-                <li>
-                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">深入响应式原理 (Reactivity in Depth)</a>
                 </li>
             
                 
@@ -304,7 +304,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/state-management.html" class="sidebar-link">State Management</a>
+                    <a href="/vuejs.org/guide/state-management.html" class="sidebar-link">状态管理 (State Management)</a>
                 </li>
             
                 
@@ -407,8 +407,6 @@
 <p>They have slightly different target users however.</p>
 <p><strong>Vuex 2.0</strong> is a radical redesign and simplification of the API, for those who are starting new projects or want to be on the cutting edge of client-side state management. <strong>It is not covered by this migration guide</strong>, so you should check out <a href="https://vuex.vuejs.org/en/index.html" target="_blank" rel="external">the Vuex 2.0 docs</a> if you’d like to learn more about it.</p>
 <p><strong>Vuex 1.0</strong> is mostly backwards-compatible, so requires very few changes to upgrade. It is recommended for those with large existing codebases or who just want the smoothest possible upgrade path to Vue 2.0. This guide is dedicated to facilitating that process, but only includes migration notes. For the complete usage guide, see <a href="https://github.com/vuejs/vuex/tree/1.0/docs/en" target="_blank" rel="external">the Vuex 1.0 docs</a>.</p>
-<p class="tip">The list of deprecations below should be relatively complete, but the migration helper is still being updated to catch them.</p>
-
 <h2 id="store-watch-with-String-Property-Path-deprecated"><a href="#store-watch-with-String-Property-Path-deprecated" class="headerlink" title="store.watch with String Property Path deprecated"></a><code>store.watch</code> with String Property Path <sup>deprecated</sup></h2><p><code>store.watch</code> now only accept functions. So for example, you would have to replace:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">store.watch(<span class="string">'user.notifications'</span>, callback)</div></pre></td></tr></table></figure>
 <p>with:</p>
@@ -420,7 +418,7 @@
   <p>Run the <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> on your codebase to find examples of <code>store.watch</code> with a string as the first argument.</p>
 </div>
 
-<h2 id="Store’s-Event-Emitter-deprecated"><a href="#Store’s-Event-Emitter-deprecated" class="headerlink" title="Store’s Event Emitter deprecated"></a>Store’s Event Emitter <sup>deprecated</sup></h2><p>The store instance no longer exposes the event emitter interface (<code>on</code>, <code>off</code>, <code>emit</code>). If you were previously using the store as a global event bus, <a href="http://vuejs.org/guide/migration.html#dispatch-and-broadcast-deprecated">see this section</a> for migration instructions.</p>
+<h2 id="Store’s-Event-Emitter-deprecated"><a href="#Store’s-Event-Emitter-deprecated" class="headerlink" title="Store’s Event Emitter deprecated"></a>Store’s Event Emitter <sup>deprecated</sup></h2><p>The store instance no longer exposes the event emitter interface (<code>on</code>, <code>off</code>, <code>emit</code>). If you were previously using the store as a global event bus, <a href="http://vuejs.org/guide/migration.html#dispatch-and-broadcast-deprecated" target="_blank" rel="external">see this section</a> for migration instructions.</p>
 <p>Instead of using this interface to watch events emitted by the store itself (e.g. <code>store.on(&#39;mutation&#39;, callback)</code>), a new method <code>store.subscribe</code> is introduced. Typical usage inside a plugin would be:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myPlugin = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</div><div class="line">  store.subscribe(<span class="function"><span class="keyword">function</span> (<span class="params">mutation, state</span>) </span>&#123;</div><div class="line">    <span class="comment">// Do something...</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>See example <a href="https://github.com/vuejs/vuex/blob/1.0/docs/en/plugins.md" target="_blank" rel="external">the plugins docs</a> for more info.</p>

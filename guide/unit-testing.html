@@ -176,7 +176,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/list.html" class="sidebar-link">List Rendering</a>
+                    <a href="/vuejs.org/guide/list.html" class="sidebar-link">列表渲染 (List Rendering)</a>
                 </li>
             
                 
@@ -203,7 +203,16 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/components.html" class="sidebar-link">Components</a>
+                    <a href="/vuejs.org/guide/components.html" class="sidebar-link">组件 (Components)</a>
+                </li>
+            
+                
+                
+                
+                
+                
+                <li>
+                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">深入响应式原理 (Reactivity in Depth)</a>
                 </li>
             
                 
@@ -233,15 +242,6 @@
                 
                 <li>
                     <a href="/vuejs.org/guide/render-function.html" class="sidebar-link">Render Functions</a>
-                </li>
-            
-                
-                
-                
-                
-                
-                <li>
-                    <a href="/vuejs.org/guide/reactivity.html" class="sidebar-link">深入响应式原理 (Reactivity in Depth)</a>
                 </li>
             
                 
@@ -304,7 +304,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/state-management.html" class="sidebar-link">State Management</a>
+                    <a href="/vuejs.org/guide/state-management.html" class="sidebar-link">状态管理 (State Management)</a>
                 </li>
             
                 
@@ -396,7 +396,7 @@
     
       <h1>单元测试 (Unit Testing)</h1>
     
-    <h2 id="安装与工具-Setup-and-Tooling"><a href="#安装与工具-Setup-and-Tooling" class="headerlink" title="安装与工具 (Setup and Tooling)"></a>安装与工具 (Setup and Tooling)</h2><p>Anything compatible with a module-based build system will work, but if you’re looking for a specific recommendation, try the <a href="http://karma-runner.github.io" target="_blank" rel="external">Karma</a> test runner. It has a lot of community plugins, including support for <a href="https://github.com/webpack/karma-webpack" target="_blank" rel="external">Webpack</a> and <a href="https://github.com/Nikku/karma-browserify" target="_blank" rel="external">Browserify</a>. For detailed setup, please refer to each project’s respective documentation, though these example Karma configurations for <a href="https://github.com/vuejs/vue-loader-example/blob/master/build/karma.conf.js" target="_blank" rel="external">Webpack</a> and <a href="https://github.com/vuejs/vueify-example/blob/master/karma.conf.js" target="_blank" rel="external">Browserify</a> may help you get started.<br>你可以使用任何兼容模块化构建的测试工具。如果你需要个具体建议，可以试试 <a href="http://karma-runner.github.io/0.12/index.html" target="_blank" rel="external">Karma</a>。它有很多的社区插件，包括对 <a href="https://github.com/webpack/karma-webpack" target="_blank" rel="external">Webpack</a> 和 <a href="https://github.com/Nikku/karma-browserify" target="_blank" rel="external">Browserify</a> 的支持。至于具体的安装细节，请参考各个项目的文档。这里有两个karma的配置实例，能够帮助你快速入门。一个是对 <a href="https://github.com/vuejs/vue-loader-example/blob/master/build/karma.conf.js" target="_blank" rel="external">Webpack</a>，另一个是对 <a href="https://github.com/vuejs/vueify-example/blob/master/karma.conf.js" target="_blank" rel="external">Browserify</a>。</p>
+    <h2 id="安装与工具-Setup-and-Tooling"><a href="#安装与工具-Setup-and-Tooling" class="headerlink" title="安装与工具 (Setup and Tooling)"></a>安装与工具 (Setup and Tooling)</h2><p>Anything compatible with a module-based build system will work, but if you’re looking for a specific recommendation, try the <a href="http://karma-runner.github.io" target="_blank" rel="external">Karma</a> test runner. It has a lot of community plugins, including support for <a href="https://github.com/webpack/karma-webpack" target="_blank" rel="external">Webpack</a> and <a href="https://github.com/Nikku/karma-browserify" target="_blank" rel="external">Browserify</a>. For detailed setup, please refer to each project’s respective documentation, though these example Karma configurations for <a href="https://github.com/vuejs-templates/webpack/blob/master/template/test/unit/karma.conf.js" target="_blank" rel="external">Webpack</a> and <a href="https://github.com/vuejs-templates/browserify/blob/master/template/karma.conf.js" target="_blank" rel="external">Browserify</a> may help you get started.<br>你可以使用任何兼容模块化构建的测试工具。如果你需要个具体建议，可以试试 <a href="http://karma-runner.github.io/0.12/index.html" target="_blank" rel="external">Karma</a>。它有很多的社区插件，包括对 <a href="https://github.com/webpack/karma-webpack" target="_blank" rel="external">Webpack</a> 和 <a href="https://github.com/Nikku/karma-browserify" target="_blank" rel="external">Browserify</a> 的支持。至于具体的安装细节，请参考各个项目的文档。这里有两个karma的配置实例，能够帮助你快速入门。一个是对 <a href="https://github.com/vuejs-templates/webpack/blob/master/template/test/unit/karma.conf.js" target="_blank" rel="external">Webpack</a>，另一个是对 <a href="https://github.com/vuejs-templates/browserify/blob/master/template/karma.conf.js" target="_blank" rel="external">Browserify</a>。</p>
 <h2 id="简单断言-Simple-Assertions"><a href="#简单断言-Simple-Assertions" class="headerlink" title="简单断言 (Simple Assertions)"></a>简单断言 (Simple Assertions)</h2><p>In terms of code structure for testing, you don’t have to do anything special in your components to make them testable. Just export the raw options:<br>就测试的代码结构而言，你不需要在组件里做任何特别的事，就能进行测试。只要导入以下选项：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data () &#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">message</span>: <span class="string">'hello!'</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    created () &#123;</div><div class="line">      <span class="keyword">this</span>.message = <span class="string">'bye!'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>When you test that component, all you have to do is import the object along with Vue to make many common assertions:<br>当你测试这个组件时，你只要同时引入 Vue 和这个组件，就能做很多常用的断言了。</p>
@@ -412,7 +412,7 @@
     
       <div class="guide-links">
         
-          <span>← <a href="/vuejs.org/guide/state-management.html">State Management</a></span>
+          <span>← <a href="/vuejs.org/guide/state-management.html">状态管理 (State Management)</a></span>
         
         
           <span style="float:right"><a href="/vuejs.org/guide/ssr.html">Server-Side Rendering</a> →</span>
