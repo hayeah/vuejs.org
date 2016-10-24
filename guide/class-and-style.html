@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Class and Style Bindings - vue.js</title>
+        <title>class 与 style 绑定 (Class and Style Bindings) - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -158,7 +158,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/class-and-style.html" class="sidebar-link current">Class and Style Bindings</a>
+                    <a href="/vuejs.org/guide/class-and-style.html" class="sidebar-link current">class 与 style 绑定 (Class and Style Bindings)</a>
                 </li>
             
                 
@@ -241,7 +241,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/render-function.html" class="sidebar-link">Render Functions</a>
+                    <a href="/vuejs.org/guide/render-function.html" class="sidebar-link">渲染函数 (Render Functions)</a>
                 </li>
             
                 
@@ -351,7 +351,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/migration-vuex.html" class="sidebar-link">Migration from Vuex 0.6.x to 1.0</a>
+                    <a href="/vuejs.org/guide/migration-vuex.html" class="sidebar-link">从 Vuex 0.6.x 迁移到 1.0 (Migration from Vuex 0.6.x to 1.0)</a>
                 </li>
             
                 
@@ -394,45 +394,45 @@
 
     
     
-      <h1>Class and Style Bindings</h1>
+      <h1>class 与 style 绑定 (Class and Style Bindings)</h1>
     
-    <p>A common need for data binding is manipulating an element’s class list and its inline styles. Since they are both attributes, we can use <code>v-bind</code> to handle them: we just need to calculate a final string with our expressions. However, meddling with string concatenation is annoying and error-prone. For this reason, Vue provides special enhancements when <code>v-bind</code> is used with <code>class</code> and <code>style</code>. In addition to strings, the expressions can also evaluate to objects or arrays.</p>
-<h2 id="Binding-HTML-Classes"><a href="#Binding-HTML-Classes" class="headerlink" title="Binding HTML Classes"></a>Binding HTML Classes</h2><h3 id="Object-Syntax"><a href="#Object-Syntax" class="headerlink" title="Object Syntax"></a>Object Syntax</h3><p>We can pass an object to <code>v-bind:class</code> to dynamically toggle classes:</p>
+    <p>A common need for data binding is manipulating an element’s class list and its inline styles. Since they are both attributes, we can use <code>v-bind</code> to handle them: we just need to calculate a final string with our expressions. However, meddling with string concatenation is annoying and error-prone. For this reason, Vue provides special enhancements when <code>v-bind</code> is used with <code>class</code> and <code>style</code>. In addition to strings, the expressions can also evaluate to objects or arrays.<br>数据绑定的一个常见需求是操作元素的 class 列表和其内联样式。由于他们都是属性 ，我们可以使用 <code>v-bind</code> 来处理它们：我们只需要计算出表达式最终的字符串结果就要好了。然而，拼接字符串是一件繁琐而又容易出错的事情。因此，Vue 特地强化了 <code>v-bind</code> 在 <code>class</code> 和 <code>style</code> 上的应用。除了字符串之外，表达式的结果类型还可以是对象或者数组。</p>
+<h2 id="绑定-HTML-class-Binding-HTML-Classes"><a href="#绑定-HTML-class-Binding-HTML-Classes" class="headerlink" title="绑定 HTML class (Binding HTML Classes)"></a>绑定 HTML class (Binding HTML Classes)</h2><h3 id="对象语法-Object-Syntax"><a href="#对象语法-Object-Syntax" class="headerlink" title="对象语法 (Object Syntax)"></a>对象语法 (Object Syntax)</h3><p>We can pass an object to <code>v-bind:class</code> to dynamically toggle classes:<br>我们可以传递给 <code>v-bind:class</code> 一个对象，以动态地切换 class：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>The above syntax means the presence of the <code>active</code> class will be determined by the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy" target="_blank" rel="external">truthiness</a> of the data property <code>isActive</code>.</p>
-<p>You can have multiple classes toggled by having more fields in the object. In addition, the <code>v-bind:class</code> directive can also co-exist with the plain <code>class</code> attribute. So given the following template:</p>
+<p>The above syntax means the presence of the <code>active</code> class will be determined by the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy" target="_blank" rel="external">truthiness</a> of the data property <code>isActive</code>.<br>以上的语法的意味着，class <code>active</code> 的存在与否，取决于数据属性 <code>isActive</code> 是否<a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy" target="_blank" rel="external">为真</a>。</p>
+<p>You can have multiple classes toggled by having more fields in the object. In addition, the <code>v-bind:class</code> directive can also co-exist with the plain <code>class</code> attribute. So given the following template:<br>在对象中，你可以有多个属性以切换多个 class 。除此之外，<code>v-bind:class</code> 指令也可以和原生的 <code>class</code> 属性共存。所以，下面的模版：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"static"</span></span></div><div class="line">     <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive, 'text-danger': hasError &#125;"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>And the following data:</p>
+<p>And the following data:<br>以及以下数据:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  <span class="attr">isActive</span>: <span class="literal">true</span>,</div><div class="line">  <span class="attr">hasError</span>: <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>It will render:</p>
+<p>It will render:<br>会渲染为:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"static active"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>When <code>isActive</code> or <code>hasError</code> changes, the class list will be updated accordingly. For example, if <code>hasError</code> becomes <code>true</code>, the class list will become <code>&quot;static active text-danger&quot;</code>.</p>
-<p>The bound object doesn’t have to be inline:</p>
+<p>When <code>isActive</code> or <code>hasError</code> changes, the class list will be updated accordingly. For example, if <code>hasError</code> becomes <code>true</code>, the class list will become <code>&quot;static active text-danger&quot;</code>.<br>每当 <code>isActive</code> 或者 <code>hasError</code> 的值改变了，class 列表就会跟着更新。举个例子，如果 <code>hasError</code> 的值变为 <code>true</code> ，class 列表就会变成 <code>&quot;static active text-danger&quot;</code>。</p>
+<p>The bound object doesn’t have to be inline:<br>绑定的对象不一定要是内联对象，也可以是表达式:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"classObject"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  <span class="attr">classObject</span>: &#123;</div><div class="line">    <span class="attr">active</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">'text-danger'</span>: <span class="literal">false</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>This will render the same result. We can also bind to a <a href="computed.html">computed property</a> that returns an object. This is a common and powerful pattern:</p>
+<p>This will render the same result. We can also bind to a <a href="computed.html">computed property</a> that returns an object. This is a common and powerful pattern:<br>这会被渲染为同样的结果。我们也可以绑定返回一个对象的<a href="computed.html">计算属性</a>。 这是一个常用且强大的模式:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"classObject"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  <span class="attr">isActive</span>: <span class="literal">true</span>,</div><div class="line">  <span class="attr">error</span>: <span class="literal">null</span></div><div class="line">&#125;,</div><div class="line"><span class="attr">computed</span>: &#123;</div><div class="line">  <span class="attr">classObject</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">active</span>: <span class="keyword">this</span>.isActive &amp;&amp; !<span class="keyword">this</span>.error,</div><div class="line">      <span class="string">'text-danger'</span>: <span class="keyword">this</span>.error &amp;&amp; <span class="keyword">this</span>.error.type === <span class="string">'fatal'</span>,</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Array-Syntax"><a href="#Array-Syntax" class="headerlink" title="Array Syntax"></a>Array Syntax</h3><p>We can pass an array to <code>v-bind:class</code> to apply a list of classes:</p>
+<h3 id="数组语法-Array-Syntax"><a href="#数组语法-Array-Syntax" class="headerlink" title="数组语法 (Array Syntax)"></a>数组语法 (Array Syntax)</h3><p>We can pass an array to <code>v-bind:class</code> to apply a list of classes:<br>我们可以把一个数组传给 <code>v-bind:class</code>，以添加一个 class 列表：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"[activeClass, errorClass]"</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  <span class="attr">activeClass</span>: <span class="string">'active'</span>,</div><div class="line">  <span class="attr">errorClass</span>: <span class="string">'text-danger'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Which will render:</p>
+<p>Which will render:<br>会渲染为：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"active text-danger"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>If you would like to also toggle a class in the list conditionally, you can do it with a ternary expression:</p>
+<p>If you would like to also toggle a class in the list conditionally, you can do it with a ternary expression:<br>如果你也想要在这个数组列表中根据条件切换 class，你可以使用三元表达式：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"[isActive ? activeClass : '', errorClass]"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>This will always apply <code>errorClass</code>, but will only apply <code>activeClass</code> when <code>isActive</code> is <code>true</code>.</p>
-<p>However, this can be a bit verbose if you have multiple conditional classes. That’s why it’s also possible to use the object syntax inside array syntax:</p>
+<p>This will always apply <code>errorClass</code>, but will only apply <code>activeClass</code> when <code>isActive</code> is <code>true</code>.<br>这个例子中将总是添加 <code>errorClass</code> ，但是只有当 <code>isAcitve</code> 为真时才会添加 <code>activeClass</code>。</p>
+<p>However, this can be a bit verbose if you have multiple conditional classes. That’s why it’s also possible to use the object syntax inside array syntax:<br>然而，当你有多个带条件的 class 这个写法可能会稍微有些啰嗦了，这就是为什么你也可以在数组语法中使用对象语法：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"[&#123; active: isActive &#125;, errorClass]"</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="Binding-Inline-Styles"><a href="#Binding-Inline-Styles" class="headerlink" title="Binding Inline Styles"></a>Binding Inline Styles</h2><h3 id="Object-Syntax-1"><a href="#Object-Syntax-1" class="headerlink" title="Object Syntax"></a>Object Syntax</h3><p>The object syntax for <code>v-bind:style</code> is pretty straightforward - it looks almost like CSS, except it’s a JavaScript object. You can use either camelCase or kebab-case for the CSS property names:</p>
+<h2 id="绑定行内样式-Binding-Inline-Styles"><a href="#绑定行内样式-Binding-Inline-Styles" class="headerlink" title="绑定行内样式 (Binding Inline Styles)"></a>绑定行内样式 (Binding Inline Styles)</h2><h3 id="对象语法-Object-Syntax-1"><a href="#对象语法-Object-Syntax-1" class="headerlink" title="对象语法 (Object Syntax)"></a>对象语法 (Object Syntax)</h3><p>The object syntax for <code>v-bind:style</code> is pretty straightforward - it looks almost like CSS, except it’s a JavaScript object. You can use either camelCase or kebab-case for the CSS property names:<br><code>v-bind:style</code> 的对象语法非常直观——它看起来就像是 CSS ，除了它是一个 JavaScript 对象以外。你可以以用驼峰命名或短横分隔命名来命名 CSS 属性:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"&#123; color: activeColor, fontSize: fontSize + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  <span class="attr">activeColor</span>: <span class="string">'red'</span>,</div><div class="line">  <span class="attr">fontSize</span>: <span class="number">30</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>It is often a good idea to bind to a style object directly so that the template is cleaner:</p>
+<p>It is often a good idea to bind to a style object directly so that the template is cleaner:<br>直接绑定一个样式对象通常来说是个好主意，因为它能让模板变得清晰：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"styleObject"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  <span class="attr">styleObject</span>: &#123;</div><div class="line">    <span class="attr">color</span>: <span class="string">'red'</span>,</div><div class="line">    <span class="attr">fontSize</span>: <span class="string">'13px'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Again, the object syntax is often used in conjunction with computed properties that return objects.</p>
-<h3 id="Array-Syntax-1"><a href="#Array-Syntax-1" class="headerlink" title="Array Syntax"></a>Array Syntax</h3><p>The array syntax for <code>v-bind:style</code> allows you to apply multiple style objects to the same element:</p>
+<p>Again, the object syntax is often used in conjunction with computed properties that return objects.<br>同样的，对象语法通常会结合计算属性返回样式对象来使用。</p>
+<h3 id="数组语法-Array-Syntax-1"><a href="#数组语法-Array-Syntax-1" class="headerlink" title="数组语法 (Array Syntax)"></a>数组语法 (Array Syntax)</h3><p>The array syntax for <code>v-bind:style</code> allows you to apply multiple style objects to the same element:<br><code>v-bind:style</code> 的数组语法允许你添加多个样式对象到同一个元素上：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"[baseStyles, overridingStyles]"</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="Auto-prefixing"><a href="#Auto-prefixing" class="headerlink" title="Auto-prefixing"></a>Auto-prefixing</h3><p>When you use a CSS property that requires vendor prefixes in <code>v-bind:style</code>, for example <code>transform</code>, Vue will automatically detect and add appropriate prefixes to the applied styles.</p>
+<h3 id="自动补齐前缀-Auto-prefixing"><a href="#自动补齐前缀-Auto-prefixing" class="headerlink" title="自动补齐前缀 (Auto-prefixing)"></a>自动补齐前缀 (Auto-prefixing)</h3><p>When you use a CSS property that requires vendor prefixes in <code>v-bind:style</code>, for example <code>transform</code>, Vue will automatically detect and add appropriate prefixes to the applied styles.<br>当你在 <code>v-bind:style</code> 中使用的 CSS 属性需要浏览器前缀时，例如 <code>transform</code> 属性，Vue 将会自动的检测并添加合适的前缀到实际的样式上。</p>
 
     
       <div class="guide-links">

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Migration from Vuex 0.6.x to 1.0 - vue.js</title>
+        <title>从 Vuex 0.6.x 迁移到 1.0 (Migration from Vuex 0.6.x to 1.0) - vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -158,7 +158,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/class-and-style.html" class="sidebar-link">Class and Style Bindings</a>
+                    <a href="/vuejs.org/guide/class-and-style.html" class="sidebar-link">class 与 style 绑定 (Class and Style Bindings)</a>
                 </li>
             
                 
@@ -241,7 +241,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/render-function.html" class="sidebar-link">Render Functions</a>
+                    <a href="/vuejs.org/guide/render-function.html" class="sidebar-link">渲染函数 (Render Functions)</a>
                 </li>
             
                 
@@ -351,7 +351,7 @@
                 
                 
                 <li>
-                    <a href="/vuejs.org/guide/migration-vuex.html" class="sidebar-link current">Migration from Vuex 0.6.x to 1.0</a>
+                    <a href="/vuejs.org/guide/migration-vuex.html" class="sidebar-link current">从 Vuex 0.6.x 迁移到 1.0 (Migration from Vuex 0.6.x to 1.0)</a>
                 </li>
             
                 
@@ -394,47 +394,52 @@
 
     
     
-      <h1>Migration from Vuex 0.6.x to 1.0</h1>
+      <h1>从 Vuex 0.6.x 迁移到 1.0 (Migration from Vuex 0.6.x to 1.0)</h1>
     
     <blockquote>
-<p>Vuex 2.0 is released, but this guide only covers the migration to 1.0? Is that a typo? Also, it looks like Vuex 1.0 and 2.0 were released simultaneously. What’s going on? Which one should I use and what’s compatible with Vue 2.0?</p>
+<p>Vuex 2.0 is released, but this guide only covers the migration to 1.0? Is that a typo? Also, it looks like Vuex 1.0 and 2.0 were released simultaneously. What’s going on? Which one should I use and what’s compatible with Vue 2.0?<br>Vuex 2.0 已经发布了，而这个教程只告诉我如何迁移到 1.0 ？你在逗我吧？还有，Vuex 的 1.0 和 2.0 版本好像是同时发布的。什么鬼？我应该用哪一个版本？哪一个版本跟 Vue 2.0 兼容？</p>
 </blockquote>
-<p>Both Vuex 1.0 and 2.0:</p>
+<p>Both Vuex 1.0 and 2.0:<br>Vuex 1.0 和 2.0 都：</p>
 <ul>
 <li>fully support both Vue 1.0 and 2.0</li>
+<li>完全支持 Vue 1.0 和 2.0</li>
 <li>will be maintained for the forseeable future</li>
+<li>在相当一段时间内会一直维护</li>
 </ul>
-<p>They have slightly different target users however.</p>
-<p><strong>Vuex 2.0</strong> is a radical redesign and simplification of the API, for those who are starting new projects or want to be on the cutting edge of client-side state management. <strong>It is not covered by this migration guide</strong>, so you should check out <a href="https://vuex.vuejs.org/en/index.html" target="_blank" rel="external">the Vuex 2.0 docs</a> if you’d like to learn more about it.</p>
-<p><strong>Vuex 1.0</strong> is mostly backwards-compatible, so requires very few changes to upgrade. It is recommended for those with large existing codebases or who just want the smoothest possible upgrade path to Vue 2.0. This guide is dedicated to facilitating that process, but only includes migration notes. For the complete usage guide, see <a href="https://github.com/vuejs/vuex/tree/1.0/docs/en" target="_blank" rel="external">the Vuex 1.0 docs</a>.</p>
-<h2 id="store-watch-with-String-Property-Path-deprecated"><a href="#store-watch-with-String-Property-Path-deprecated" class="headerlink" title="store.watch with String Property Path deprecated"></a><code>store.watch</code> with String Property Path <sup>deprecated</sup></h2><p><code>store.watch</code> now only accept functions. So for example, you would have to replace:</p>
+<p>They have slightly different target users however.<br>不过它们的目标用户稍有不同。</p>
+<p><strong>Vuex 2.0</strong> is a radical redesign and simplification of the API, for those who are starting new projects or want to be on the cutting edge of client-side state management. <strong>It is not covered by this migration guide</strong>, so you should check out <a href="https://vuex.vuejs.org/en/index.html" target="_blank" rel="external">the Vuex 2.0 docs</a> if you’d like to learn more about it.<br><strong>Vuex 2.0</strong> 是一个激进的重新设计，极大简化了 API，面向的是那些刚开始新项目，或者想使用客户端状态管理的最新技术的开发者。<strong>本教程没有涉及 Vuex 2.0 的内容</strong>，所以请参考 <a href="https://vuex.vuejs.org/en/index.html" target="_blank" rel="external">Vuex 2.0 文档</a>来进一步了解。</p>
+<p><strong>Vuex 1.0</strong> is mostly backwards-compatible, so requires very few changes to upgrade. It is recommended for those with large existing codebases or who just want the smoothest possible upgrade path to Vue 2.0. This guide is dedicated to facilitating that process, but only includes migration notes. For the complete usage guide, see <a href="https://github.com/vuejs/vuex/tree/1.0/docs/en" target="_blank" rel="external">the Vuex 1.0 docs</a>.<br><strong>Vuex 1.0</strong> 几乎是完全向后兼容的，只需要很小的改动就可以将旧项目升级到 Vuex 1.0。对于那些已经有大量代码的项目，或者想尽可能顺畅地升级到 Vue 2.0 的开发者，Vuex 1.0 会是更好的选择。本教程会帮助你完成这个过程，不过只会包括迁移的注意事项。如果你想查看完整的使用教程，可以看 <a href="https://github.com/vuejs/vuex/tree/1.0/docs/en" target="_blank" rel="external">Vuex 1.0 文档</a>。</p>
+<h2 id="接受字符串属性路径的-store-watch-store-watch-with-String-Property-Path-弃用-deprecated"><a href="#接受字符串属性路径的-store-watch-store-watch-with-String-Property-Path-弃用-deprecated" class="headerlink" title="接受字符串属性路径的 store.watch (store.watch with String Property Path) 弃用 (deprecated)"></a>接受字符串属性路径的 <code>store.watch</code> (<code>store.watch</code> with String Property Path) <sup>弃用 (deprecated)</sup></h2><p><code>store.watch</code> now only accept functions. So for example, you would have to replace:<br><code>store.watch</code> 现在只接受函数。比如，你需要将下面的代码：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">store.watch(<span class="string">'user.notifications'</span>, callback)</div></pre></td></tr></table></figure>
-<p>with:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">store.watch(</div><div class="line">  <span class="comment">// When the returned result changes...</span></div><div class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">state</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> state.user.notifications</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// Run this callback</span></div><div class="line">  callback</div><div class="line">)</div></pre></td></tr></table></figure>
-<p>This gives you more complete control over the reactive properties you’d like to watch.</p>
+<p>替换成：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">store.watch(</div><div class="line">  <span class="comment">// When the returned result changes...</span></div><div class="line">  <span class="comment">// 当返回的结果发生变化时...</span></div><div class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">state</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> state.user.notifications</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// Run this callback</span></div><div class="line">  <span class="comment">// 调用这个回调函数</span></div><div class="line">  callback</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>This gives you more complete control over the reactive properties you’d like to watch.<br>这让你可以更好地掌控要监听的响应式属性。</p>
 
 <div class="upgrade-path">
-  <h4>Upgrade Path</h4>
+  <h4>升级路径 (Upgrade Path)</h4>
   <p>Run the <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> on your codebase to find examples of <code>store.watch</code> with a string as the first argument.</p>
+  <p>在你的项目里使用<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">迁移工具</a>，查找以字符串作为第一参数的 <code>store.watch</code> 调用。</p>
 </div>
 
-<h2 id="Store’s-Event-Emitter-deprecated"><a href="#Store’s-Event-Emitter-deprecated" class="headerlink" title="Store’s Event Emitter deprecated"></a>Store’s Event Emitter <sup>deprecated</sup></h2><p>The store instance no longer exposes the event emitter interface (<code>on</code>, <code>off</code>, <code>emit</code>). If you were previously using the store as a global event bus, <a href="http://vuejs.org/guide/migration.html#dispatch-and-broadcast-deprecated" target="_blank" rel="external">see this section</a> for migration instructions.</p>
-<p>Instead of using this interface to watch events emitted by the store itself (e.g. <code>store.on(&#39;mutation&#39;, callback)</code>), a new method <code>store.subscribe</code> is introduced. Typical usage inside a plugin would be:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myPlugin = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</div><div class="line">  store.subscribe(<span class="function"><span class="keyword">function</span> (<span class="params">mutation, state</span>) </span>&#123;</div><div class="line">    <span class="comment">// Do something...</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>See example <a href="https://github.com/vuejs/vuex/blob/1.0/docs/en/plugins.md" target="_blank" rel="external">the plugins docs</a> for more info.</p>
+<h2 id="store-的事件分发器-Store’s-Event-Emitter-弃用-deprecated"><a href="#store-的事件分发器-Store’s-Event-Emitter-弃用-deprecated" class="headerlink" title="store 的事件分发器 (Store’s Event Emitter) 弃用 (deprecated)"></a>store 的事件分发器 (Store’s Event Emitter) <sup>弃用 (deprecated)</sup></h2><p>The store instance no longer exposes the event emitter interface (<code>on</code>, <code>off</code>, <code>emit</code>). If you were previously using the store as a global event bus, <a href="http://vuejs.org/guide/migration.html#dispatch-and-broadcast-deprecated" target="_blank" rel="external">see this section</a> for migration instructions.<br>store 实例不会再提供事件分发器的接口（<code>on</code>，<code>off</code>，<code>emit</code>）。如果你之前使用 store 来作为全局的事件中心，可以参考<a href="(http://vuejs.org/guide/migration.html#dispatch-and-broadcast-deprecated">教程的这一节</a>，其中有相关的迁移指引。</p>
+<p>Instead of using this interface to watch events emitted by the store itself (e.g. <code>store.on(&#39;mutation&#39;, callback)</code>), a new method <code>store.subscribe</code> is introduced. Typical usage inside a plugin would be:<br>为了替代原有的接口（比如 <code>store.on(&#39;mutation&#39;, callback)</code>)，我们引入了一个新的方法 <code>store.subscribe</code>。这个方法的典型使用场景，就是在插件中使用：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myPlugin = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</div><div class="line">  store.subscribe(<span class="function"><span class="keyword">function</span> (<span class="params">mutation, state</span>) </span>&#123;</div><div class="line">    <span class="comment">// Do something...</span></div><div class="line">    <span class="comment">// 代码逻辑</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>See example <a href="https://github.com/vuejs/vuex/blob/1.0/docs/en/plugins.md" target="_blank" rel="external">the plugins docs</a> for more info.<br>可以参考 <a href="https://github.com/vuejs/vuex/blob/1.0/docs/en/plugins.md" target="_blank" rel="external">插件文档</a>中的示例代码。</p>
 
 <div class="upgrade-path">
-  <h4>Upgrade Path</h4>
+  <h4>升级方法 (Upgrade Path)</h4>
   <p>Run the <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> on your codebase to find examples of <code>store.on</code>, <code>store.off</code>, and <code>store.emit</code>.</p>
+  <p>在你的项目里使用<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">迁移工具</a>，查找用到 <code>store.on</code>，<code>store.off</code> 和 <code>store.emit</code> 的代码。</p>
 </div>
 
-<h2 id="Middlewares-deprecated"><a href="#Middlewares-deprecated" class="headerlink" title="Middlewares deprecated"></a>Middlewares <sup>deprecated</sup></h2><p>Middlewares are replaced by plugins. A plugin is simply a function that receives the store as the only argument, and can listen to the mutation event on the store:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> myPlugins = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</div><div class="line">  store.subscribe(<span class="string">'mutation'</span>, (mutation, state) =&gt; &#123;</div><div class="line">    <span class="comment">// Do something...</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>For more details, see <a href="https://github.com/vuejs/vuex/blob/1.0/docs/en/plugins.md" target="_blank" rel="external">the plugins docs</a>.</p>
+<h2 id="中间件-Middlewares-弃用-deprecated"><a href="#中间件-Middlewares-弃用-deprecated" class="headerlink" title="中间件 (Middlewares) 弃用 (deprecated)"></a>中间件 (Middlewares) <sup>弃用 (deprecated)</sup></h2><p>Middlewares are replaced by plugins. A plugin is simply a function that receives the store as the only argument, and can listen to the mutation event on the store:<br>插件替代了中间件。插件其实就是接受 store 作为唯一参数的函数，它可以监听 store 的 mutation 事件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> myPlugins = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</div><div class="line">  store.subscribe(<span class="string">'mutation'</span>, (mutation, state) =&gt; &#123;</div><div class="line">    <span class="comment">// Do something...</span></div><div class="line">    <span class="comment">// 代码逻辑</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>For more details, see <a href="https://github.com/vuejs/vuex/blob/1.0/docs/en/plugins.md" target="_blank" rel="external">the plugins docs</a>.<br>更多细节可以参考<a href="https://github.com/vuejs/vuex/blob/1.0/docs/en/plugins.md" target="_blank" rel="external">插件文档</a>。</p>
 
 <div class="upgrade-path">
-  <h4>Upgrade Path</h4>
+  <h4>升级方法 (Upgrade Path)</h4>
   <p>Run the <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">migration helper</a> on your codebase to find examples of the <code>middlewares</code> option on a store.</p>
+  <p>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">迁移工具</a>，查找带有 <code>middlewares</code> 选项的 store 对象。</p>
 </div>
 
 
