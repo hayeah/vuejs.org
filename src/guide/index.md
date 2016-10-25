@@ -1,5 +1,5 @@
 ---
-title: 入门 (Introduction)
+title: 简介 (Introduction)
 type: guide
 order: 2
 ---
@@ -50,7 +50,7 @@ var app = new Vue({
 {% endraw %}
 
 We have already created our very first Vue app! This looks pretty similar to just rendering a string template, but Vue has done a lot of work under the hood. The data and the DOM are now linked, and everything is now **reactive**. How do we know? Just open up your browser's JavaScript console and set `app.message` to a different value. You should see the rendered example above update accordingly.
-这样就创建了我们的第一个 Vue 应用！虽然看起来好像只是渲染一个字符串模版，不过 Vue 在底层做了很多工作。现在，Vue 已经将数据和 DOM 绑定到一起，所有东西都是**响应式**的。你怎么知道？打开你浏览器的 JavaScritp 控制台，然后将 `app.message` 设成另一个值。你应该能看到上面上面渲染的例子也相应地改变。
+这样就创建了我们的第一个 Vue 应用！虽然看起来好像只是渲染一个字符串模版，不过 Vue 在底层做了很多工作。现在，Vue 已经将数据和 DOM 绑定到一起，所有东西都是**响应式**的。你怎么知道？打开你浏览器的 JavaScritp 控制台，然后将 `app.message` 设成另一个值。你应该能看到上面渲染的例子也相应地改变。
 
 In addition to text interpolation, we can also bind element attributes like this:
 除了文本插值以外，我们也可以像这样绑定元素属性：
@@ -132,7 +132,7 @@ Go ahead and enter `app3.seen = false` in the console. You should see the messag
 打开控制台输入 `app3.seen = false`。你应该能看到文本消失了。
 
 This example demonstrates that we can bind data to not only text and attributes, but also the **structure** of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply [transition effects](transitions.html) when elements are inserted/updated/removed by Vue.
-从这个例子看出，我们不只能够将数据绑定到文本和属性，还可以绑定到 DOM 的结构。而且，Vue 还提供了一个强大的过渡效果系统，Vue 会自动在插入/更新/删除元素时应用[过渡效果](transitions.html)。
+从这个例子看出，我们不只能够将数据绑定到文本和属性，还可以绑定到 DOM 的**结构**。而且，Vue 还提供了一个强大的过渡效果系统，Vue 会自动在插入/更新/删除元素时应用[过渡效果](transitions.html)。
 
 There are quite a few other directives, each with its own special functionality. For example, the `v-for` directive can be used for displaying a list of items using the data from an Array:
 还有好几个别的指令，每一个都有特殊的功能。比如，`v-for` 指令可以用来将数组的数据展示成一个列表：
@@ -266,7 +266,7 @@ var app6 = new Vue({
 ## 将组件组合起来 (Composing with Components)
 
 The component system is another important concept in Vue, because it's an abstraction that allows us to build large-scale applications composed of small, self-contained, and often reusable components. If we think about it, almost any type of application interface can be abstracted into a tree of components:
-组件系统是 Vue 的另一个重要概念，因为它提供了一个抽象，让我们可以通过组合组件来构建大型应用。仔细想想的话，几乎所有类型的应用界面都可以被抽象成组件树：
+组件系统是 Vue 的另一个重要概念，因为它提供了一个抽象，让我们可以通过组合小型的，自包含的，而且通常是可复用的组件来构建大型应用。仔细想想的话，几乎所有类型的应用界面都可以被抽象成组件树：
 
 ![Component Tree](/images/components.png)
 
@@ -372,7 +372,7 @@ This is just a contrived example, but we have managed to separate our app into t
 这只是一个虚构的例子，不过我们已经成功地将应用分离成两个小的单元，而子元素也通过属性接口，很好地与父部件分离开来。我们可以进一步完善 `<todo-item>` 部件，使用更复杂的模版和逻辑，而不需要担心影响父部件。
 
 In a large application, it is necessary to divide the whole app into components to make development manageable. We will talk a lot more about components [later in the guide](/guide/components.html), but here's an (imaginary) example of what an app's template might look like with components:
-在一个大型应用中，要提高开发的可控性，将整个应用拆分成小的部件是非常必要的。我们会在教程[后面的章节](/guide/components.html)大量讲解部件。这里我们给出了一个虚构的示例，展示了一个使用部件的模版：
+在一个大型应用中，要提高开发的可控性，将整个应用拆分成小的部件是非常必要的。我们会在教程[后面的章节](/guide/components.html)对部件进行详细讲解。这里我们给出了一个虚构的示例，展示了一个使用部件的模版：
 
 ``` html
 <div id="app">
@@ -393,7 +393,7 @@ You may have noticed that Vue components are very similar to **Custom Elements**
 1. Web Component 标准依然处于草案状态，并没有被所有的浏览器原生支持。而 Vue 并不需要任何的 polyfill 就可以在所有 IE9+ 的浏览器上运行。必要时，Vue 组件也可以放在原生的自定义元素中。
 
 2. Vue components provide important features that are not available in plain custom elements, most notably cross-component data flow, custom event communication and build tool integrations.
-2. Vue 组件提供了普通自定义组件所有没有的重要特性，包括部件间数据流，自定义事件通信，以及构建工具集成。
+2. Vue 组件提供了普通自定义组件所没有的重要特性，包括部件间数据流，自定义事件通信，以及构建工具集成。
 
 ## 想了解更多？(Ready for More?)
 
