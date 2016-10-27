@@ -87,7 +87,7 @@ If you're feeling lazy though, below are the numbers from one run in Chrome 52 o
       <td>94ms</td>
     </tr>
     <tr>
-      <th>最慢的 5% (95th Perc.)</th>
+      <th>第 95 百分位数 (95th Perc.)</th>
       <td>73ms</td>
       <td>164ms</td>
     </tr>
