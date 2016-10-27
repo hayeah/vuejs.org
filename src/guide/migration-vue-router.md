@@ -5,7 +5,7 @@ order: 26
 ---
 
 > Only Vue Router 2 is compatible with Vue 2, so if you're updating Vue, you'll have to update Vue Router as well. That's why we've included details on the migration path here in the main docs. For a complete guide on using the new Vue Router, see the [Vue Router docs](http://router.vuejs.org/en/).
-> 只有 Vue Router 2 才跟 Vue 2 兼容，所以如果要更新 Vue 的版本，你也同样需要更新 Vue Router。这就是为什么我们要在主文档这里提供迁移的详细方法。如果你想查看新 Vue Router 的教程，你可以参考 [Vue Roter 的文档](http://router.vuejs.org/en/)。
+> 只有 Vue Router 2 才跟 Vue 2 兼容，所以如果要更新 Vue 的版本，你也同样需要更新 Vue Router。这就是为什么我们要在主文档这里提供迁移的详细方法。如果你想查看新 Vue Router 的完整教程，你可以参考 [Vue Roter 的文档](http://router.vuejs.org/en/)。
 
 ## 路由器初始化 (Router Initialization)
 
@@ -343,7 +343,7 @@ The `<a>` will be the actual link (and will get the correct href), but the activ
 ### `router.go`
 
 For consistency with the [HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API), `router.go` is now only used for [back/forward navigation](https://router.vuejs.org/en/essentials/navigation.html#routergon), while [`router.push`](http://router.vuejs.org/en/essentials/navigation.html#routerpushlocation) is used to navigate to a specific page.
-为了与 [HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) 保持一致，`router.go` 现在只用于[后退/前进的导航](https://router.vuejs.org/en/essentials/navigation.html#routergon)，而用 [`router.push`](http://router.vuejs.org/en/essentials/navigation.html#routerpushlocation) 跳到特定页面。
+为了与 [HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) 保持一致，`router.go` 现在只用于[后退/前进的导航](https://router.vuejs.org/en/essentials/navigation.html#routergon)，而 [`router.push`](http://router.vuejs.org/en/essentials/navigation.html#routerpushlocation) 则被用来跳转到指定页面。
 
 {% raw %}
 <div class="upgrade-path">
