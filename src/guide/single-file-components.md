@@ -57,7 +57,7 @@ With `.vue` components, we're entering the realm of advanced JavaScript applicat
 使用 `.vue` 组件，我们已经进入了高级 JavaScript 应用的领域。这意味着你需要学习使用一些额外的工具：
 
 - **Node Package Manager (NPM)**: Read the [Getting Started guide](https://docs.npmjs.com/getting-started/what-is-npm) through section _10: Uninstalling global packages_.
-- **Node Package Manager (NPM)**: 从头阅读[上手指南](https://docs.npmjs.com/getting-started/what-is-npm) 直到第十章_Uninstalling global packages_；
+- **Node Package Manager (NPM)**: 从头阅读[上手指南](https://docs.npmjs.com/getting-started/what-is-npm) 直到 _10: Uninstalling global packages_；
 
 - **Modern JavaScript with ES2015/16**: Read through Babel's [Learn ES2015 guide](https://babeljs.io/docs/learn-es2015/). You don't have to memorize every feature right now, but keep this page as a reference you can come back to.
 - **Modern JavaScript with ES2015/16**: 阅读 Babel 的 [ES2015 教程](https://babeljs.io/docs/learn-es2015/)。你不需要记得每一个特性，但可以留着这个页面供日后参考。
@@ -69,7 +69,7 @@ The template uses [Webpack](https://webpack.github.io/), a module bundler that t
 这个模版使用了 [Webpack](https://webpack.github.io/)，它是一个模块打包器，会将多个“模块”打包成最终的应用。要更多地了解 Webpack，可以看[这个视频](https://www.youtube.com/watch?v=WQue1AN93YU)。掌握了基础之后，你还可以看一下 [Egghead.io 上面的进阶 Webpack 课程](https://egghead.io/courses/using-webpack-for-production-javascript-applications)。
 
 In Webpack, each module can be transformed by a "loader" before being included in the bundle, and Vue offers the [vue-loader](https://github.com/vuejs/vue-loader) plugin to take care of translating `.vue` single-file components. The [webpack-simple](https://github.com/vuejs-templates/webpack-simple) template has already set up everything for you, but if you'd like to learn more about how `.vue` components work with Webpack, you can read [the docs for vue-loader](https://vue-loader.vuejs.org).
-在 Webpack 中，每一个模块在被打包前都会通过“加载器”来变形，而 Vue 提供了一个 [vue-loader](https://github.com/vuejs/vue-loader) 插件来负责转译 `.vue` 单文件组件。[webpack-simple](https://github.com/vuejs-templates/webpack-simple) 模版已经帮你配置好所有东西，不过如果你想要更多地了解 `.vue` 和 Webpack 是如何配合的，你可以阅读 [vue-loader 的文档](https://vue-loader.vuejs.org)。
+在 Webpack 中，每一个模块在被打包前都会通过“加载器”来转换，而 Vue 提供了一个 [vue-loader](https://github.com/vuejs/vue-loader) 插件来负责转译 `.vue` 单文件组件。[webpack-simple](https://github.com/vuejs-templates/webpack-simple) 模版已经帮你配置好所有东西，不过如果你想要更多地了解 `.vue` 和 Webpack 是如何配合的，你可以阅读 [vue-loader 的文档](https://vue-loader.vuejs.org)。
 
 ### 如果你是老司机 (For Advanced Users)
 
