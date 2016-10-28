@@ -15,21 +15,42 @@
 
 英文 | 中文 | 备注 |
 ---- | ---- | ---- |
-See also | 另见
-component | 组件
-functional | 函数化| e.g. `functional component` ：函数化组件
-reactive | 响应式的
-(single) source of truth | (单一)数据源
-mutation | 突变
-fallback content | 替换内容 | 根据 MDN 文档
-virtual DOM | 虚拟 DOM
-core | 内核
-companion library | 插件库
-overhead | 额外开销
-benchmark | 测试基准
-learning curve | 学习曲线
-non-trivial app | 正常应用
 
+(single) source of truth | (单一)数据源
+attribute | 属性 | 主体： DOM 元素
+benchmark | 测试基准
+companion library | 插件库
+component | 组件
+console | 控制台
+core | 内核
+declarative | 声明式
+directive | 指令
+example | 示例
+fallback content | 替换内容 | 根据 MDN 文档
+filter | 过滤器
+for example | 例如
+functional | 函数式 | e.g. `functional component` ：函数式组件
+guide | 教程
+incrementally adoptable | 增量式使用（转为动词）
+interpolation | 插值
+item | 项 | e.g. 列表项，数组项
+learning curve | 学习曲线
+listener, listen | 侦听器；侦听
+mutation | 突变
+non-trivial app | 正常应用
+overhead | 额外开销
+parent scope | 父级作用域
+progressive | 渐进式
+prop | 属性 | 主体：Vue 组件
+property | 属性 | 主体：javascript 对象
+reactive | 响应式的
+render function | 渲染函数
+see also | 另见
+single page application, spa | 单页应用
+transition effect | 过渡动画
+transition | 过渡动画 | [小右的文章](http://www.html-js.com/article/1833)
+virtual DOM | 虚拟 DOM
+wrap | 包裹
 参考 [vuejs-1.0 中文文档](http://cn.vuejs.org/)
 
 ## 协作形式
