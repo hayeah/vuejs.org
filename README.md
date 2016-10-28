@@ -11,11 +11,12 @@
 * 专有词注意大小写，如 HTML，CSS，JavaScript。
 * 代码只翻译注释。
 
+[阮一峰关于中文技术文档的规范](https://github.com/ruanyf/document-style-guide)
+
 ## 翻译字典（更新中）
 
 英文 | 中文 | 备注 |
 ---- | ---- | ---- |
-
 (single) source of truth | (单一)数据源
 attribute | 属性 | 主体： DOM 元素
 benchmark | 测试基准
@@ -51,8 +52,13 @@ transition effect | 过渡动画
 transition | 过渡动画 | [小右的文章](http://www.html-js.com/article/1833)
 virtual DOM | 虚拟 DOM
 wrap | 包裹
-参考 [vuejs-1.0 中文文档](http://cn.vuejs.org/)
 
+参考资料：
+- [小右的专栏](http://www.html-js.com/article/column/99)
+- [小右的另一个专栏](http://www.zhihu.com.question.39879941.cmiiu.com/?people/evanyou/posts)
+- [小右对 Vue 2 的介绍@Qcon](http://www.infoq.com/cn/articles/vue-2-progressive-front-end-solution)
+- [vuejs-1.0 中文文档](http://cn.vuejs.org/)
+ 
 ## 协作形式
 
 翻译者：
