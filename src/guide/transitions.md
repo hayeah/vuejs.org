@@ -119,7 +119,7 @@ There are four classes applied for enter/leave transitions.
 2. `v-enter-active`: Active and ending state for enter. Applied before element is inserted, removed when transition/animation finishes.
 3. `v-leave`: Starting state for leave. Applied when leave transition is triggered, removed after one frame.
 4. `v-leave-active`: Active and ending state for leave. Applied when leave transition is triggered, removed when the transition/animation finishes.
-1. `v-enter`：进入过渡的开始状态。在元素被插入的前或元素移除后的下一帧应用。
+1. `v-enter`：进入过渡的开始状态。在元素被插入前或元素移除后的下一帧应用。
 2. `v-enter-active`：进入过渡的活跃和结束状态。在元素被插入前应用，当过渡/动画结束时被删除。
 3. `v-leave`：离开过渡的开始状态。当离开过渡开始时生效，只应用一帧然后立即被删除。
 4. `v-leave-active`：离开过渡的活跃和结束状态。当离开过渡开始时生效，当过渡/动画结束后立即被删除。
@@ -343,7 +343,7 @@ new Vue({
 ### Custom Transition Classes
 ### 自定义过渡类名
 You can also specify custom transition classes by providing the following attributes:
-你也可以通过提供一下属性来声明自定义过渡类名：
+你也可以通过提供以下属性来声明自定义过渡类名：
 - `enter-class`
 - `enter-active-class`
 - `leave-class`
@@ -874,7 +874,7 @@ new Vue({
 {% endraw %}
 
 With one simple attribute addition, we've fixed that original transition without having to add any special styling.
-这一简单的添加特性使解决了原本过渡只能同时进入与离开的问题，并且没有额外添加任何特殊样式。
+这一简单的添加属性解决了原本过渡只能同时进入与离开的问题，并且没有额外添加任何特殊样式。
 The `in-out` mode isn't used as often, but can sometimes be useful for a slightly different transition effect. Let's try combining it with the slide-fade transition we worked on earlier:
  `in-out` 模式没有  `out-in` 的使用频率高，但有时也能在一些稍微不同的过渡效果中非常有用。尝试结合前面的滑动-褪色过渡效果：
 {% raw %}
