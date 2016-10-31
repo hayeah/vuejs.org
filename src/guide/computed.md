@@ -104,9 +104,8 @@ methods: {
 }
 ```
 
-Instead of a computed property, we can define the same function as a method instead. For the end result, the two approaches are indeed exactly the same. However, the difference is that **computed properties are cached based on its dependencies.** A computed property will only re-evaluate when some of its dependencies have changed. This means as long as `message` has not changed, multiple access to the `reversedMessage` computed property will immediately return the previously computed result without having to run the function again.
+Instead of a computed property, we can define the same function as a method instead. For the end result, the two approaches are indeed exactly the same. However, the difference is that **computed properties are cached based on their dependencies.** A computed property will only re-evaluate when some of its dependencies have changed. This means as long as `message` has not changed, multiple access to the `reversedMessage` computed property will immediately return the previously computed result without having to run the function again.
 我们可以定义一个相同功能的方法来代替计算属性。从最终显示的结果来看，这两种方法确实是完全相同的。然而，不同的是 **计算属性基于它的依赖关系被缓存。** 当它依赖关系中的某些值发生改变时这个计算属性将会仅仅对这些改变的值进行重新求值。也就是说，只要 `message` 不发生改变，多次请求 `reversedMessage` 的话计算属性将会立刻返回上次计算的结果而不用重新计算。
-
 
 This also means the following computed property will never update, because `Date.now()` is not a reactive dependency:
 这也意味着下面这个计算属性将不会更新，因为 `Date.now()` 不是一个被动依赖：
