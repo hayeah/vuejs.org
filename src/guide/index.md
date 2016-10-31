@@ -14,8 +14,8 @@ If you are an experienced frontend developer and want to know how Vue compares t
 
 ## 上手 (Getting Started)
 
-The easiest way to try out Vue.js is using the [JSFiddle Hello World example](https://jsfiddle.net/chrisvfritz/4tpzm3e1/). Feel free to open it in another tab and follow along as we go through some basic examples. If you prefer downloading / installing from a package manager, check out the [Installation](/guide/installation.html) page.
-要尝试 Vue.js，最简单的方式就是使用 [JSFiddle 的 Hello World 示例](https://jsfiddle.net/chrisvfritz/4tpzm3e1/)。你可以在另一个标签页打开这个页面，然后跟着本教程一步一步地学习一些基本示例。如果你更喜欢从包管理器上下载或安装，可以参考教程的[安装](/guide/installation.html)一节。
+The easiest way to try out Vue.js is using the [JSFiddle Hello World example](https://jsfiddle.net/chrisvfritz/50wL7mdz/). Feel free to open it in another tab and follow along as we go through some basic examples. If you prefer downloading / installing from a package manager, check out the [Installation](/guide/installation.html) page.
+要尝试 Vue.js，最简单的方式就是使用 [JSFiddle 的 Hello World 示例](https://jsfiddle.net/chrisvfritz/50wL7mdz/)。你可以在另一个标签页打开这个页面，然后跟着本教程一步一步地学习一些基本示例。如果你更喜欢从包管理器上下载或安装，可以参考教程的[安装](/guide/installation.html)一节。
 
 ## 声明式渲染 (Declarative Rendering)
 
