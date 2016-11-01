@@ -12,7 +12,7 @@ ro_gz_size: "16"
 ### 兼容性 (Compatibility Note)
 
 Vue does **not** support IE8 and below, because it uses ECMAScript 5 features that are un-shimmable in IE8. However it supports all [ECMAScript 5 compliant browsers](http://caniuse.com/#feat=es5).
-Vue.js **不支持** IE8 及其以下版本，因为 Vue.js 使用了 IE8 无法实现的 ECMAScript 5 特性。 Vue.js 支持所有[兼容 ECMAScript 5 的浏览器]((http://caniuse.com/#feat=es5))。
+Vue.js **不支持** IE8 及其以下版本，因为 Vue.js 使用了 IE8 无法实现的 ECMAScript 5 特性。 Vue.js 支持所有[兼容 ECMAScript 5 的浏览器]((http://caniuse.com/#feat=es5)。
 
 ### 更新日志 (Release Notes)
 
@@ -22,10 +22,10 @@ Detailed release notes for each version are available on [GitHub](https://github
 ## 独立版本 (Standalone)
 
 Simply download and include with a script tag. `Vue` will be registered as a global variable.
-直接下载并用 `<script>` 标签引入，`Vue` 会被注册为一个全局变量。
+直接下载并用 `<script>` 标签引入。`Vue` 会被注册为一个全局变量。
 
 <p class="tip">Don't use the minified version during development. You will miss out all the nice warnings for common mistakes!
-重要提示：在开发时请用开发版本，遇到常见错误它会给出友好的警告。</p>
+重要提示：开发时请用开发版本。它会对常见错误给出友好的警告。</p>
 
 <div id="downloads">
 <a class="button" href="/js/vue.js" download>Development Version</a><span class="light info">With full warnings and debug mode</span>
@@ -41,12 +41,12 @@ Recommended: [unpkg](https://unpkg.com/vue/dist/vue.js), which will reflect the 
 推荐使用 [unpkg](https://unpkg.com/vue/dist/vue.min.js)，它是 npm 上的最新版本。你也可以在 [unpkg.com/vue/](https://unpkg.com/vue/) 上浏览 npm 包的源代码。
 
 Also available on [jsdelivr](//cdn.jsdelivr.net/vue/{{vue_version}}/vue.js) or [cdnjs](//cdnjs.cloudflare.com/ajax/libs/vue/{{vue_version}}/vue.js), but these two services take some time to sync so the latest release may not be available yet.
-你还可以从 [jsdelivr](//cdn.jsdelivr.net/vue/{{vue_version}}/vue.min.js) 或 [cdnjs](//cdnjs.cloudflare.com/ajax/libs/vue/{{vue_version}}/vue.min.js) 获取（版本更新可能略滞后）。
+你还可以从 [jsdelivr](//cdn.jsdelivr.net/vue/{{vue_version}}/vue.min.js) 或 [cdnjs](//cdnjs.cloudflare.com/ajax/libs/vue/{{vue_version}}/vue.min.js) 获取，但这两个服务的版本更新可能略滞后。
 
 ## NPM
 
 NPM is the recommended installation method when building large scale applications with Vue. It pairs nicely with module bundlers such as [Webpack](http://webpack.github.io/) or [Browserify](http://browserify.org/). Vue also provides accompanying tools for authoring [Single File Components](single-file-components.html).
-当使用 Vue 来构建大型应用时，我们推荐使用 NPM 来安装 Vue。它跟像 [Webpack](http://webpack.github.io/) 或者 [Browserify](http://browserify.org/) 这样的模块打包器配合得很好。Vue 同时还提供配套工具来开发 [单文件组件](single-file-components.html)。
+当用 Vue 来构建大型应用时，我们推荐使用 NPM 来安装 Vue。它跟 [Webpack](http://webpack.github.io/) 或者 [Browserify](http://browserify.org/) 这样的模块打包器可以和很好地配合。Vue 同时还提供配套工具来开发[单文件组件](single-file-components.html)。
 
 ``` bash
 # latest stable
@@ -79,7 +79,7 @@ resolve: {
 For Browserify, you can use [aliasify](https://github.com/benbria/aliasify) to achieve the same.
 如果你使用 Browserify，你可以用 [aliasify](https://github.com/benbria/aliasify) 来达到同样的效果。
 
-<p class="tip">Do NOT do `import Vue from 'vue/dist/vue'` - since some tools or 3rd party libraries may import vue as well, this may cause the app to load both the runtime and standalone builds at the same time and lead to errors.<br>不要写成 `import Vue from 'vue/dist/vue'` —— 因为某些工具或者第三方库也可能导入 vue，这可能会导致应用同时倒入运行时版本和独立版本，导致错误发生。</p>
+<p class="tip">Do NOT do `import Vue from 'vue/dist/vue'` - since some tools or 3rd party libraries may import vue as well, this may cause the app to load both the runtime and standalone builds at the same time and lead to errors.<br>不要写成 `import Vue from 'vue/dist/vue'` —— 因为某些工具或者第三方库也可能导入 vue，这可能会让应用同时导入运行时版本和独立版本，导致错误发生。</p>
 
 ### CSP 环境 (CSP environments)
 
@@ -102,7 +102,7 @@ $ npm install --global vue-cli
 # 使用 `webpack` 模版来构建一个新项目
 $ vue init webpack my-project
 # install dependencies and go!
-# 安装依赖，走起！
+# 安装依赖，开始开发！
 $ cd my-project
 $ npm install
 $ npm run dev
