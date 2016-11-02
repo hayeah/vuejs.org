@@ -92,7 +92,7 @@
         document.addEventListener('DOMContentLoaded', function() {
           FastClick.attach(document.body)
 
-            var paragraphs = document.querySelectorAll('.content p');
+            var paragraphs = document.querySelectorAll('.content p, .content li');
 
             var process = function(ele) {
                 var arr = ele.innerHTML.split('<br>');
