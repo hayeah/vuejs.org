@@ -1,5 +1,5 @@
 ---
-title: 从 Vue 1.x 迁移（Migration from Vue 1.x）
+title: 从 Vue 1.x 迁移 (Migration from Vue 1.x)
 type: guide
 order: 25
 ---
