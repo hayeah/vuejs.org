@@ -108,7 +108,7 @@ Which will render:
 <div class="active text-danger"></div>
 ```
 
-If you would like to also toggle a class in the list conditionally, you can do it with a ternary expression:		
+If you would like to also toggle a class in the list conditionally, you can do it with a ternary expression:
 如果你也想要在这个数组列表中根据条件切换 class，你可以使用三元表达式：
 
 ``` html
@@ -123,6 +123,51 @@ However, this can be a bit verbose if you have multiple conditional classes. Tha
 
 ``` html
 <div v-bind:class="[{ active: isActive }, errorClass]">
+```
+
+### 使用组件 (With Components)
+
+> This section assumes knowledge of [Vue Components](components.html). Feel free to skip it and come back later.
+> 要理解本小节，你需要先了解 [Vue 组件](components.html)的知识。如果你还不了解组件，可以先跳过这个段落，之后再回头看。
+
+When you use the `class` attribute on a custom component, those classes will be added to the component's root element. Existing classes on this element will not be overwritten.
+如果一个自定义组件使用 `class` 属性，那么这些 class 会被添加到组件的根元素。这个元素已有的类不会被覆盖。
+
+For example, if you declare this component:
+例如，如果你声明了这样一个组件：
+
+``` js
+Vue.component('my-component', {
+  template: '<p class="foo bar">Hi</p>'
+})
+```
+
+Then add some classes when using it:
+然后，在使用时添加了几个 class：
+
+``` html
+<my-component class="baz boo"></my-component>
+```
+
+The rendered HTML will be:
+渲染出来的 HTML 会是：
+
+``` html
+<p class="foo bar baz boo">Hi</p>
+```
+
+The same is true for class bindings:
+class 绑定也是一样的：
+
+``` html
+<my-component v-bind:class="{ active: isActive }"></my-component>
+```
+
+When `isActive` is truthy, the rendered HTML will be:
+当 `isActive` 为真时，渲染出来的 HTML 会是：
+
+``` html
+<div class="foo bar active"></div>
 ```
 
 ## 绑定行内样式 (Binding Inline Styles)
