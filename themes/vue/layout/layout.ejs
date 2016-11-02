@@ -93,9 +93,10 @@
           FastClick.attach(document.body)
 
             var paragraphs = document.querySelectorAll('.content p, .content li');
+            var headers = document.querySelectorAll('.content h1, .content h2, .content h3');
 
             // parse the file and manipulate DOM
-            var process = function(ele) {
+            var processParagraphs = function(ele) {
                 if (!ele.querySelector(':scope > br')) return;
 
                 var arr = ele.innerHTML.split('<br>');
@@ -103,10 +104,24 @@
                 ele.innerHTML = arr[1];
             };
 
-            for (var i = 0; i < paragraphs.length; i++) {
-                process(paragraphs[i]);
+            var processHeaders = function(ele) {
+                var isH3 = ele.tagName === "H3";
+
+                var a = ele.querySelector('a');
+                var contents = ele.textContent.split(/[\(\)]/);
+                if (isH3) ele.parentNode.title = contents[1];
+                else ele.title = contents[1];
+                ele.textContent = contents[0];
             }
-            }, false)
+
+            for (var i = 0; i < paragraphs.length; i++) {
+                processParagraphs(paragraphs[i]);
+            }
+
+            for (var i = 0; i < headers.length ; i++) {
+                processHeaders(headers[i]);
+            }
+            }, false);
         </script>
     </body>
 </html>
