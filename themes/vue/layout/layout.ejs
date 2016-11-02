@@ -91,7 +91,20 @@
         <script>
         document.addEventListener('DOMContentLoaded', function() {
           FastClick.attach(document.body)
-        }, false)
+
+            var paragraphs = document.querySelectorAll('.content p');
+
+            var process = function(ele) {
+                var arr = ele.innerHTML.split('<br>');
+                if (arr.length!==2) return;
+                ele.title = arr[0].replace(/(<([^>]+)>)/ig,"");
+                ele.innerHTML = arr[1];
+            };
+
+            for (var i = 0; i < paragraphs.length; i++) {
+                process(paragraphs[i]);
+            }
+            }, false)
         </script>
     </body>
 </html>
