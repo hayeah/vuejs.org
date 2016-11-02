@@ -49,8 +49,8 @@
                     <!-- Move cookbook sections here once they have -->
                     <!-- at least one recipe -->
                 <% } %>
-                <li>
-                    <a href="/<%- p.path %>" class="sidebar-link<%- page.title === p.title ? ' current' : '' %><%- p.is_new ? ' new' : '' %>"><%- p.title %></a>
+                <li title="<%- p.title.split(/[\(\)]/)[1] %>">
+                    <a href="/<%- p.path %>" class="sidebar-link<%- page.title === p.title ? ' current' : '' %><%- p.is_new ? ' new' : '' %>"><%- p.title.split(/[\(\)]/)[0] %></a>
                 </li>
             <% }) %>
             <% if (type === 'cookbook') { %>
