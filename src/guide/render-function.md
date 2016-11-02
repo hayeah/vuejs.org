@@ -356,8 +356,8 @@ new Vue({
 })
 ```
 
-<p class="tip">Aliasing `createElement` to `h` is a common convention you'll see in the Vue ecosystem and is actually required for JSX. If `h` is not available in the scope, your app will throw an error.</p>
-<p class="tip">你会发现，在 Vue 生态中，将 `h` 作为 `createElement` 的别名是一种通用惯例，而且在 JSX 中这更被作为一种要求。如果在作用域中 `h` 不可用，你的应用将会抛出异常。</p>
+<p class="tip">Aliasing `createElement` to `h` is a common convention you'll see in the Vue ecosystem and is actually required for JSX. If `h` is not available in the scope, your app will throw an error.
+你会发现，在 Vue 生态中，将 `h` 作为 `createElement` 的别名是一种通用惯例，而且在 JSX 中这更被作为一种要求。如果在作用域中 `h` 不可用，你的应用将会抛出异常。</p>
 
 For more on how JSX maps to JavaScript, see the [usage docs](https://github.com/vuejs/babel-plugin-transform-vue-jsx#usage).
 关于更多 JSX 映射到 JavaScript 的使用方法，参考[使用文档](https://github.com/vuejs/babel-plugin-transform-vue-jsx#usage).
@@ -392,15 +392,19 @@ Everything the component needs is passed through `context`, which is an object c
 组件需要的所有信息都是通过 `context` 来传递，它是一个包含了以下内容的对象：
 
 - `props`: An object of the provided props
-- `props`: props 对象
+`props`: props 对象
+
 - `children`: An array of the VNode children
-- `children`: VNode 子节点数组
+`children`: VNode 子节点数组
+
 - `slots`: A function returning a slots object
-- `slots`: 返回 slots 对象的函数
+`slots`: 返回 slots 对象的函数
+
 - `data`: The entire data object passed to the component
-- `data`: 传递给组件的完整 data 对象
+`data`: 传递给组件的完整 data 对象
+
 - `parent`: A reference to the parent component
-- `parent`: 父组件的引用
+`parent`: 父组件的引用
 
 After adding `functional: true`, updating the render function of our anchored heading component would simply require adding the `context` argument, updating `this.$slots.default` to `context.children`, then updating `this.level` to `context.props.level`.
 添加完 `functional: true` 之后，更新我们的带链接的标题组件中的渲染函数就非常简单了：添加 `context` 参数，将 `this.$slots.default` 改为 `context.children`，再将 `this.level` 改为 `context.props.level`。
@@ -409,9 +413,10 @@ Since functional components are just functions, they're much cheaper to render. 
 函数化组件仅仅是函数，它们的渲染成本更低。同时，函数化组件作为包装组件也非常有用。例如以下情形：
 
 - Programmatically choose one of several other components to delegate to
-- 用编程的形式选择使用的组件
+用编程的形式选择使用的组件
+
 - Manipulate children, props, or data before passing them on to a child component
-- 在将 children、props 或者 data 传递给子组件之前操作它们
+在将 children、props 或者 data 传递给子组件之前操作它们
 
 Here's an example of a `smart-list` component that delegates to more specific components, depending on the props passed to it:
 这是一个 `smart-list` 组件的示例，它依赖接收到的 props 决定使用某个具体的组件：

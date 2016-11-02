@@ -69,19 +69,19 @@ A directive definition object can provide several hook functions (all optional):
 
 
 - `bind`: called only once, when the directive is first bound to the element. This is where you can do one-time setup work.
-- `bind`：只触发一次，当指令初次绑定到元素时触发。此处可以做些一次性的配置。
+`bind`：只触发一次，当指令初次绑定到元素时触发。此处可以做些一次性的配置。
 
 - `inserted`: called when the bound element has been inserted into its parent node (this only guarantees parent node presence, not necessarily in-document).
-- `inserted`: 当元素被插入其父元素时触发（只需保证父元素存在，不要求父元素必须在网页文档中）
+`inserted`: 当元素被插入其父元素时触发（只需保证父元素存在，不要求父元素必须在网页文档中）
 
 - `update`: called after the containing component has updated, __but possibly before its children have updated__. The directive's value may or may not have changed, but you can skip unnecessary updates by comparing the binding's current and old values (see below on hook arguments).
-- `update`：当所包含的组件更新时触发，__但有可能是在它的子组件更新之前__。该指令的值可能改变也可能不改变。可以通过比较当前值是否变化来略过不必要的更新操作。（详见下文钩子参数）
+`update`：当所包含的组件更新时触发，__但有可能是在它的子组件更新之前__。该指令的值可能改变也可能不改变。可以通过比较当前值是否变化来略过不必要的更新操作。（详见下文钩子参数）
 
 - `componentUpdated`: called after the containing component __and its children__ have updated.
-- `componentUpdated`：包含的组件__以及它的子组件__完成更新后触发。
+`componentUpdated`：包含的组件__以及它的子组件__完成更新后触发。
 
 - `unbind`: called only once, when the directive is unbound from the element.
-- `unbind`：只触发一次，当指令解除绑定时触发。
+`unbind`：只触发一次，当指令解除绑定时触发。
 
 We'll explore the arguments passed into these hooks (i.e. `el`, `binding`, `vnode`, and `oldVnode`) in the next section.
 下一节我们将探讨以上这些钩子函数（即 `el`、`binding`、`vnode` 和 `oldVnode`）的参数。
@@ -92,25 +92,34 @@ Directive hooks are passed these arguments:
 指令中的参数：
 
 - **el**: The element the directive is bound to. This can be used to directly manipulate the DOM.
-- **el**: 被绑定的元素，可用来直接操作 DOM。
+**el**: 被绑定的元素，可用来直接操作 DOM。
+
 - **binding**: An object containing the following properties.
-- **binding**: 一个包含下列属性的对象。
+**binding**: 一个包含下列属性的对象。
+
   - **name**: The name of the directive, without the `v-` prefix.
-  - **name**: 指令的名称，没有 `v-` 前缀。
+  **name**: 指令的名称，没有 `v-` 前缀。
+
   - **value**: The value passed to the directive. For example in `v-my-directive="1 + 1"`, the value would be `2`.
-  - **value**L: 传递给指令的值。比如：`v-my-directive="1 + 1"`，指令的值就是 2。
+  **value**L: 传递给指令的值。比如：`v-my-directive="1 + 1"`，指令的值就是 2。
+
   - **oldValue**: The previous value, only available in `update` and `componentUpdated`. It is available whether or not the value has changed.
-  - **oldValue**: 前一个值，仅于 `update` 和 `componentUpdated` 事件中提供。无论值是否改变，oldValue 都会传递。
+  **oldValue**: 前一个值，仅于 `update` 和 `componentUpdated` 事件中提供。无论值是否改变，oldValue 都会传递。
+
   - **expression**: The expression of the binding as a string. For example in `v-my-directive="1 + 1"`, the expression would be `"1 + 1"`.
-  - **expression**: 字符串类型，指令中传入的表达式，比如 `v-my-directive="1 + 1"`，表达式是 `"1 + 1"`
+  **expression**: 字符串类型，指令中传入的表达式，比如 `v-my-directive="1 + 1"`，表达式是 `"1 + 1"`
+
   - **arg**: The argument passed to the directive, if any. For example in `v-my-directive:foo`, the arg would be `"foo"`.
-  - **arg**: 传递给指令的参数，可空。比如：`v-my-directive:foo`，则 arg 为 `"foo"`。
+  **arg**: 传递给指令的参数，可空。比如：`v-my-directive:foo`，则 arg 为 `"foo"`。
+
   - **modifiers**: An object containing modifiers, if any. For example in `v-my-directive.foo.bar`, the modifiers object would be `{ foo: true, bar: true }`.
-  - **modifiers**: 一个包含修饰符（如果有）的对象。比如在 `v-my-directive.foo.bar` 中，修饰符对象就是 `{ foo: true, bar: true }`。
+  **modifiers**: 一个包含修饰符（如果有）的对象。比如在 `v-my-directive.foo.bar` 中，修饰符对象就是 `{ foo: true, bar: true }`。
+
 - **vnode**: The virtual node produced by Vue's compiler. See the [VNode API](/api/#VNode-Interface) for full details.
-- **vnode**: Vue 的编译器生成的虚拟节点。详情参考 [VNode API](/api/#VNode-Interface)。
+**vnode**: Vue 的编译器生成的虚拟节点。详情参考 [VNode API](/api/#VNode-Interface)。
+
 - **oldVnode**: The previous virtual node, only available in the `update` and `componentUpdated` hooks.
-- **oldVnode**: 上一个虚拟节点， 仅在 `update` 和 `componentUpdated` 事件中提供。
+**oldVnode**: 上一个虚拟节点， 仅在 `update` 和 `componentUpdated` 事件中提供。
 
 <p class="tip">Apart from `el`, you should treat these arguments as read-only and never modify them. If you need to share information across hooks, it is recommended to do so through element's [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset).
 除了`el`，其它参数应被视作只读，不应被更改或编辑。若钩子函数之间需要通信，建议使用 [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)。</p>

@@ -10,13 +10,13 @@ Vue provides a variety of ways to apply transition effects when items are insert
 Vue 为插入元素，更新元素，以及从 DOM 中移除元素提供了多种过渡效果。包括以下工具：
 
 - automatically apply classes for CSS transitions and animations
-- 自动应用 CSS 过渡效果和动画的类
+自动应用 CSS 过渡效果和动画的类
 - integrate 3rd-party CSS animation libraries, such as Animate.css
-- 整合第三方 CSS 动画库如 Animate.css
+整合第三方 CSS 动画库如 Animate.css
 - use JavaScript to directly manipulate the DOM during transition hooks
-- 在过渡效果的钩子中使用 JavaScript 直接控制 DOM
+在过渡效果的钩子中使用 JavaScript 直接控制 DOM
 - integrate 3rd-party JavaScript animation libraries, such as Velocity.js
-- 整合第三方 JavaScript 动画库例如 Velocity.js
+整合第三方 JavaScript 动画库例如 Velocity.js
 
 On this page, we'll only cover entering, leaving, and list transitions, but you can see the next section for [managing state transitions](transitioning-state.html).
 本节教程只会涉及进入、离开和列表的过渡效果，关于如何[管理状态的过渡](transitioning-state.html)，你可以阅读下一节。
@@ -27,13 +27,13 @@ Vue provides a `transition` wrapper component, allowing you to add entering/leav
 Vue 提供一个 `transition` 包裹组件，使你能够在下列情况中，为任意元素或组件添加进入或离开的过渡效果：
 
 - Conditional rendering (using `v-if`)
-- 条件渲染（使用 `v-if`）
+条件渲染（使用 `v-if`）
 - Conditional display (using `v-show`)
-- 条件展示（使用 `v-show`）
+条件展示（使用 `v-show`）
 - Dynamic components
-- 动态组件
+动态组件
 - Component root nodes
-- 组件根节点
+组件根节点
 
 This is what a very simple example looks like in action:
 这是实际应用中的一个简单的例子：
@@ -98,13 +98,13 @@ When an element wrapped in a `transition` component is inserted or removed, this
 当被包裹在 `transition` 中的元素插入 DOM，或从 DOM 中移除时，Vue 将：
 
 1. Vue will automatically sniff whether the target element has CSS transitions or animations applied. If it does, CSS transition classes will be added/removed at appropriate timings.
-1. 自动嗅探目标元素是否应用了 CSS 过渡或动画。如果有，将会在合适时添加/删除 CSS 过渡的类；
+自动嗅探目标元素是否应用了 CSS 过渡或动画。如果有，将会在合适时添加/删除 CSS 过渡的类；
 
 2. If the transition component provided [JavaScript hooks](#JavaScript-Hooks), these hooks will be called at appropriate timings.
-2. 如果过渡组件提供了 [JavaScript 钩子](#JavaScript-Hooks)，这些钩子函数将会在适当的时候被调用；
+如果过渡组件提供了 [JavaScript 钩子](#JavaScript-Hooks)，这些钩子函数将会在适当的时候被调用；
 
 3. If no CSS transitions/animations are detected and no JavaScript hooks are provided, the DOM operations for insertion and/or removal will be executed immediately on next frame (Note: this is a browser animation frame, different from Vue's concept of `nextTick`).
-3. 如果既没有检测到 CSS 过渡/动画也没有提供 JavaScript 钩子，DOM 操作（插入/删除）将会在下一帧中立即执行。（注意：这里的帧指浏览器动画帧，与 Vue 中 `nextTick` 的概念不同）
+如果既没有检测到 CSS 过渡/动画也没有提供 JavaScript 钩子，DOM 操作（插入/删除）将会在下一帧中立即执行。（注意：这里的帧指浏览器动画帧，与 Vue 中 `nextTick` 的概念不同）
 
 ### 过渡类名 (Transition Classes)
 
@@ -112,13 +112,13 @@ There are four classes applied for enter/leave transitions.
 进入/离开的过渡将会使用到下列四个类名：
 
 1. `v-enter`: Starting state for enter. Applied before element is inserted, removed after one frame.
-1. `v-enter`：进入过渡的开始状态。在元素被插入前或元素移除后的下一帧应用；
+`v-enter`：进入过渡的开始状态。在元素被插入前或元素移除后的下一帧应用；
 2. `v-enter-active`: Active and ending state for enter. Applied before element is inserted, removed when transition/animation finishes.
-2. `v-enter-active`：进入过渡的活跃和结束状态。在元素被插入前应用，当过渡/动画结束时被删除；
+`v-enter-active`：进入过渡的活跃和结束状态。在元素被插入前应用，当过渡/动画结束时被删除；
 3. `v-leave`: Starting state for leave. Applied when leave transition is triggered, removed after one frame.
-3. `v-leave`：离开过渡的开始状态。当离开过渡开始时生效，只应用一帧然后立即被删除；
+`v-leave`：离开过渡的开始状态。当离开过渡开始时生效，只应用一帧然后立即被删除；
 4. `v-leave-active`: Active and ending state for leave. Applied when leave transition is triggered, removed when the transition/animation finishes.
-4. `v-leave-active`：离开过渡的活跃和结束状态。当离开过渡开始时生效，当过渡/动画结束后立即被删除。
+`v-leave-active`：离开过渡的活跃和结束状态。当离开过渡开始时生效，当过渡/动画结束后立即被删除。
 
 Each of these classes will be prefixed with the name of the transition. Here the `v-` prefix is the default when you use a `<transition>` element with no name. If you use `<transition name="my-transition">` for example, then the `v-enter` class would instead be `my-transition-enter`.
 每一个类的前缀都是对应的过渡的 name 是以上类名的前缀。当 `<transition>` 没有 name 时，则默认为这里的 `v-` 前缀。如果你使用 `<transition name="my-transition">` ， `v-enter` 类名应该改为 `my-transition-enter`。
@@ -650,8 +650,7 @@ This works well, but there's one caveat to be aware of:
 这事例没问题，但需要注意：
 
 <p class="tip">When toggling between elements that have **the same tag name**, you must tell Vue that they are distinct elements by giving them unique `key` attributes. Otherwise, Vue's compiler will only replace the content of the element for efficiency. Even when technically unnecessary though, **it's considered good practice to always key multiple items within a `<transition>` component.**
-当在两个标签名相同的元素之间过渡时，必须通过赋予它们唯一的 `key` 属性值以告诉 Vue 它们是不同的元素。否则，Vue 的编译器会为了高效率，单纯替换标签中的内容。即使在技术上看起来没那么必要，**在 `<transition>` 组件中总是为多个元素分别提供唯一的 `key` 值依然是最佳实践。**<
-</p>
+当在两个标签名相同的元素之间过渡时，必须通过赋予它们唯一的 `key` 属性值以告诉 Vue 它们是不同的元素。否则，Vue 的编译器会为了高效率，单纯替换标签中的内容。即使在技术上看起来没那么必要，**在 `<transition>` 组件中总是为多个元素分别提供唯一的 `key` 值依然是最佳实践。**</p>
 
 For example:
 例如：
@@ -847,9 +846,9 @@ Simultaneous entering and leaving transitions aren't always desirable though, so
 然而同时进入离开的过渡不总是令人满意。因此 Vue 提供了一些额外的 **过渡状态**：
 
 - `in-out`: New element transitions in first, then when complete, the current element transitions out.
--  `in-out`：新元素先过渡进入，当过渡完成后，当前元素过渡离开。
+`in-out`：新元素先过渡进入，当过渡完成后，当前元素过渡离开。
 - `out-in`: Current element transitions out first, then when complete, the new element transitions in.
-- `out-in`：当前元素先过渡离开，当过渡完成后，新元素过渡进入。
+`out-in`：当前元素先过渡离开，当过渡完成后，新元素过渡进入。
 
 Now let's update the transition for our on/off buttons with `out-in`:
 现在使用 `out-in` 重写开/关按钮的过渡效果：
@@ -1019,17 +1018,17 @@ So far, we've managed transitions for:
 至今为止，我们已经了解了以下过渡：
 
 - Individual nodes
-- 独立节点
+独立节点
 - Multiple nodes where only 1 is rendered at a time
-- 多节点，每次只渲染一个节点
+多节点，每次只渲染一个节点
 
 So what about for when we have a whole list of items we want to render simultaneously, for example with `v-for`? In this case, we'll use the `<transition-group>` component. Before we dive into an example though, there are a few things that are important to know about this component:
 那么当试图同时渲染一个列表，例如说使用 `v-for` ，该怎么办呢？在这种情况下，我们使用 `<transition-group>` 组件。在看例子前，使用该组件有几个注意事项：
 
 - Unlike `<transition>`, it renders an actual element: a `<span>` by default. You can change the element that's rendered with the `tag` attribute.
-- 与 `<transition>` 不同，它渲染出一个真实的元素：默认为 `<span>`。可以通过修改 `tag` 属性改变渲染出的元素类型。
+与 `<transition>` 不同，它渲染出一个真实的元素：默认为 `<span>`。可以通过修改 `tag` 属性改变渲染出的元素类型。
 - Elements inside are **always required** to have a unique `key` attribute
-- 被包裹在里面的元素**总是需要**一个唯一的 `key` 属性值。
+被包裹在里面的元素**总是需要**一个唯一的 `key` 属性值。
 
 ### 列表进入/离开过渡 (List Entering/Leaving Transitions)
 

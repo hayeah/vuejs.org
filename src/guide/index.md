@@ -387,10 +387,10 @@ You may have noticed that Vue components are very similar to **Custom Elements**
 你可能已经注意到，Vue 组件和 [Web Components 标准](http://www.w3.org/wiki/WebComponents/)中的**自定义组件**非常相似。这是因为，Vue 的组件语法参考了这份标准。例如，Vue 组件实现了 [Slot API](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md)，还有 `is` 特殊属性。不过，Vue 组件和自定义组件有一些关键的差异：
 
 1. The Web Components Spec is still in draft status, and is not natively implemented in every browser. In comparison, Vue components don't require any polyfills and work consistently in all supported browsers (IE9 and above). When needed, Vue components can also be wrapped inside a native custom element.
-1. Web Component 标准依然处于草案状态，并不是所有的浏览器都原生实现了这个标准。而 Vue 并不需要任何的 polyfill 就可以在所有 IE9+ 的浏览器上运行。必要时，Vue 组件也可以包裹在原生的自定义元素中。
+Web Component 标准依然处于草案状态，并不是所有的浏览器都原生实现了这个标准。而 Vue 并不需要任何的 polyfill 就可以在所有 IE9+ 的浏览器上运行。必要时，Vue 组件也可以包裹在原生的自定义元素中。
 
 2. Vue components provide important features that are not available in plain custom elements, most notably cross-component data flow, custom event communication and build tool integrations.
-2. Vue 组件提供了普通自定义组件所没有的重要特性，包括部组件间数据流，自定义事件通信，以及构建工具集成。
+Vue 组件提供了普通自定义组件所没有的重要特性，包括部组件间数据流，自定义事件通信，以及构建工具集成。
 
 ## 想了解更多？(Ready for More?)
 

@@ -16,16 +16,16 @@ I'm glad you asked! The answer is no. About 90% of the API is the same and the c
 > 那我应该从哪里开始着手迁移？
 
 1. Start by running the [migration helper](https://github.com/vuejs/vue-migration-helper) on a current project. We've carefully minified and compressed a senior Vue dev into a simple command line interface. Whenever they recognize a deprecated pattern, they'll let you know, offer suggestions, and provide links to more info.
-1. 首先，在当前的项目中运行[迁移工具](https://github.com/vuejs/vue-migration-helper)。我们非常细心将一个 Vue 开发版本最小化和压缩，然后打包到一个命令行界面。每当它识别出一个被弃用的模式，它会告诉你，提供建议，并且给出包含更多信息的链接。
+首先，在当前的项目中运行[迁移工具](https://github.com/vuejs/vue-migration-helper)。我们非常细心将一个 Vue 开发版本最小化和压缩，然后打包到一个命令行界面。每当它识别出一个被弃用的模式，它会告诉你，提供建议，并且给出包含更多信息的链接。
 
 2. After that, browse through the table of contents for this page in the sidebar. If you see a topic you may be affected by, but the migration helper didn't catch, check it out.
-2. 然后，你可以浏览一下本页面在侧栏中的目录。如果你看到一个[迁移工具](https://github.com/vuejs/vue-migration-helper)没有捕获到的主题，那就点击它进行阅读。
+然后，你可以浏览一下本页面在侧栏中的目录。如果你看到一个[迁移工具](https://github.com/vuejs/vue-migration-helper)没有捕获到的主题，那就点击它进行阅读。
 
 3. If you have any tests, run them and see what still fails. If you don't have tests, just open the app in your browser and keep an eye out for warnings or errors as you navigate around.
-3. 如果你有测试用例，运行它们，看看有哪些无法通过。如果你没有测试用例，那就尝试在浏览器中打开你的应用，留意浏览器发出的警告和错误。
+如果你有测试用例，运行它们，看看有哪些无法通过。如果你没有测试用例，那就尝试在浏览器中打开你的应用，留意浏览器发出的警告和错误。
 
 4. By now, your app should be fully migrated. If you're still hungry for more though, you can read the rest of this page - or just dive in to the new and improved guide from [the beginning](index.html). Many parts will be skimmable, since you're already familiar with the core concepts.
-4. 现在，你的程序应该已经完全迁移到 Vue 2.0 了。如果你还想知道得更多，你可以阅读本页剩下的内容，或者看一下我们新的[上手教程](index.html)。你可以略过其中的很多内容，因为你对核心概念已经很熟悉了。
+现在，你的程序应该已经完全迁移到 Vue 2.0 了。如果你还想知道得更多，你可以阅读本页剩下的内容，或者看一下我们新的[上手教程](index.html)。你可以略过其中的很多内容，因为你对核心概念已经很熟悉了。
 
 > How long will it take to migrate a Vue 1.x app to 2.0?
 > 一个 Vue 1.x 的应用要迁移到 Vue 2.0 需要多长时间?
@@ -34,13 +34,13 @@ It depends on a few factors:
 这取决于以下几点：
 
 - The size of your app (small to medium-sized apps will probably be less than a day)
-- 应用程序的大小（中小型应用应该只需要不到一天）
+应用程序的大小（中小型应用应该只需要不到一天）
 
 - How many times you get distracted and start playing with a cool new feature. <U+1F609> &nbsp;Not judging, it also happened to us while building 2.0!
-- 你分心去玩酷炫新特性的次数。<U+1F609> &nbsp;我们并不是在吐槽你，因为我们自己在写 Vue 2.0 的时候也是这样的！
+你分心去玩酷炫新特性的次数。<U+1F609> &nbsp;我们并不是在吐槽你，因为我们自己在写 Vue 2.0 的时候也是这样的！
 
 - Which obsolete features you're using. Most can be upgraded with find-and-replace, but others might take a few minutes. If you're not currently following best practices, Vue 2.0 will also try harder to force you to. This is a good thing in the long run, but could also mean a significant (though possibly overdue) refactor.
-- 你使用了哪些过时的特性。大多数过时特性可以通过找到包含和替换升级，但有一些可能要花费好几分钟。如果你之前并没有遵循最佳实践，Vue 2.0 还会更加强迫你去遵循。这从长期来说是件好事，但也可能意味着不小的重构。
+你使用了哪些过时的特性。大多数过时特性可以通过找到包含和替换升级，但有一些可能要花费好几分钟。如果你之前并没有遵循最佳实践，Vue 2.0 还会更加强迫你去遵循。这从长期来说是件好事，但也可能意味着不小的重构。
 
 > If I upgrade to Vue 2, will I also have to upgrade Vuex and Vue-Router?
 > 如果我升级到 Vue 2，我还要升级 Vuex 和 Vue-Router 吗？
@@ -77,8 +77,7 @@ It's recommended to simply wrap the entire contents in a new element, like this:
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about multiple root elements in a template.</p>
-  <p>在升级后，运行你的端对端测试或者直接运行应用，查看<strong>控制台警告</strong>中关于模版存在多个根元素的信息。</p>
+  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about multiple root elements in a template.<br>在升级后，运行你的端对端测试或者直接运行应用，查看<strong>控制台警告</strong>中关于模版存在多个根元素的信息。</p>
 </div>
 {% endraw %}
 
@@ -92,8 +91,7 @@ Use the `created` hook instead.
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.</p>
-  <p>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.<br>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
 </div>
 {% endraw %}
 
@@ -105,8 +103,7 @@ Use the new `mounted` hook instead.
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.</p>
-  <p>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.<br>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
 </div>
 {% endraw %}
 
@@ -135,8 +132,7 @@ mounted: function () {
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.</p>
-  <p>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.<br>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
 </div>
 {% endraw %}
 
@@ -165,8 +161,7 @@ destroyed: function () {
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.</p>
-  <p>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.<br>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
 </div>
 {% endraw %}
 
@@ -178,8 +173,7 @@ Use the new `beforeCreate` hook instead, which is essentially the same thing. It
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.</p>
-  <p>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.<br>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
 </div>
 {% endraw %}
 
@@ -201,8 +195,7 @@ mounted: function () {
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.</p>
-  <p>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find all examples of this hook.<br>在项目中运行<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这个钩子的所有代码。</p>
 </div>
 {% endraw %}
 
@@ -216,8 +209,7 @@ When including an `index`, the argument order for arrays used to be `(index, val
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete argument order. Note that if you name your index arguments something unusual like <code>position</code> or <code>num</code>, the helper will not flag them.</p>
-  <p>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到过时参数顺序的代码。注意，如果你用像 <code>position</code> 或 <code>num</code> 这样的名字给索引参数命名，那么迁移工具不会将它们标记出来。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete argument order. Note that if you name your index arguments something unusual like <code>position</code> or <code>num</code>, the helper will not flag them.<br>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到过时参数顺序的代码。注意，如果你用像 <code>position</code> 或 <code>num</code> 这样的名字给索引参数命名，那么迁移工具不会将它们标记出来。</p>
 </div>
 {% endraw %}
 
@@ -229,8 +221,7 @@ When including a `key`, the argument order for objects used to be `(key, value)`
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete argument order. Note that if you name your key arguments something like <code>name</code> or <code>property</code>, the helper will not flag them.</p>
-  <p>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到过时参数顺序的代码。注意，如果你用像 <code>position</code> 或 <code>num</code> 这样的名字给键参数命名，那么迁移工具不会将它们标记出来。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete argument order. Note that if you name your key arguments something like <code>name</code> or <code>property</code>, the helper will not flag them.<br>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到过时参数顺序的代码。注意，如果你用像 <code>position</code> 或 <code>num</code> 这样的名字给键参数命名，那么迁移工具不会将它们标记出来。</p>
 </div>
 {% endraw %}
 
@@ -242,8 +233,7 @@ When including a `key`, the argument order for objects used to be `(key, value)`
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of these removed variables. If you miss any, you should also see <strong>console errors</strong> such as: <code>Uncaught ReferenceError: $index is not defined</code></p>
-  <p>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这些移除变量的代码。如果没有找到，你还应该留意<strong>控制台异常</strong>，例如：<code>Uncaught ReferenceError: $index is not defined</code></p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of these removed variables. If you miss any, you should also see <strong>console errors</strong> such as: <code>Uncaught ReferenceError: $index is not defined</code><br>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这些移除变量的代码。如果没有找到，你还应该留意<strong>控制台异常</strong>，例如：<code>Uncaught ReferenceError: $index is not defined</code></p>
 </div>
 {% endraw %}
 
@@ -266,8 +256,7 @@ You would now write:
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>track-by</code>.</p>
-  <p>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>track-by</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>track-by</code>.<br>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>track-by</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -279,8 +268,7 @@ Previously, `v-for="number in 10"` would have `number` starting at 0 and ending 
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Search your codebase for the regex <code>/\w+ in \d+/</code>. Wherever it appears in a <code>v-for</code>, check to see if you may be affected.</p>
-  <p>在项目中用正则表达式 <code>/\w+ in \d+/</code> 进行找到包含。检查那些在 <code>v-for</code> 中的匹配，看新的数值范围是否影响了你的代码逻辑。</p>
+  <p>Search your codebase for the regex <code>/\w+ in \d+/</code>. Wherever it appears in a <code>v-for</code>, check to see if you may be affected.<br>在项目中用正则表达式 <code>/\w+ in \d+/</code> 进行找到包含。检查那些在 <code>v-for</code> 中的匹配，看新的数值范围是否影响了你的代码逻辑。</p>
 </div>
 {% endraw %}
 
@@ -324,15 +312,14 @@ There are a few advantages:
 这样做有几个优点：
 
 - You still have access to the original value of the prop.
-- 你仍然能够访问属性的原始值；
+你仍然能够访问属性的原始值；
 - You are forced to be more explicit, by giving your coerced value a name that differentiates it from the value passed in the prop.
-- 通过给强制转换的值命名，将它和原始值区分开来，提高代码的可读性。
+通过给强制转换的值命名，将它和原始值区分开来，提高代码的可读性。
 
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>coerce</code> option.</p>
-  <p>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>coerce</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>coerce</code> option.<br>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>coerce</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -342,17 +329,16 @@ Props are now always one-way down. To produce side effects in the parent scope, 
 现在，属性只能单向传递。如果要在父作用域中产生副作用，组件需要显式地触发事件，而不是依赖隐式绑定。更多的内容请参考：
 
 - [Custom component events](components.html#Custom-Events)
-- [自定义组件事件](components.html#Custom-Events)
+[自定义组件事件](components.html#Custom-Events)
 - [Custom input components](components.html#Form-Input-Components-using-Custom-Events) (using component events)
-- [自定义输入组件](components.html#Form-Input-Components-using-Custom-Events)（使用组件事件）
+[自定义输入组件](components.html#Form-Input-Components-using-Custom-Events)（使用组件事件）
 - [Global state management](state-management.html)
-- [全局状态管理](state-management.html)
+[全局状态管理](state-management.html)
 
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>twoWay</code> option.</p>
-  <p>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>twoWay</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>twoWay</code> option.<br>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>twoWay</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -362,17 +348,16 @@ Props are now always one-way down. To produce side effects in the parent scope, 
 现在，属性只能单向传递。如果要在父作用域中产生副作用，组件需要显式地触发事件，而不是依赖隐式绑定。更多的内容请参考：
 
 - [Custom component events](components.html#Custom-Events)
-- [自定义组件事件](components.html#Custom-Events)
+[自定义组件事件](components.html#Custom-Events)
 - [Custom input components](components.html#Form-Input-Components-using-Custom-Events) (using component events)
-- [自定义输入组件](components.html#Form-Input-Components-using-Custom-Events)（使用组件事件）
+[自定义输入组件](components.html#Form-Input-Components-using-Custom-Events)（使用组件事件）
 - [Global state management](state-management.html)
-- [全局状态管理](state-management.html)
+[全局状态管理](state-management.html)
 
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>.once</code> and <code>.sync</code> modifiers.</p>
-  <p>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>.once</code> 和 <code>.sync</code> 修饰符的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>.once</code> and <code>.sync</code> modifiers.<br>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>.once</code> 和 <code>.sync</code> 修饰符的代码。</p>
 </div>
 {% endraw %}
 
@@ -385,15 +370,14 @@ Most use cases of mutating a prop can be replaced by one of these options:
 大多数对属性的修改，都可以用以下选项取代：
 
 - a data property, with the prop used to set its default value
-- 数据属性，用组件属性来设置它的默认值
+数据属性，用组件属性来设置它的默认值
 - a computed property
-- 计算属性
+计算属性
 
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about prop mutations.</p>
-  <p>在升级后运行端对端测试或者直接运行应用，留意有关属性修改的<strong>控制台警告</strong>。</p>
+  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about prop mutations.<br>在升级后运行端对端测试或者直接运行应用，留意有关属性修改的<strong>控制台警告</strong>。</p>
 </div>
 {% endraw %}
 
@@ -405,8 +389,7 @@ On root Vue instances (i.e. instances created with `new Vue({ ... })`), you must
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run your end-to-end test suite, if you have one. The <strong>failed tests</strong> should alert to you to the fact that props passed to root instances are no longer working.</p>
-  <p>如果有的话，运行你的端对端测试。其中的<strong>失败测试</strong>应该会提示你，传递给根实例的属性已经失效了。</p>
+  <p>Run your end-to-end test suite, if you have one. The <strong>failed tests</strong> should alert to you to the fact that props passed to root instances are no longer working.<br>如果有的话，运行你的端对端测试。其中的<strong>失败测试</strong>应该会提示你，传递给根实例的属性已经失效了。</p>
 </div>
 {% endraw %}
 
@@ -426,8 +409,7 @@ For enumerated attributes, in addition to the falsy values above, the string `"f
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run your end-to-end test suite, if you have one. The <strong>failed tests</strong> should alert to you to any parts of your app that may be affected by this change.</p>
-  <p>如果有的话，运行你的端对端测试。其中的<strong>失败测试</strong>应该会提示你，应用中的哪些地方可能受到这个改动影响。</p>
+  <p>Run your end-to-end test suite, if you have one. The <strong>failed tests</strong> should alert to you to any parts of your app that may be affected by this change.<br>如果有的话，运行你的端对端测试。其中的<strong>失败测试</strong>应该会提示你，应用中的哪些地方可能受到这个改动影响。</p>
 </div>
 {% endraw %}
 
@@ -443,8 +425,7 @@ When used on a component, `v-on` now only listens to custom events `$emit`ted by
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run your end-to-end test suite, if you have one. The <strong>failed tests</strong> should alert to you to any parts of your app that may be affected by this change.</p>
-  <p>如果有的话，运行你的端对端测试。其中的<strong>失败测试</strong>应该会提示你，应用中的哪些地方可能受到这个改动影响。</p>
+  <p>Run your end-to-end test suite, if you have one. The <strong>failed tests</strong> should alert to you to any parts of your app that may be affected by this change.<br>如果有的话，运行你的端对端测试。其中的<strong>失败测试</strong>应该会提示你，应用中的哪些地方可能受到这个改动影响。</p>
 </div>
 {% endraw %}
 
@@ -563,8 +544,7 @@ Another advantage of this approach is there will be times when debouncing isn't 
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>debounce</code> attribute.</p>
-  <p>在项目里使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>debounce</code> 属性的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>debounce</code> attribute.<br>在项目里使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>debounce</code> 属性的代码。</p>
 </div>
 {% endraw %}
 
@@ -589,8 +569,7 @@ You would use:
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the these param attributes.</p>
-  <p>在项目里使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这些参数属性的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the these param attributes.<br>在项目里使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含这些参数属性的代码。</p>
 </div>
 {% endraw %}
 
@@ -629,8 +608,7 @@ You should ensure your initial value for `text` is "hello world".
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about inline value attributes with <code>v-model</code>.</p>
-  <p>在升级后，运行你的端对端测试或者直接运行应用，查看<strong>控制台警告</strong>中关于 <code>v-model</code> 的内联 <code>value</code> 属性的信息。</p>
+  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about inline value attributes with <code>v-model</code>.<br>在升级后，运行你的端对端测试或者直接运行应用，查看<strong>控制台警告</strong>中关于 <code>v-model</code> 的内联 <code>value</code> 属性的信息。</p>
 </div>
 {% endraw %}
 
@@ -665,8 +643,7 @@ Instead, you should use an array of __objects__ so that `v-model` can update the
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run your test suite, if you have one. The <strong>failed tests</strong> should alert to you to any parts of your app that may be affected by this change.</p>
-  <p>如果有测试套件，运行它。那些 <strong>失败的测试用例</strong> 应该可以提醒你，应用的哪些部分受到了这个变动的影响。</p>
+  <p>Run your test suite, if you have one. The <strong>failed tests</strong> should alert to you to any parts of your app that may be affected by this change.<br>如果有测试套件，运行它。那些 <strong>失败的测试用例</strong> 应该可以提醒你，应用的哪些部分受到了这个变动的影响。</p>
 </div>
 {% endraw %}
 
@@ -689,8 +666,7 @@ If you really need to override another `!important`, you must use the string syn
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of style bindings with <code>!important</code> in objects.</p>
-  <p>在项目里使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>!important</code> 样式绑定的对象。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of style bindings with <code>!important</code> in objects.<br>在项目里使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>!important</code> 样式绑定的对象。</p>
 </div>
 {% endraw %}
 
@@ -722,8 +698,7 @@ On the other hand, `$refs` are designed primarily for programmatic access in Jav
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>v-el</code> and <code>v-ref</code>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>v-el</code> 和 <code>v-ref</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>v-el</code> and <code>v-ref</code>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>v-el</code> 和 <code>v-ref</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -748,8 +723,7 @@ You can use:
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>v-else</code> with <code>v-show</code>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>v-else</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>v-else</code> with <code>v-show</code>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>v-else</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -762,11 +736,11 @@ Some of the most notable differences include:
 一些最为显著的差异：
 
 - Directives no longer have instances. This means there's no more `this` inside directive hooks. Instead, they receive everything they might need as arguments. If you really must persist state across hooks, you can do so on `el`.
-- 指令不再有实例。这意味着，指令钩子里面不会再有 `this` 出现。现在，钩子需要的一切都只能通过参数接收。如果你确实需要在不同钩子之间维护状态，你可以使用 `el`。
+指令不再有实例。这意味着，指令钩子里面不会再有 `this` 出现。现在，钩子需要的一切都只能通过参数接收。如果你确实需要在不同钩子之间维护状态，你可以使用 `el`。
 - Options such as `acceptStatement`, `deep`, `priority`, etc have all been removed. To replace `twoWay` directives, see [this example](#Two-Way-Filters-replaced).
-- 像 `acceptStatement`, `deep`, `priority` 等等的这些选项全部被移除。要取代 `twoWay` 指令，请参考[这个示例](#Two-Way-Filters-replaced)。
+像 `acceptStatement`, `deep`, `priority` 等等的这些选项全部被移除。要取代 `twoWay` 指令，请参考[这个示例](#Two-Way-Filters-replaced)。
 - Some of the current hooks have different behavior and there are also a couple new hooks.
-- 一些现有钩子的行为已经改变了，而且我们还添加了几个新的钩子。
+一些现有钩子的行为已经改变了，而且我们还添加了几个新的钩子。
 
 Fortunately, since the new directives are much simpler, you can master them more easily. Read the new [Custom Directives guide](custom-directive.html) to learn more.
 幸运的是，新的指令非常简单，你可以轻松地掌握它们。你可以阅读教程的[自定义指令](custom-directive.html)一节来深入学习。
@@ -774,8 +748,7 @@ Fortunately, since the new directives are much simpler, you can master them more
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of defined directives. The helper will flag all of them, as it's likely in most cases that you'll want to refactor to a component.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含预设指令的代码。迁移工具会将它们全部标记出来，因为在大多数情况下你可能需要将它们重构成一个组件</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of defined directives. The helper will flag all of them, as it's likely in most cases that you'll want to refactor to a component.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含预设指令的代码。迁移工具会将它们全部标记出来，因为在大多数情况下你可能需要将它们重构成一个组件</p>
 </div>
 {% endraw %}
 
@@ -801,8 +774,7 @@ to just:
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the `.literal` modifier on a directive.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在指令中使用 `.literal` 修饰符的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the `.literal` modifier on a directive.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在指令中使用 `.literal` 修饰符的代码。</p>
 </div>
 {% endraw %}
 
@@ -816,8 +788,7 @@ Vue 的过渡效果系统已经发生了大幅度的改变，它现在使用 `<t
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>transition</code> attribute.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>transition</code> 属性的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>transition</code> attribute.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>transition</code> 属性的代码。</p>
 </div>
 {% endraw %}
 
@@ -829,8 +800,7 @@ With the new transition system, you can now just [use components for reusable tr
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.transition</code>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.transition</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.transition</code>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.transition</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -842,8 +812,7 @@ If you need to stagger list transitions, you can control timing by setting and a
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>transition</code> attribute. During your update, you can transition (pun very much intended) to the new staggering strategy as well.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>transition</code> 属性的代码。在更新过程中，你也可以选择使用新的错开策略。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>transition</code> attribute. During your update, you can transition (pun very much intended) to the new staggering strategy as well.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>transition</code> 属性的代码。在更新过程中，你也可以选择使用新的错开策略。</p>
 </div>
 {% endraw %}
 
@@ -867,8 +836,7 @@ Vue.config.keyCodes.f1 = 112
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the the old <code>keyCode</code> configuration syntax.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含旧的 <code>keyCode</code> 配置语法的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the the old <code>keyCode</code> configuration syntax.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含旧的 <code>keyCode</code> 配置语法的代码。</p>
 </div>
 {% endraw %}
 
@@ -965,8 +933,7 @@ This pattern can serve as a replacement for `$dispatch` and `$broadcast` in simp
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>$dispatch</code> and <code>$broadcast</code>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>$dispatch</code> 和 <code>$broadcast</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>$dispatch</code> and <code>$broadcast</code>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>$dispatch</code> 和 <code>$broadcast</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -1115,8 +1082,7 @@ _.orderBy(this.users, ['name', 'last_login'], ['asc', 'desc'])
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of filters being used inside directives. If you miss any, you should also see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在指令中使用过滤器的代码。如果有遗漏，你应该会看到 <strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of filters being used inside directives. If you miss any, you should also see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在指令中使用过滤器的代码。如果有遗漏，你应该会看到 <strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1139,8 +1105,7 @@ We surround the arguments with parentheses and delimit the arguments with commas
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the old filter syntax. If you miss any, you should also see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含旧的过滤器语法的代码。如果有遗漏，你应该会看到 <strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the old filter syntax. If you miss any, you should also see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含旧的过滤器语法的代码。如果有遗漏，你应该会看到 <strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1207,8 +1172,7 @@ In many cases though, you'll still run into strange behavior (e.g. `0.035.toFixe
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete text filters. If you miss any, you should also see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含过时文本过滤器的代码。如果有遗漏，你应该会看到 <strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete text filters. If you miss any, you should also see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含过时文本过滤器的代码。如果有遗漏，你应该会看到 <strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1239,9 +1203,9 @@ This increased modularity not only makes it easier to migrate to Vue 2, but also
 这样做提高了代码的模块化，不仅迁移到 Vue 2 变得更加轻松，而且让货币解析和格式化的功能：
 
 - unit tested in isolation from your Vue code
-- 可以从 Vue 代码中分离出来，单独地进行单元测试；
+可以从 Vue 代码中分离出来，单独地进行单元测试；
 - used by other parts of your application, such as to validate the payload to an API endpoint
-- 在应用的其它部分使用，例如校验 API 接口返回的信息。
+在应用的其它部分使用，例如校验 API 接口返回的信息。
 
 Having this validator extracted out, we've also more comfortably built it up into a more robust solution. The state quirks have been eliminated and it's actually impossible for users to enter anything wrong, similar to what the browser's native number input tries to do.
 因为将校验器提取出来，我们构建了一个更为健壮的解决方案。那个关于状态的奇怪问题被解决了，实际上用户不再能输入奇奇怪怪的东西，这点和浏览器的原生数值输入控件类似。
@@ -1255,17 +1219,16 @@ You may notice that:
 你会注意到：
 
 - Every aspect of our input is more explicit, using lifecycle hooks and DOM events in place of the hidden behavior of two-way filters.
-- 输入控件的每一个部分都更为明晰，因为使用了生命周期钩子以及 DOM 事件，取代双向过滤器的隐藏行为；
+输入控件的每一个部分都更为明晰，因为使用了生命周期钩子以及 DOM 事件，取代双向过滤器的隐藏行为；
 - We can now use `v-model` directly on our custom inputs, which is not only more consistent with normal inputs, but also means our component is Vuex-friendly.
-- 我们现在可以在自定义输入控件上直接使用 `v-model`，自定义控件和普通输入控件不仅更加一致，而且我们的部件对 Vuex 更加友好；
+我们现在可以在自定义输入控件上直接使用 `v-model`，自定义控件和普通输入控件不仅更加一致，而且我们的部件对 Vuex 更加友好；
 - Since we're no longer using filter options that require a value to be returned, our currency work could actually be done asynchronously. That means if we had a lot of apps that had to work with currencies, we could easily refactor this logic into a shared microservice.
-- 因为我们不再使用过滤器选项，不需要返回一个值，所以实际上可以异步完成对货币的处理。这意味着如果我们有大量的要处理货币问题的应用，我们可以轻松地将逻辑重构成一个微服务。
+因为我们不再使用过滤器选项，不需要返回一个值，所以实际上可以异步完成对货币的处理。这意味着如果我们有大量的要处理货币问题的应用，我们可以轻松地将逻辑重构成一个微服务。
 
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of filters used in directives like <code>v-model</code>. If you miss any, you should also see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在指令中使用过滤器的代码，例如 <code>v-model</code>。如果有遗漏，你应该会看到 <strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of filters used in directives like <code>v-model</code>. If you miss any, you should also see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在指令中使用过滤器的代码，例如 <code>v-model</code>。如果有遗漏，你应该会看到 <strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1279,8 +1242,7 @@ It is no longer supported to have `<slot>`s with the same name in the same templ
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about duplicate slots <code>v-model</code>.</p>
-  <p>在升级后，运行你的端对端测试或者直接运行应用，查看<strong>控制台警告</strong>中关于重复插槽的信息。</p>
+  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about duplicate slots <code>v-model</code>.<br>在升级后，运行你的端对端测试或者直接运行应用，查看<strong>控制台警告</strong>中关于重复插槽的信息。</p>
 </div>
 {% endraw %}
 
@@ -1292,8 +1254,7 @@ Content inserted via named `<slot>` no longer preserves the `slot` attribute. Us
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find CSS selectors targeting named slots (e.g. <code>[slot="my-slot-name"]</code>).</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在具名插槽上的 CSS 选择器（例如 <code>[slot="my-slot-name"]</code>）。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find CSS selectors targeting named slots (e.g. <code>[slot="my-slot-name"]</code>).<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在具名插槽上的 CSS 选择器（例如 <code>[slot="my-slot-name"]</code>）。</p>
 </div>
 {% endraw %}
 
@@ -1337,8 +1298,7 @@ When used together with `<transition>`, make sure to nest it inside:
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find <code>keep-alive</code> attributes.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>keep-alive</code> 属性的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find <code>keep-alive</code> attributes.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>keep-alive</code> 属性的代码。</p>
 </div>
 {% endraw %}
 
@@ -1378,8 +1338,7 @@ computed: {
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of interpolation used within attributes.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在属性内使用插值的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of interpolation used within attributes.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在属性内使用插值的代码。</p>
 </div>
 {% endraw %}
 
@@ -1391,8 +1350,7 @@ HTML 插值（`{% raw %}{{{ foo }}}{% endraw %}`）已经被移除，你应该�
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find HTML interpolations.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到 HTML 插值的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find HTML interpolations.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到 HTML 插值的代码。</p>
 </div>
 {% endraw %}
 
@@ -1404,8 +1362,7 @@ One time bindings (`{% raw %}{{* foo }}{% endraw %}`) have been replaced by the 
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find one-time bindings.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到一次性绑定的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find one-time bindings.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到一次性绑定的代码。</p>
 </div>
 {% endraw %}
 
@@ -1422,8 +1379,7 @@ If you were previously relying on `vm.$watch` to do something with the DOM after
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run your end-to-end test suite, if you have one. The <strong>failed tests</strong> should alert to you to the fact that a watcher was relying on the old behavior.</p>
-  <p>如果有的话，运行你的端对端测试。其中的<strong>失败测试</strong>应该会提示你，哪一个监听器在依赖旧的行为。</p>
+  <p>Run your end-to-end test suite, if you have one. The <strong>failed tests</strong> should alert to you to the fact that a watcher was relying on the old behavior.<br>如果有的话，运行你的端对端测试。其中的<strong>失败测试</strong>应该会提示你，哪一个监听器在依赖旧的行为。</p>
 </div>
 {% endraw %}
 
@@ -1435,8 +1391,7 @@ If you were previously relying on `vm.$watch` to do something with the DOM after
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete usage.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 `vm.$set` 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete usage.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 `vm.$set` 的代码。</p>
 </div>
 {% endraw %}
 
@@ -1448,8 +1403,7 @@ If you were previously relying on `vm.$watch` to do something with the DOM after
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete usage.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 `vm.$delete` 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete usage.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 `vm.$delete` 的代码。</p>
 </div>
 {% endraw %}
 
@@ -1461,8 +1415,7 @@ Use `Vue.set` instead.
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>.$set</code> on an array. If you miss any, you should see <strong>console errors</strong> from the missing method.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>.$set</code> 的代码。如果有遗漏，你应该能看到遗漏方法的 <strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>.$set</code> on an array. If you miss any, you should see <strong>console errors</strong> from the missing method.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>.$set</code> 的代码。如果有遗漏，你应该能看到遗漏方法的 <strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1494,8 +1447,7 @@ methods: {
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>.$remove</code> on an array. If you miss any, you should see <strong>console errors</strong> from the missing method.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在数组上使用 <code>.$remove</code> 的代码。如果有遗漏，你应该能看到缺失方法的 <strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>.$remove</code> on an array. If you miss any, you should see <strong>console errors</strong> from the missing method.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在数组上使用 <code>.$remove</code> 的代码。如果有遗漏，你应该能看到缺失方法的 <strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1507,8 +1459,7 @@ methods: {
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.set</code> or <code>Vue.delete</code> on a Vue instance. If you miss any, they'll trigger <strong>console warnings</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在 Vue 实例上的 <code>Vue.set</code> 或者 <code>Vue.delete</code>。如果有遗漏，它们会触发<strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.set</code> or <code>Vue.delete</code> on a Vue instance. If you miss any, they'll trigger <strong>console warnings</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到在 Vue 实例上的 <code>Vue.set</code> 或者 <code>Vue.delete</code>。如果有遗漏，它们会触发<strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1520,8 +1471,7 @@ It is now prohibited to replace a component instance's root $data. This prevents
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of overwriting <code>vm.$data</code>. If you miss any, <strong>console warnings</strong> will be emitted.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到重写 <code>vm.$data</code> 的代码。如果有遗漏，它们会触发<strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of overwriting <code>vm.$data</code>. If you miss any, <strong>console warnings</strong> will be emitted.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到重写 <code>vm.$data</code> 的代码。如果有遗漏，它们会触发<strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1533,8 +1483,7 @@ Just retrieve reactive data directly.
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$get</code>. If you miss any, you'll see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$get</code> 的代码。如果有遗漏，你会看到<strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$get</code>. If you miss any, you'll see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$get</code> 的代码。如果有遗漏，你会看到<strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1552,8 +1501,7 @@ myElement.appendChild(vm.$el)
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$appendTo</code>. If you miss any, you'll see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$appendTo</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$appendTo</code>. If you miss any, you'll see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$appendTo</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1569,8 +1517,7 @@ myElement.parentNode.insertBefore(vm.$el, myElement)
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$before</code>. If you miss any, you'll see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$before</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$before</code>. If you miss any, you'll see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$before</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1593,8 +1540,7 @@ myElement.parentNode.appendChild(vm.$el)
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$after</code>. If you miss any, you'll see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$after</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$after</code>. If you miss any, you'll see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$after</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1610,8 +1556,7 @@ vm.$el.remove()
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$remove</code>. If you miss any, you'll see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$remove</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$remove</code>. If you miss any, you'll see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$remove</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1625,8 +1570,7 @@ No real use. If you do happen to rely on this feature somehow and aren't sure ho
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$eval</code>. If you miss any, you'll see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$eval</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$eval</code>. If you miss any, you'll see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$eval</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1638,8 +1582,7 @@ No real use. If you do happen to rely on this feature somehow and aren't sure ho
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$interpolate</code>. If you miss any, you'll see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$interpolate</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$interpolate</code>. If you miss any, you'll see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$interpolate</code> 的代码。如果有遗漏，你应该能看到<strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1651,8 +1594,7 @@ Use the [Vue Devtools](https://github.com/vuejs/vue-devtools) for the optimal de
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$log</code>. If you miss any, you'll see <strong>console errors</strong>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$log</code> 的代码。如果有遗漏，你应该会看到<strong>控制台报错</strong>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>vm.$log</code>. If you miss any, you'll see <strong>console errors</strong>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>vm.$log</code> 的代码。如果有遗漏，你应该会看到<strong>控制台报错</strong>。</p>
 </div>
 {% endraw %}
 
@@ -1689,8 +1631,7 @@ new Vue({
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>replace: false</code>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>replace: false</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>replace: false</code>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>replace: false</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -1704,8 +1645,7 @@ No longer necessary, since warnings come with stack traces by default now.
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.config.debug</code>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.config.debug</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.config.debug</code>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.config.debug</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -1717,8 +1657,7 @@ Async is now required for rendering performance.
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.config.async</code>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.config.async</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.config.async</code>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.config.async</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -1730,8 +1669,7 @@ This has been reworked as a [component-level option](/api/#delimiters). This all
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.config.delimiters</code>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.config.delimiters</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.config.delimiters</code>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.config.delimiters</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -1743,8 +1681,7 @@ This has been reworked as a [component-level option](/api/#delimiters). This all
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.config.unsafeDelimiters</code>. After this, the helper will also find instances of HTML interpolation so that you can replace them with `v-html`.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.config.unsafeDelimiters</code> 的代码。然后，迁移工具还会找到包含 HTML 插值的地方，这样就可以用 `v-html` 来替换。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.config.unsafeDelimiters</code>. After this, the helper will also find instances of HTML interpolation so that you can replace them with `v-html`.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.config.unsafeDelimiters</code> 的代码。然后，迁移工具还会找到包含 HTML 插值的地方，这样就可以用 `v-html` 来替换。</p>
 </div>
 {% endraw %}
 
@@ -1758,8 +1695,7 @@ The el option can no longer be used in `Vue.extend`. It's only valid as an insta
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about the <code>el</code> option with <code>Vue.extend</code>.</p>
-  <p>在升级后，运行你的端对端测试或者直接运行应用，查看<strong>控制台警告</strong>中关于在 <code>Vue.extend</code> 中使用 <code>el</code> 选项的信息。</p>
+  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about the <code>el</code> option with <code>Vue.extend</code>.<br>在升级后，运行你的端对端测试或者直接运行应用，查看<strong>控制台警告</strong>中关于在 <code>Vue.extend</code> 中使用 <code>el</code> 选项的信息。</p>
 </div>
 {% endraw %}
 
@@ -1771,8 +1707,7 @@ Use components instead.
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.elementDirective</code>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.elementDirective</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.elementDirective</code>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>Vue.elementDirective</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -1790,7 +1725,6 @@ A benefit of functional components over partials is that they can be much more d
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.partial</code>.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 `Vue.partial` 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.partial</code>.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 `Vue.partial` 的代码。</p>
 </div>
 {% endraw %}

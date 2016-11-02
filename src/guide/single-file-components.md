@@ -13,13 +13,16 @@ This can work very well for small to medium-sized projects, where JavaScript is 
 这种方式在中小型项目中没有问题，因为在这些项目中 JavaScript 只是用来增强某些视图而已。不过在更复杂的项目中，或者当你的整个前端都是由 JavaScript 驱动时，以下缺点就会变得很明显：
 
 - **Global definitions** force unique names for every component
-- **全局定义**要求组件不能重名；
+**全局定义**要求组件不能重名；
+
 - **String templates** lack syntax highlighting and require ugly slashes for multiline HTML
-- **字符串模版**没有语法高亮，多行 HTML 需要使用丑陋的 `\`；
+**字符串模版**没有语法高亮，多行 HTML 需要使用丑陋的 `\`；
+
 - **No CSS support** means that while HTML and JavaScript are modularized into components, CSS is conspicuously left out
-- **没有 CSS 支持**，也就是说虽然 HTML 和 JavaScript 通过组件模块化了，CSS 却被丢到一边；
+**没有 CSS 支持**，也就是说虽然 HTML 和 JavaScript 通过组件模块化了，CSS 却被丢到一边；
+
 - **No build step** restricts us to HTML and ES5 JavaScript, rather than preprocessors like Pug (formerly Jade) and Babel
-- **没有构建步骤**，这样我们就只能使用 HTML 和 ES5，而没办法用上 Pug（以前的 Jade） 和 Babel 这样的预编译器。
+**没有构建步骤**，这样我们就只能使用 HTML 和 ES5，而没办法用上 Pug（以前的 Jade） 和 Babel 这样的预编译器。
 
 All of these are solved by **single-file components** with a `.vue` extension, made possible with build tools such as Webpack or Browserify.
 通过使用带有 `.vue` 扩展名的**单文件组件**，以及 Webpack 和 Browserify 这样的构建工具，我们可以解决上面的问题。
@@ -33,9 +36,11 @@ Now we get:
 现在我们就拥有了：
 
 - [Complete syntax highlighting](https://github.com/vuejs/awesome-vue#syntax-highlighting)
-- [完整的语法高亮](https://github.com/vuejs/awesome-vue#syntax-highlighting)
+[完整的语法高亮](https://github.com/vuejs/awesome-vue#syntax-highlighting)
+
 - [CommonJS modules](https://webpack.github.io/docs/commonjs.html)
-- [CommonJS 模块](https://webpack.github.io/docs/commonjs.html)
+[CommonJS 模块](https://webpack.github.io/docs/commonjs.html)
+
 - [Component-scoped CSS](https://github.com/vuejs/vue-loader/blob/master/docs/en/features/scoped-css.md)
 - [组件域 CSS](https://github.com/vuejs/vue-loader/blob/master/docs/en/features/scoped-css.md)
 
@@ -57,10 +62,10 @@ With `.vue` components, we're entering the realm of advanced JavaScript applicat
 使用 `.vue` 组件，我们已经进入了高级 JavaScript 应用的领域。这意味着你需要学习使用一些额外的工具：
 
 - **Node Package Manager (NPM)**: Read the [Getting Started guide](https://docs.npmjs.com/getting-started/what-is-npm) through section _10: Uninstalling global packages_.
-- **Node Package Manager (NPM)**: 从头阅读[上手指南](https://docs.npmjs.com/getting-started/what-is-npm) 直到 _10: Uninstalling global packages_；
+**Node Package Manager (NPM)**: 从头阅读[上手指南](https://docs.npmjs.com/getting-started/what-is-npm) 直到 _10: Uninstalling global packages_；
 
 - **Modern JavaScript with ES2015/16**: Read through Babel's [Learn ES2015 guide](https://babeljs.io/docs/learn-es2015/). You don't have to memorize every feature right now, but keep this page as a reference you can come back to.
-- **Modern JavaScript with ES2015/16**: 阅读 Babel 的 [ES2015 教程](https://babeljs.io/docs/learn-es2015/)。你不需要记得每一个特性，但可以留着这个页面供日后参考。
+**Modern JavaScript with ES2015/16**: 阅读 Babel 的 [ES2015 教程](https://babeljs.io/docs/learn-es2015/)。你不需要记得每一个特性，但可以留着这个页面供日后参考。
 
 After you've taken a day to dive into these resources, we recommend checking out the [webpack-simple](https://github.com/vuejs-templates/webpack-simple) template. Follow the instructions and you should have a Vue project with `.vue` components, ES2015 and hot-reloading running in no time!
 在你花上一天钻研这些资源以后，我们推荐你看一下 [webpack-simple](https://github.com/vuejs-templates/webpack-simple) 模版。按照上面的指引，你很快就可以创建一个支持 `.vue` 组件，ES2015 以及热加载的项目！

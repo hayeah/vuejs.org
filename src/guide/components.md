@@ -132,9 +132,9 @@ The custom component `<my-row>` will be hoisted out as invalid content, thus cau
 
 - `<script type="text/x-template">`
 - JavaScript inline template strings
-- 行内 JavaScript 模板
+行内 JavaScript 模板
 - `.vue` components
-- `.vue` 组件
+`.vue` 组件
 
 Therefore, prefer using string templates whenever possible.
 因此，你应该尽可能使用字符串模板。
@@ -401,19 +401,19 @@ There are usually two cases where it's tempting to mutate a prop:
 通常有这两种场景你可能会想要直接改变属性值：
 
 1. The prop is used to only pass in an initial value, the child component simply wants to use it as a local data property afterwards;
-1. 属性只是用来传递初始值，实际上子组件将它作为本地数据属性来使用；
+属性只是用来传递初始值，实际上子组件将它作为本地数据属性来使用；
 
 2. The prop is passed in as a raw value that needs to be transformed.
-2. 属性作为原始值被传递进来，它需要经过变形来进一步使用。
+属性作为原始值被传递进来，它需要经过变形来进一步使用。
 
 The proper answer to these use cases are:
 这些场景的正确解决方式时：
 
 1. Define a local data property that uses the prop's initial value as its initial value;
-1. 定义一个本地数据属性，它的初始值就是属性的初始值；
+定义一个本地数据属性，它的初始值就是属性的初始值；
 
 2. Define a computed property that is computed from the prop's value.
-2. 定义一个用基于属性值计算的计算属性。
+定义一个用基于属性值计算的计算属性。
 
 <p class="tip">Note that objects and arrays in JavaScript are passed by reference, so if the prop is an array or object, mutating the object or array itself inside the child **will** affect parent state.
 要注意，在 JavaScript 中对象和数组时通过引用传递的。如果属性是数组活着对象，在子组件内修改 **会** 影响父组件的状态。</p>
@@ -494,13 +494,12 @@ Every Vue instance implements an [events interface](/api/#Instance-Methods-Event
 Vue 实例实现了 [事件接口](/api/#Instance-Methods-Events)，这意味着它可以：
 
 - Listen to an event using `$on(eventName)`
-- 通过 `$on(eventName)` 监听事件
+通过 `$on(eventName)` 监听事件
 - Trigger an event using `$emit(eventName)`
-- 通过 `$emit(eventName)` 触发事件
+通过 `$emit(eventName)` 触发事件
 
 <p class="tip">Note that Vue's event system is separate from the browser's [EventTarget API](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget). Though they work similarly, `$on` and `$emit` are __not__ aliases for `addEventListener` and `dispatchEvent`.
-要注意，Vue 的事件系统跟浏览器的 [EventTarget API](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) 是两回事，虽然它们的工作方式类似。`$on` 和 `$emit` __并不是__ `addEventListener` 和 `dispatchEvent` 的别名。
-</p>
+要注意，Vue 的事件系统跟浏览器的 [EventTarget API](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) 是两回事，虽然它们的工作方式类似。`$on` 和 `$emit` __并不是__ `addEventListener` 和 `dispatchEvent` 的别名。</p>
 
 In addition, a parent component can listen to the events emitted from a child component using `v-on` directly in the template where the child component is used.
 除此之外，父组件也可以在模版中直接使用 `v-on`，来监听子组件分发的事件。
@@ -619,9 +618,10 @@ So for a component to work with `v-model`, it must:
 因此，要使用 `v-model`，组件必须满足如下条件：
 
 - accept a `value` prop
-- 接收一个 `value` 属性
+接收一个 `value` 属性
+
 - emit an `input` event with the new value
-- 有新的 value 值时分发一个 `input` 事件
+有新的 value 值时分发一个 `input` 事件
 
 Let's see it in action:
 看一下实际应用：
@@ -751,10 +751,10 @@ There are two things to note here:
 注意两点：
 
 1. The `<app>` component does not know what content may be present inside its mount target. It is decided by whatever parent component that is using `<app>`.
-1. `<app>` 组件并不知道它的挂载点会有什么内容，这取决于 `<app>` 的父组件。
+`<app>` 组件并不知道它的挂载点会有什么内容，这取决于 `<app>` 的父组件。
 
 2. The `<app>` component very likely has its own template.
-2. `<app>` 组件很可能有它自己的模板。
+`<app>` 组件很可能有它自己的模板。
 
 To make the composition work, we need a way to interweave the parent "content" and the component's own template. This is a process called **content distribution** (or "transclusion" if you are familiar with Angular). Vue.js implements a content distribution API that is modeled after the current [Web Components spec draft](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md), using the special `<slot>` element to serve as distribution outlets for the original content.
 为了让组件可以组合使用，我们需要一种方式混合父组件的内容和子组件自己的模板。 我们将这个过程称为 **内容分发** （类似 Angular 中的 “transclusion”）。 Vue.js 参照当前的 [Web 组件规范草案](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md)，实现了一个内容分发的 API，使用特殊的 `<slot>` 元素作为原始内容的插槽。
@@ -985,13 +985,13 @@ The API for a Vue component comes in three parts - props, events, and slots:
 Vue 组件的 API 来自于属性，事件和插槽三部分：
 
 - **Props** allow the external environment to pass data into the component
-- 外部环境通过**属性**将数据传递给组件；
+外部环境通过**属性**将数据传递给组件；
 
 - **Events** allow the component to trigger side effects in the external environment
-- 组件通过**事件**对外部环境产生影响；
+组件通过**事件**对外部环境产生影响；
 
 - **Slots** allow the external environment to compose the component with extra content.
-- 外部环境通过**插槽**将外部内容和组件组合在一起。
+外部环境通过**插槽**将外部内容和组件组合在一起。
 
 With the dedicated shorthand syntaxes for `v-bind` and `v-on`, the intents can be clearly and succinctly conveyed in the template:
 使用 `v-bind` 和 `v-on` 的简写语法，在模版中可以更清晰简洁地传达意图：

@@ -38,17 +38,16 @@ module.exports = {
 ### Browserify
 
 - Run your bundling command with `NODE_ENV` set to `"production"`. This tells `vueify` to avoid including hot-reload and development related code.
-- 将 `NODE_ENV` 设成 `"production"`，然后运行打包命令。这会让 `vueify` 不打包热重载和开发相关的代码。
+将 `NODE_ENV` 设成 `"production"`，然后运行打包命令。这会让 `vueify` 不打包热重载和开发相关的代码。
+
 - Apply a global [envify](https://github.com/hughsk/envify) transform to your bundle. This allows the minifier to strip out all the warnings in Vue's source code wrapped in env variable conditional blocks. For example:
-- 用 [envify](https://github.com/hughsk/envify) 对你的打包文件进行全局转换。这会让简化工具检查 Vue 源代码中的环境变量分支块，去除其中的所有警告。比如：
-
-
+用 [envify](https://github.com/hughsk/envify) 对你的打包文件进行全局转换。这会让简化工具检查 Vue 源代码中的环境变量分支块，去除其中的所有警告。比如：
 ``` bash
 NODE_ENV=production browserify -g envify -e main.js | uglifyjs -c -m > build.js
 ```
 
 - To extract styles to a separate css file use a extract-css plugin which is included in vueify.
-- 用包含在 vueify 中的 extract-css 插件，将样式提取到独立的 CSS 文件。
+用包含在 vueify 中的 extract-css 插件，将样式提取到独立的 CSS 文件。
 
 ``` bash
 NODE_ENV=production browserify -g envify -p [ vueify/plugins/extract-css -o build.css ] -e main.js | uglifyjs -c -m > build.js

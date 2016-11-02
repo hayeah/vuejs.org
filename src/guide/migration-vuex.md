@@ -11,9 +11,9 @@ Both Vuex 1.0 and 2.0:
 Vuex 1.0 和 2.0 都：
 
 - fully support both Vue 1.0 and 2.0
-- 完全支持 Vue 1.0 和 2.0
+完全支持 Vue 1.0 和 2.0
 - will be maintained for the forseeable future
-- 在相当一段时间内会一直维护
+在相当一段时间内会一直维护
 
 They have slightly different target users however.
 不过它们的目标用户稍有不同。
@@ -54,8 +54,7 @@ This gives you more complete control over the reactive properties you'd like to 
 {% raw %}
 <div class="upgrade-path">
   <h4>升级路径 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>store.watch</code> with a string as the first argument.</p>
-  <p>在你的项目里使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，查找以字符串作为第一参数的 <code>store.watch</code> 调用。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>store.watch</code> with a string as the first argument.<br>在你的项目里使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，查找以字符串作为第一参数的 <code>store.watch</code> 调用。</p>
 </div>
 {% endraw %}
 
@@ -83,8 +82,7 @@ See example [the plugins docs](https://github.com/vuejs/vuex/blob/1.0/docs/en/pl
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>store.on</code>, <code>store.off</code>, and <code>store.emit</code>.</p>
-  <p>在你的项目里使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，查找用到 <code>store.on</code>，<code>store.off</code> 和 <code>store.emit</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>store.on</code>, <code>store.off</code>, and <code>store.emit</code>.<br>在你的项目里使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，查找用到 <code>store.on</code>，<code>store.off</code> 和 <code>store.emit</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -108,7 +106,6 @@ For more details, see [the plugins docs](https://github.com/vuejs/vuex/blob/1.0/
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>middlewares</code> option on a store.</p>
-  <p>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，查找带有 <code>middlewares</code> 选项的 store 对象。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>middlewares</code> option on a store.<br>在项目中使用<a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，查找带有 <code>middlewares</code> 选项的 store 对象。</p>
 </div>
 {% endraw %}

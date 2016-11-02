@@ -46,8 +46,8 @@ The double mustaches interprets the data as plain text, not HTML. In order to ou
 The contents are inserted as plain HTML - data bindings are ignored. Note that you cannot use `v-html` to compose template partials, because Vue is not a string-based templating engine. Instead, components are preferred as the fundamental unit for UI reuse and composition.
 内容以 HTML 字符串插入——数据绑定将被忽略。注意你不能使用 `v-html` 生成模板片断，因为 Vue 不是基于字符串的模板引擎。相反，组件才是 UI 复用和构成的最基本单元。
 
-<p class="tip">Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). Only use HTML interpolation on trusted content and **never** on user-provided content.</p>
-<p class="tip">在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 [XSS 攻击](https://en.wikipedia.org/wiki/Cross-site_scripting)。记住，只对可信内容使用 HTML 插值，**永不**用于用户提交的内容。</p>
+<p class="tip">Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). Only use HTML interpolation on trusted content and **never** on user-provided content.
+在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 [XSS 攻击](https://en.wikipedia.org/wiki/Cross-site_scripting)。记住，只对可信内容使用 HTML 插值，**永不**用于用户提交的内容。</p>
 
 
 ### 属性 (Attributes)
@@ -94,8 +94,8 @@ These expressions will be evaluated as JavaScript in the data scope of the owner
 {{ if (ok) { return message } }}
 ```
 
-<p class="tip">Template expressions are sandboxed and only have access to a whitelist of globals such as `Math` and `Date`. You should not attempt to access user defined globals in template expressions.</p>
-<p class="tip">模板表达式运行在沙盒中，只能访问白名单中的全局变量，如 `Math` 和 `Date`，不要试图访问用户在模板表达式中定义的全局变量。</p>
+<p class="tip">Template expressions are sandboxed and only have access to a whitelist of globals such as `Math` and `Date`. You should not attempt to access user defined globals in template expressions.
+模板表达式运行在沙盒中，只能访问白名单中的全局变量，如 `Math` 和 `Date`，不要试图访问用户在模板表达式中定义的全局变量。</p>
 
 ### 过滤器 (Filters)
 

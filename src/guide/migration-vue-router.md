@@ -45,8 +45,7 @@ new Vue({
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.start</code> being called.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到调用 <code>router.start</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.start</code> being called.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到调用 <code>router.start</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -86,8 +85,7 @@ The array syntax allows more predictable route matching, since iterating over an
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.map</code> being called.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到调用 <code>router.map</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.map</code> being called.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到调用 <code>router.map</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -137,8 +135,7 @@ router.match = createMatcher(
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.on</code> being called.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到调用 <code>router.on</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.on</code> being called.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到调用 <code>router.on</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -150,8 +147,7 @@ router.match = createMatcher(
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>subRoutes</code> option.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>subRoutes</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>subRoutes</code> option.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>subRoutes</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -179,8 +175,7 @@ to a definition like below in your `routes` configuration:
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.redirect</code> being called.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到调用 <code>router.redirect</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.redirect</code> being called.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到调用 <code>router.redirect</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -216,8 +211,7 @@ alias: ['/manage', '/administer', '/administrate']
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.alias</code> being called.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到调用 <code>router.alias</code> 的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.alias</code> being called.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到调用 <code>router.alias</code> 的代码。</p>
 </div>
 {% endraw %}
 
@@ -258,8 +252,7 @@ if (route.meta.requiresAuth) {
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of arbitrary route properties not scoped under meta.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到不是在 `meta` 下定义的自定义路由属性。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of arbitrary route properties not scoped under meta.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到不是在 `meta` 下定义的自定义路由属性。</p>
 </div>
 {% endraw %}
 
@@ -276,8 +269,7 @@ The syntax has changed slightly, so `/category/*tags` for example, should be upd
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete route syntax.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含过时路由语法的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the obsolete route syntax.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含过时路由语法的代码。</p>
 </div>
 {% endraw %}
 
@@ -304,8 +296,7 @@ Note that `target="_blank"` is not supported on `<router-link>`, so if you need 
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>v-link</code> directive.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>v-link</code> 指令的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>v-link</code> directive.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>v-link</code> 指令的代码。</p>
 </div>
 {% endraw %}
 
@@ -335,8 +326,7 @@ The `<a>` will be the actual link (and will get the correct href), but the activ
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>v-link-active</code> directive.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>v-link-active</code> 指令的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>v-link-active</code> directive.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>v-link-active</code> 指令的代码。</p>
 </div>
 {% endraw %}
 
@@ -350,8 +340,7 @@ For consistency with the [HTML5 History API](https://developer.mozilla.org/en-US
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.go</code> being used where <code>router.push</code> should be used instead.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，将 <code>router.go</code> 修改为 <code>router.push</code>。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>router.go</code> being used where <code>router.push</code> should be used instead.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，将 <code>router.go</code> 修改为 <code>router.push</code>。</p>
 </div>
 {% endraw %}
 
@@ -365,8 +354,7 @@ Hashbangs are no longer required for Google to crawl a URL, so they are no longe
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>hashbang: false</code> option.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>hashbang: false</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>hashbang: false</code> option.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>hashbang: false</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -393,8 +381,7 @@ var router = new VueRouter({
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>history: true</code> option.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>history: true</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>history: true</code> option.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>history: true</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -421,8 +408,7 @@ var router = new VueRouter({
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>abstract: true</code> option.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>abstract: true</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>abstract: true</code> option.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>abstract: true</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -449,8 +435,7 @@ scrollBehavior: function (to, from, savedPosition) {
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>saveScrollPosition: true</code> option.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>saveScrollPosition: true</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>saveScrollPosition: true</code> option.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>saveScrollPosition: true</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -462,8 +447,7 @@ Renamed to `base` for consistency with [the HTML `<base>` element](https://devel
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>root</code> option.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>root</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>root</code> option.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>root</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -475,8 +459,7 @@ This option is no longer necessary now that Vue's transition system has explicit
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>transitionOnLoad: true</code> option.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>transitionOnLoad: true</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>transitionOnLoad: true</code> option.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>transitionOnLoad: true</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -488,8 +471,7 @@ Removed due to hooks simplification. If you really must suppress transition erro
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>suppressTransitionError: true</code> option.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>suppressTransitionError: true</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>suppressTransitionError: true</code> option.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>suppressTransitionError: true</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -503,8 +485,7 @@ Use [`beforeRouteEnter`](http://router.vuejs.org/en/advanced/navigation-guards.h
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>beforeRouteEnter</code> hook.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>beforeRouteEnter</code> 钩子的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>beforeRouteEnter</code> hook.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>beforeRouteEnter</code> 钩子的代码。</p>
 </div>
 {% endraw %}
 
@@ -516,8 +497,7 @@ Use [`beforeEnter`](http://router.vuejs.org/en/advanced/navigation-guards.html#p
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>canActivate</code> hook.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>canActivate</code> 钩子的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>canActivate</code> hook.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>canActivate</code> 钩子的代码。</p>
 </div>
 {% endraw %}
 
@@ -529,8 +509,7 @@ Use the component's [`beforeDestroy`](/api/#beforeDestroy) or [`destroyed`](/api
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>deactivate</code> hook.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>deactivate</code> 钩子的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>deactivate</code> hook.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>deactivate</code> 钩子的代码。</p>
 </div>
 {% endraw %}
 
@@ -542,8 +521,7 @@ Use [`beforeRouteLeave`](http://router.vuejs.org/en/advanced/navigation-guards.h
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>canDeactivate</code> hook.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>canDeactivate</code> 钩子的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>canDeactivate</code> hook.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>canDeactivate</code> 钩子的代码。</p>
 </div>
 {% endraw %}
 
@@ -555,8 +533,7 @@ There's no longer a use case for this in the new Vue Router.
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>canReuse: false</code> option.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>canReuse: false</code> 选项的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>canReuse: false</code> option.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>canReuse: false</code> 选项的代码。</p>
 </div>
 {% endraw %}
 
@@ -579,8 +556,7 @@ methods: {
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>data</code> hook.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>data</code> 钩子的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>data</code> hook.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>data</code> 钩子的代码。</p>
 </div>
 {% endraw %}
 
@@ -623,7 +599,6 @@ methods: {
 {% raw %}
 <div class="upgrade-path">
   <h4>升级方法 (Upgrade Path)</h4>
-  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>$loadingRouteData</code> meta property.</p>
-  <p>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>$loadingRouteData</code> 元属性的代码。</p>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the <code>$loadingRouteData</code> meta property.<br>在项目中运行 <a href="https://github.com/vuejs/vue-migration-helper">迁移工具</a>，找到包含 <code>$loadingRouteData</code> 元属性的代码。</p>
 </div>
 {% endraw %}

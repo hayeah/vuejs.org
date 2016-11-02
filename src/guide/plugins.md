@@ -10,17 +10,15 @@ Plugins usually add global-level functionality to Vue. There is no strictly defi
 插件通常会为 Vue 添加全局功能。插件的范围没有严格的限制——通常是下面几种：
 
 1. Add some global methods or properties. e.g. [vue-element](https://github.com/vuejs/vue-element)
-1. 添加全局方法或属性，如 vue-element(https://github.com/vuejs/vue-element)
+添加全局方法或属性，如 [vue-element](https://github.com/vuejs/vue-element)
 2. Add one or more global assets: directives/filters/transitions etc. e.g. [vue-touch](https://github.com/vuejs/vue-touch)
-2. 添加全局资源：指令/过滤器/过渡等，如 vue-touch(https://github.com/vuejs/vue-touch)
+添加全局资源：指令/过滤器/过渡等，如 [vue-touch](https://github.com/vuejs/vue-touch)
 3. Add some component options by global mixin. e.g. [vuex](https://github.com/vuejs/vuex)
-3. 添加组件对象，通过全局继承，如 vuex (https://github.com/vuejs/vuex)
+添加组件对象，通过全局继承，如 [vuex](https://github.com/vuejs/vuex)
 4. Add some Vue instance methods by attaching them to Vue.prototype.
-4. 添加 Vue 实例方法，通过把它们添加到 Vue.prototype 上实现。
-
-
+添加 Vue 实例方法，通过把它们添加到 Vue.prototype 上实现。
 5. A library that provides an API of its own, while at the same time injecting some combination of the above. e.g. [vue-router](https://github.com/vuejs/vue-router)
-5. 一个库，提供自己的 API，同时提供上面提到的一个或多个功能，如 vue-router
+一个库，提供自己的 API，同时提供上面提到的一个或多个功能，如 [vue-router](https://github.com/vuejs/vue-router)
 
 A Vue.js plugin should expose an `install` method. The method will be called with the `Vue` constructor as the first argument, along with possible options:
 Vue.js 的插件应当有一个公开方法 install 。这个方法的第一个参数是 Vue 构造器，第二个参数是一个可选的选项对象：
@@ -99,7 +97,7 @@ Vue.use(VueRouter)
 ```
 
 Checkout [awesome-vue](https://github.com/vuejs/awesome-vue#libraries--plugins) for a huge collection of community-contributed plugins and libraries.
-访问 awesome-vue (https://github.com/vuejs/awesome-vue#libraries--plugins) 获得大量社区贡献的插件和资料。
+访问 [awesome-vue](https://github.com/vuejs/awesome-vue#libraries--plugins) 获得大量社区贡献的插件和资料。
 
 
 

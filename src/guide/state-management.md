@@ -79,8 +79,7 @@ var vmB = new Vue({
 ![State Management](/images/state.png)
 
 <p class="tip">It's important to note that you should never replace the original state object in your actions - the components and the store need to share reference to the same object in order for mutations to be observed.
-你永远都不应该在动作中替换掉原来的状态对象 —— 组件和 store 必需共享同一个对象的引用，这样 Vue 才能观察到数据的变异。这一点非常重要。
-</p>
+你永远都不应该在动作中替换掉原来的状态对象 —— 组件和 store 必需共享同一个对象的引用，这样 Vue 才能观察到数据的变异。这一点非常重要。</p>
 
 As we continue developing the convention where components are never allowed to directly mutate state that belongs to a store, but should instead dispatch events that notify the store to perform actions, we eventually arrive at the [Flux](https://facebook.github.io/flux/) architecture. The benefit of this convention is we can record all state mutations happening to the store and implement advanced debugging helpers such as mutation logs, snapshots, and history re-rolls / time travel.
 当我们继续完善这个约定，也就是组件永远不能直接改变属于 store 的状态，而应该通过分发事件来通知 store 执行动作，我们最终得出了和 [Flux](https://facebook.github.io/flux/) 一样的架构。这个约定的优点是，我们可以记录所有的状态变化，实现更加高级的调试辅助功能，比如变化日志，状态快照，历史回滚／时光旅行。

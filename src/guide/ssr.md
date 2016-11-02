@@ -70,17 +70,17 @@ Not so scary, right? Of course, this example is much simpler than most applicati
 看起来不难吧？当然，这个示例比大部分应用都简单。因为我们还不用担心一下问题：
 
 - A Web Server
-- Web 服务器
+Web 服务器
 - Response Streaming
-- 流式响应
+流式响应
 - Component Caching
-- 组件缓存
+组件缓存
 - A Build Process
-- 构建过程
+构建过程
 - Routing
-- 路由
+路由
 - Vuex State Hydration
-- Vuex 状态重现
+Vuex 状态重现
 
 In the rest of this guide, we'll walk through how to work with some of these features. Once you understand the basics, we'll then direct you to more detailed documentation and advanced examples to help you handle edge cases.
 在这个教程剩下的部分，我们会引导你解决其中一部分问题。在你掌握了基础过后，我们会将你指向更详细的文档以及进阶实例，它们可以帮助你处理边缘场景。
@@ -112,9 +112,9 @@ To adapt this for SSR, there are a few modifications we'll have to make, so that
 为了适应服务器端渲染，我们需要进行一些修改，让代码可以在浏览器和 Node.js 中运行：
 
 - When in the browser, add an instance of our app to the global context (i.e. `window`), so that we can mount it.
-- 在浏览器中，将应用实例添加到全局上下文（`window`），这样我们可以挂载它；
+在浏览器中，将应用实例添加到全局上下文（`window`），这样我们可以挂载它；
 - When in node, export a factory function so that we can create a fresh instance of the app for every request.
-- 在 Node.js 中，导出一个工厂函数，这样可以为每个请求创建一个新的应用实例。
+在 Node.js 中，导出一个工厂函数，这样可以为每个请求创建一个新的应用实例。
 
 Accomplishing this requires a little boilerplate:
 实现这个需要添加一点模版代码：
@@ -257,7 +257,7 @@ server.listen(5000, function (error) {
 ```
 
 And that's it! Here's [the full application](https://github.com/chrisvfritz/vue-ssr-demo-simple), in case you'd like to clone it and experiment further. Once you have it running locally, you can confirm that server-side rendering really is working by right-clickig on the page and selecting `View Page Source` (or similar). You should see this in the body:
-[??]这样就完成了。完整的应用代码[在这里](https://github.com/chrisvfritz/vue-ssr-demo-simple)，克隆下来深度实验。当代码在本地运行起来后，你可以右键点击页面，选择 `显示网页源代码` （或类似操作），以此来确认服务器端渲染真的在运行。你应该能在 body 标签中看到：
+这样就完成了。完整的应用代码[在这里](https://github.com/chrisvfritz/vue-ssr-demo-simple)，你可以克隆下来进一步试验。当代码在本地运行起来后，你可以右键点击页面，选择 `显示网页源代码` （或类似操作），以此来确认服务器端渲染真的在运行。你应该能在 body 标签中看到：
 
 ``` html
 <div id="app" server-rendered="true">You have been here for 0 seconds&period;</div>
@@ -331,15 +331,15 @@ As you can see, it's not much more complicated than the previous version, even i
 如你所见，这段代码不会比之前的复杂太多，虽然流这个概念对你来说可能比较陌生。在这段代码里我们只是：
 
 1. Set up the stream
-1. 建立流；
+建立流；
 2. Write the HTML that comes before the app to the response
-2. 将应用代码之前的 HTML 写入响应；
+将应用代码之前的 HTML 写入响应；
 3. Write the app HTML to the response as it becomes available
-3. 每当应用代码渲染好，就写入响应
+每当应用代码渲染好，就写入响应
 4. Write the HTML that comes after the app to the response and end it
-4. 将应用代码之后的 HTML 写入响应，并且结束响应
+将应用代码之后的 HTML 写入响应，并且结束响应
 5. Handle any errors
-5. 处理出现的错误
+处理出现的错误
 
 ## 组件缓存 (Component Caching)
 
@@ -373,9 +373,9 @@ Then for components you want to cache, you must provide them with:
 然后对于你想缓存的组件，你需要分别给它们：
 
 - a unique `name`
-- 一个唯一的 `name`
+一个唯一的 `name`
 - a `serverCacheKey` function, returning a unique key scoped to the component
-- 一个 `serverCacheKey` 函数，这个函数返回一个组件域内唯一的键
+一个 `serverCacheKey` 函数，这个函数返回一个组件域内唯一的键
 
 For example:
 例如：
@@ -397,11 +397,11 @@ Any "pure" component can be safely cached - that is, any component that is guara
 任何“纯”组件 —— 相同属性保证渲染出相同 HTML 的组件 —— 都可以放心缓存。一些常见的例子包括：
 
 - Static components (i.e. they always generate the same HTML, so the `serverCacheKey` function can just return `true`)
-- 静态组件 (它们总是生成同样的 HTML，所以 `serverCacheKey` 函数只要返回 `true` )；
+静态组件 (它们总是生成同样的 HTML，所以 `serverCacheKey` 函数只要返回 `true` )；
 - List item components (when part of large lists, caching these can significantly improve performance)
-- 列表项组件（如果它们存在于很大的列表中，对它们进行缓存可以大大提高性能）；
+列表项组件（如果它们存在于很大的列表中，对它们进行缓存可以大大提高性能）；
 - Generic UI components (e.g. buttons, alerts, etc - at least those that accept content through props rather than slots/children)
-- 通用 UI 组件 (例如按钮，提示框等等 —— 至少是那些只通过属性接受内容，而不接受插槽/子元素的组件)。
+通用 UI 组件 (例如按钮，提示框等等 —— 至少是那些只通过属性接受内容，而不接受插槽/子元素的组件)。
 
 ## 构建过程，路由，和 Vuex 状态重现 (Build Process, Routing, and Vuex State Hydration)
 
@@ -412,6 +412,6 @@ To truly master server-side rendering in complex applications, we recommend a de
 要真正掌握复杂应用中的服务器端渲染，你应该深入学习以下资源：
 
 - [vue-server-renderer docs](https://www.npmjs.com/package/vue-server-renderer#api): more details on topics covered here, as well as documentation of more advanced topics, such as [preventing cross-request contamination](https://www.npmjs.com/package/vue-server-renderer#why-use-bundlerenderer) and [adding a separate server build](https://www.npmjs.com/package/vue-server-renderer#creating-the-server-bundle)
-- [vue-server-renderer 文档](https://www.npmjs.com/package/vue-server-renderer#api)：这里有相关主题的更多细节，以及进阶主题的文档，例如 [防止跨站请求攻击](https://www.npmjs.com/package/vue-server-renderer#why-use-bundlerenderer) 和 [添加独立的服务器构建版本](https://www.npmjs.com/package/vue-server-renderer#creating-the-server-bundle)；
+[vue-server-renderer 文档](https://www.npmjs.com/package/vue-server-renderer#api)：这里有相关主题的更多细节，以及进阶主题的文档，例如 [防止跨站请求攻击](https://www.npmjs.com/package/vue-server-renderer#why-use-bundlerenderer) 和 [添加独立的服务器构建版本](https://www.npmjs.com/package/vue-server-renderer#creating-the-server-bundle)；
 - [vue-hackernews-2.0](https://github.com/vuejs/vue-hackernews-2.0): the definitive example of integrating all major Vue libraries and concepts in a single application
-- [vue-hackernews-2.0](https://github.com/vuejs/vue-hackernews-2.0)：在一个应用中整合所有主要的 Vue 库和概念的权威示例。
+[vue-hackernews-2.0](https://github.com/vuejs/vue-hackernews-2.0)：在一个应用中整合所有主要的 Vue 库和概念的权威示例。

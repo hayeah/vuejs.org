@@ -14,18 +14,18 @@ Now we'll answer both what the community can do for and what you can do for the 
 ### 得到帮助 (Get Support)
 
 - [Forum](http://forum.vuejs.org/): THE best place to ask questions and get answers about Vue and its ecosystem.
-- [论坛](http://forum.vuejs.org/): 对 Vue 及它相关生态系统提问和获得解答的好地方。
+[论坛](http://forum.vuejs.org/): 对 Vue 及它相关生态系统提问和获得解答的好地方。
 - [Gitter Channel](https://gitter.im/vuejs/vue): A place for devs to meet and chat. You can ask questions here too, but the forum is the better platform, since the discussions are threaded.
-- [Gitter Channel](https://gitter.im/vuejs/vue): 开发者聊天室。你也可以在这里提问，不过最好是在论坛的讨论区讨论。
+[Gitter Channel](https://gitter.im/vuejs/vue): 开发者聊天室。你也可以在这里提问，不过最好是在论坛的讨论区讨论。
 - [Github](https://github.com/vuejs): If you have a bug to report or feature to request, that's what the GitHub issues are for. We also welcome pull requests!
-- [Github](https://github.com/vuejs): 如果你有问题或报告，欢迎提交，感谢你的贡献！
+[Github](https://github.com/vuejs): 如果你有问题或报告，欢迎提交，感谢你的贡献！
 
 ### 探索生态圈 (Explore the Ecosystem)
 
 - [The Awesome Vue Page](https://github.com/vuejs/awesome-vue): See what other awesome resources have been published by other awesome people.
-- [The Awesome Vue Page](https://github.com/vuejs/awesome-vue): 看看其他牛人发布的好资源。
+[The Awesome Vue Page](https://github.com/vuejs/awesome-vue): 看看其他牛人发布的好资源。
 - [The "Show and Tell" Subforum](http://forum.vuejs.org/c/show-and-tell): Another great place to check out what others have built with and for the growing Vue ecosystem.
-- [The "Show and Tell" 子论坛](http://forum.vuejs.org/c/show-and-tell): 另一个看看别人的贡献的好地方。
+[The "Show and Tell" 子论坛](http://forum.vuejs.org/c/show-and-tell): 另一个看看别人的贡献的好地方。
 
 ## 你可以做的 (What You Can Do)
 
@@ -38,11 +38,11 @@ After that, you'll be ready to contribute to Vue's core repositories:
 在这之后，你已经准备好了给 Vue 的核心仓库贡献代码：
 
 - [vue](https://github.com/vuejs/vue): the core library
-- [vue](https://github.com/vuejs/vue): 核心库
+[vue](https://github.com/vuejs/vue): 核心库
 - [vuex](https://github.com/vuejs/vuex): Flux-inspired state management
-- [vuex](https://github.com/vuejs/vuex): 类 Flux 的状态管理框架
+[vuex](https://github.com/vuejs/vuex): 类 Flux 的状态管理框架
 - [vue-router](https://github.com/vuejs/vue-router): a routing system for SPAs
-- [vue-router](https://github.com/vuejs/vue-router): 单页面应用的路由系统
+[vue-router](https://github.com/vuejs/vue-router): 单页面应用的路由系统
 
 ...as well as many smaller official [companion libraries](https://github.com/vuejs).
 ...一些其他小型库 [仓库指南](https://github.com/vuejs).
@@ -53,9 +53,9 @@ Apart from answering questions and sharing resources in the forum and Gitter cha
 除了在社区和开发者聊天室提问和分享资源，这里还有一些其他分享以及扩展你的知识的途径：
 
 - **Develop learning materials.** It's often said that the best way to learn is to teach. If there's something interesting you're doing with Vue, strengthen your expertise by writing a blog post, developing a workshop, or even just publishing a gist that you share on social media.
-- **提高学习方法.** 常言道：最好的学习方法就是教学。如果你在用 Vue 做一些有趣的事情，你可以写博客，开办工作坊，或者通过社交平台分享你的感悟，以此来加深你对 Vue 的理解。
+**提高学习方法.** 常言道：最好的学习方法就是教学。如果你在用 Vue 做一些有趣的事情，你可以写博客，开办工作坊，或者通过社交平台分享你的感悟，以此来加深你对 Vue 的理解。
 - **Watch a repo you care about.** This will send you notifications whenever there's activity in that repository, giving you insider knowledge about ongoing discussions and upcoming features. It's a fantastic way to build expertise so that you're eventually able to help address issues and pull requests.
-- **关注一个你感兴趣的仓库.** 这将会在每当仓库有活动的时候，及时的推送给你消息，并且让你了解正在进行的讨论和即将到来的功能。这个方法会让你很好地加深对 Vue 的理解，让你最终能够处理 issue 和提出 pull request
+**关注一个你感兴趣的仓库.** 这将会在每当仓库有活动的时候，及时的推送给你消息，并且让你了解正在进行的讨论和即将到来的功能。这个方法会让你很好地加深对 Vue 的理解，让你最终能够处理 issue 和提出 pull request
 
 ### 翻译文档 (Translate Docs)
 

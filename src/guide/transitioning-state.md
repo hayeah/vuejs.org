@@ -8,13 +8,16 @@ Vue's transition system offers many simple ways to animate entering, leaving, an
 Vue 的过渡效果系统提供了非常多简单的方式来设置进入、离开以及列表的动效。如果我想给数据本身添加过渡效果呢？例如：
 
 - numbers and calculations
-- 数值和运算
+数值和运算
+
 - colors displayed
-- 颜色的显示
+颜色的显示
+
 - the positions of SVG nodes
-- SVG 节点的位置
+SVG 节点的位置
+
 - the sizes and other properties of elements
-- 元素的大小和其它属性
+元素的大小和其它属性
 
 All of these are either already stored as raw numbers or can be converted into numbers. Once we do that, we can animate these state changes using 3rd-party libraries to tween state, in combination with Vue's reactivity and component systems.
 上面提到的数据都是以原始数值或者被转换成数值来储存的。所以，我们可以结合 Vue 的响应式和组件系统，用第三方库来给状态改变添加动效。
