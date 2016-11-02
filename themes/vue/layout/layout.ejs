@@ -94,9 +94,11 @@
 
             var paragraphs = document.querySelectorAll('.content p, .content li');
 
+            // parse the file and manipulate DOM
             var process = function(ele) {
+                if (!ele.querySelector(':scope > br')) return;
+
                 var arr = ele.innerHTML.split('<br>');
-                if (arr.length!==2) return;
                 ele.title = arr[0].replace(/(<([^>]+)>)/ig,"");
                 ele.innerHTML = arr[1];
             };
