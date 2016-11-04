@@ -28,11 +28,11 @@ React 和 Vue 有很多相似点。它们都：
 Being so similar in scope, we've put more time into fine-tuning this comparison than any other. We want to ensure not only technical accuracy, but also balance. We point out where React outshines Vue, for example in the richness of their ecosystem and abundance of their custom renderers.
 因为 React 和 Vue 如此相似，所以我们花了最多的时间对它们进行细致的比较。我们不只想保证技术上的准确性，还想兼顾两者的优点。我们会指出 React 胜过 Vue 的地方，比如繁荣的生态系统，以及丰富的自定义渲染器。
 
+With that said, it's inevitable that the comparison would appear biased towards Vue to some React users, as many of the subjects explored are to some extent subjective. We acknowledge the existence of varying technical taste, and this comparison primarily aims to outline the reasons why Vue could potentially be a better fit if your preferences happen to coincide with ours.
+虽然这样，但对于一些 React 用户来说，本文会不可避免地看起来更偏向 Vue，因为很多对比的方面从某种程度上来说是比较主观的。我们认为不同的技术品味的确存在，而本文主要是面向像我们一样更喜欢 Vue 的用户，我们会列出一些理由，说明为什么 Vue 有可能是一个更好的选择。
+
 The React community [has been instrumental](https://github.com/vuejs/vuejs.org/issues/364) in helping us achieve this balance, with special thanks to Dan Abramov from the React team. He was extremely generous with his time and considerable expertise to help us refine this document until we were [both happy](https://github.com/vuejs/vuejs.org/issues/364#issuecomment-244575740) with the final result.
 React 社区[积极帮助](https://github.com/vuejs/vuejs.org/issues/364)我们来达到这种平衡，特别是 React 团队的 Dan Abramov。他非常慷慨地花费了大量时间精力来帮助我们完善这篇文档，直到两个社区对于最终结果都[非常满意](https://github.com/vuejs/vuejs.org/issues/364#issuecomment-244575740)。
-
-With that said, we hope you can feel confident in the fairness of the review below as we explore the differences between these two libraries.
-综上所述，你可以对本文的公正性感到放心。接下来，我们会讨论 React 和 Vue 之间的差异。
 
 ### 性能 (Performance Profiles)
 
@@ -46,14 +46,11 @@ When rendering UI, manipulating the DOM is typically the most expensive operatio
 
 1. Minimize the number of necessary DOM mutations. Both React and Vue use virtual DOM abstractions to accomplish this and both implementations work about equally well.
 降低必要的 DOM 更新次数。React 和 Vue 都使用了虚拟 DOM 来做到这一点，在这个层面两者做得一样好。
-2. Add as little overhead as possible on top of those DOM manipulations. This is an area where Vue and React differ.
-尽可能降低 DOM 操作的额外开销。这是 Vue 和 React 有所差异的地方。
+2. Add as little overhead (pure JavaScript computations) as possible on top of those DOM manipulations. This is an area where Vue and React differ.
+尽可能降低 DOM 操作的额外开销（纯 JavaScript 的计算）。这是 Vue 和 React 有所差异的地方。
 
-In React, let's say the additional overhead of rendering an element is 1 and the overhead of an average component is 2. In Vue, the overhead of an element would be more like 0.1, but the overhead of an average component would be 4, due to the setup required for our reactivity system.
-假设在 React 中，渲染一个元素的额外开销是 1， 而渲染一个组件的平均 额外开销是 2。那么在 Vue 中，渲染一个元素的额外开销大概是 0.1，而渲染一个组件的平均额外开销是 4，这是因为 Vue 的响应式系统需要做一些配置工作。
-
-This means that in typical applications, where there are many more elements than components being rendered, Vue will outperform React by a significant margin. In extreme cases however, such as using 1 normal component to render each element, Vue will usually be slower. This isn't the end of the story though.
-这意味着在典型的，渲染元素多于组件的应用中，Vue 的性能会远远好于 React。不过在极端情况下，比如只用一个普通组件来渲染每一个元素，Vue 通常会比 React 慢。让我们继续往下看。
+The JavaScript overhead is directly related to the mechanisms of computing the necessary DOM operations. Both Vue and React utilizes Virtual DOM to achieve that, but Vue's Virtual DOM implementation (a fork of [snabbdom](https://github.com/snabbdom/snabbdom)) is much lighter-weight and thus introduces less overhead than React's.
+JavaScript 的额外开销跟计算必要的 DOM 操作的机制是直接相关的。Vue 和 React 都采用了虚拟 DOM，不过 Vue 的虚拟 DOM 实现（复制了 [snabbdom](https://github.com/snabbdom/snabbdom)）要更加轻量，因此 Vue 的额外开销要比 React 少。
 
 Both Vue and React also offer functional components, which are stateless and instanceless - and therefore, require less overhead. When these are used in performance-critical situations, Vue is once again faster. To demonstrate this, we built a simple [benchmark project](https://github.com/chrisvfritz/vue-render-performance-comparisons) that just renders 10,000 list items 100 times. We encourage you to try it yourself, as the results will vary depending on the hardware and browser used - and actually, they'll vary even between runs due to the nature of JavaScript engines.
 Vue 和 React 都支持函数式组件，这些组件是无状态而且不需要实例化的，因此额外开销会更小。在追求性能的场合使用函数式组件时，Vue 再一次胜出。我们构建了一个简单的[测试基准项目](https://github.com/chrisvfritz/vue-render-performance-comparisons)来展示这一点，这个项目会将 10000 个列表项渲染 100 次。我们鼓励你尝试在自己的机器上运行这个项目，因为它的结果会因硬件和浏览器的差异有所不同。实际上，哪怕在同样的机器和浏览器上运行，每次运行的结果也会有所不同，这个差异是 JavaScript 引擎本身所导致的。
@@ -103,27 +100,27 @@ If you're feeling lazy though, below are the numbers from one run in Chrome 52 o
 
 #### 更新性能 (Update Performance)
 
-In React, you need to implement `shouldComponentUpdate` everywhere and use immutable data structures to achieve fully optimized re-renders. In Vue, a component's dependencies are automatically tracked so that it only updates when one of those dependencies change. The only further optimization that sometimes can be helpful in Vue is adding a `key` attribute to items in long lists.
-在 React 里，要彻底优化视图更新，你需要在各种地方实现 `shouldComponentUpdate`，并且使用不可变数据结构。而 Vue 会自动跟踪组件依赖，因此只有在依赖变化时，才会更新视图。Vue 中唯一可能进一步优化的地方，就是给长列表的项添加 `key` 属性。
+In React, when a component's state changes, it triggers the re-render of the entire component sub-tree, starting at that component as root. To avoid unnecessary re-renders of child components, you need to implement `shouldComponentUpdate` everywhere and use immutable data structures. In Vue, a component's dependencies are automatically tracked during its render, so the system knows precisely which components actually need to re-render.
+在 React 中，当一个组件的状态改变时，它会触发整个组件的子树重新渲染。要避免子组件的不必要的渲染，你需要在各处实现 `shouldComponentUpdate`，并且使用不可变数据结构。而 Vue 会自动追踪组件的依赖，所以系统会准确地知道哪些部件需要重新渲染。
 
 This means updates in unoptimized Vue will be much faster than unoptimized React and actually, due to the improved render performance in Vue, even fully-optimized React will usually be slower than Vue is out-of-the-box.
 这意味着，在未优化的情况下，Vue 的视图更新比 React 更快。实际上，因为 Vue 本身已经对渲染性能进行了优化，所以开箱即用的 Vue 代码也比彻底优化过的 React 代码要更快。
 
 #### 开发环境中的性能 (In Development)
 
-Obviously, performance in production is the most important and that's what we've been discussing so far. Performance in development still matters though. The good news is that both Vue and React remain fast enough in development for most normal applications.
-显然，在生产环境中，性能是最重要的考量，这也是为什么我们一直在聊性能的原因。而在开发环境中，性能也同样重要。好消息是，对于大多数普通应用，Vue 和 React 在开发环境中的性能都足够好。
+While performance in production is the more important metrics as it is directly associated with end-user experience, performance in development still matters because it is associated with the developer experience.
+虽然在生产环境中，性能是最重要的指标，因为它和用户体验直接相关。但是开发环境中的性能也同样重要，因为它会影响开发体验。
 
-However, if you're prototyping any high-performance data visualizations or animations, you may find it useful to know that in scenarios where Vue can't handle more than 10 frames per second in development, we've seen React slow down to about 1 frame per second.
-不过，如果你正在构建对性能要求很高的数据可视化或者动画原型，在某些情况下，Vue 最多只能达到 10 帧/秒， 而 React 甚至只有 1 帧/秒。
+Both Vue and React remain fast enough in development for most normal applications. However, when prototyping high frame-rate data visualizations or animations, we've seen cases of Vue handling 10 frames per second in development while React dropping to about 1 frame per second.
+对于大多数普通应用，Vue 和 React 在开发环境中的性能都足够好。不过，如果要构建高帧率的数据可视化或者动画效果原型，，有时 Vue 最多只能达到 10 帧/秒， 而 React 甚至只有 1 帧/秒。
 
-This is due to React's many heavy invariant checks, which help it to provide many excellent warnings and error messages. We agree that these are important in Vue, but have tried to keep a closer eye on performance while we implement these checks.
-这是因为 React 做了大量的条件检查，这让 React 能提供大量有用的警告和错误信息。虽然我们认为这对 Vue 也同样重要，但我们在实现检查机制时，把更多的注意力放在了性能上。
+This is due to React's many heavy invariant checks in development mode, which help it to provide many excellent warnings and error messages. We agree that these are also important in Vue, but have tried to keep a closer eye on performance while we implement these checks.
+这是因为在开发模式中，React 做了大量的条件检查，这让 React 能提供大量有用的警告和错误信息。虽然我们认为这对 Vue 也同样重要，但我们在实现检查机制时，把更多的注意力放在了性能上。
 
 ### HTML 和 CSS (HTML & CSS)
 
-In React, everything is Just JavaScript, which sounds very simple and elegant - until you dig deeper. The unfortunate reality is that reinventing HTML and CSS within JavaScript can cause a lot of pain. In Vue, we instead embrace web technologies and build on top of them. To show you what that means, we'll dive into some examples.
-在 React 中，一切都只是 JavaScript，听起来简单而优雅，不过那只是在你深入了解它之前。现实是，用 JavaScript 去重构 HTML 和 CSS 会非常蛋疼。相对地，Vue 选择了拥抱现有的 web 技术，在它们的基础上去构建。我们会用一些例子来解释这是什么意思。
+In React, everything is Just JavaScript, which sounds very simple and elegant - until you dig deeper. The unfortunate reality is that reinventing HTML and CSS within JavaScript, while solving some issues of the traditional model, can also cause pain of its own. In Vue, we instead embrace web technologies and build on top of them. To show you what that means, we'll dive into some examples.
+在 React 中，一切都只是 JavaScript，听起来简单而优雅，不过那只是在你深入了解它之前。现实是，用 JavaScript 去重构 HTML 和 CSS，虽然解决了传统模型的一些问题，但也带来了一些缺点。相对地，Vue 选择了拥抱现有的 web 技术，在它们的基础上去构建。我们会用一些例子来解释这是什么意思。
 
 #### JSX vs Templates
 
@@ -164,11 +161,8 @@ Render functions with JSX have a few advantages:
 - The tooling support (e.g. linting, type checking, editor autocompletion) for JSX is in some ways more advanced than what's currently available for Vue templates.
 在某些方面，JSX 的工具支持（比如 linting，类型检查，编辑器的自动补全）比现在的 Vue 模版更好。
 
-In Vue, we also have [render functions](render-function.html) and even [support JSX](render-function.html#JSX), because sometimes you need that power. Render functions are not recommended for most components however.
-Vue 也提供 [render 函数](render-function.html)，甚至还 [支持 JSX](render-function.html#JSX)，因为有时候你的确需要用到。不过，对于大部分组件，我们不推荐使用 render 函数。
-
-Instead, we offer templates as a simpler alternative:
-取而代之地，我们提供了模版，作为更简单的替代方案：
+In Vue, we also have [render functions](render-function.html) and even [support JSX](render-function.html#JSX), because sometimes you need that power. However, as the default experience we offer templates as a simpler alternative:
+Vue 也提供 [render 函数](render-function.html)，甚至还 [支持 JSX](render-function.html#JSX)，因为有时候你的确需要用到。不过，Vue 的默认方式是更为简单的模版：
 
 ``` html
 <template>
@@ -185,7 +179,7 @@ Instead, we offer templates as a simpler alternative:
 
 优点如下：
 
-- Many fewer implementation and stylistic decisions have to be made while writing a template
+- Fewer implementation and stylistic decisions have to be made while writing a template
 在编写模版时，不需要考虑太多实现和风格的细节
 - A template will always be declarative
 模版永远是声明式的
@@ -199,23 +193,20 @@ Instead, we offer templates as a simpler alternative:
 This is not only much easier for the developer that's writing it, but designers and less experienced developers will also find it much easier parsing and contributing code.
 这不仅仅让工程师更加轻松，而且让设计师和新手工程师也更容易阅读和贡献代码。
 
-It doesn't end there though. By embracing HTML rather than trying to reinvent it within JavaScript, Vue also allows you to use preprocessors such as Pug (formerly known as Jade) in your templates.
-还有，因为 Vue 拥抱 HTML 而不是用 JavaScript 来重新发明轮子，所以你可以在模版中使用像 Pug (曾经的 Jade) 这样的预处理器。
+An additional benefit of HTML-compliant templates is that you can use pre-processors such as Pug (formerly known as Jade) to author your Vue templates:
+使用与 HTML 兼容的模版的另一个好处就是，你可以使用像 Pug（以前的 Jade）这样的预处理器来编写 Vue 模版：
 
-The React ecosystem also has [a project](https://wix.github.io/react-templates/) that allows you to write templates, but there are a few disadvantages:
-React 的生态系统里也有一个让你可以写模版的 [项目](https://wix.github.io/react-templates/)，不过它有以下缺陷：
-
-- It's not nearly as feature-rich as Vue's templating system
-- 功能不如 Vue 的模版系统那样丰富
-- It requires separating your HTML from component files
-- HTML 和组件必需用不同文件来分离
-- Because it's a 3rd party library rather than officially supported, it may or may not be kept up-to-date with React core into the future
-- 因为它是第三方库而不是官方库，未来不一定会与 React 内核保持一致
+``` pug
+div.list-container
+  ul(v-if="items.length")
+    li(v-for="item in items") {{ item.name }}
+  p(v-else) No items found.
+```
 
 #### 组件中的 CSS (Component-Scoped CSS)
 
-Unless you spread components out over multiple files (for example with [CSS Modules](https://github.com/gajus/react-css-modules)), scoping CSS in React comes with caveats. Very basic CSS works great out-of-the-box, but some more complex features such as hover states, media queries, and pseudo-selectors all either require heavy dependencies to reinvent what CSS already does - or they simply don't work.
-除非你将组件分布在不同的文件（比如用 [CSS Modules](https://github.com/gajus/react-css-modules)），否则在 React 中限定 CSS 的作用域会产生警告。基本的 CSS 没什么问题，但一些复杂一点的特性，比如悬停状态，媒体查询，伪类选择器等，要么需要大量的依赖来重造 CSS，要么就直接无法使用。
+Unless you spread components out over multiple files (for example with [CSS Modules](https://github.com/gajus/react-css-modules)), scoping CSS in React is often done via CSS-in-JS solutions. There are many competing solutions out there, each with its own caveats. A common issue is that features such as hover states, media queries, and pseudo-selectors either require heavy dependencies to reinvent what CSS already does - or they simply are not supported. If not optimized carefully, CSS-in-JS can also introduce non-trivial runtime performance cost. Most importantly, it deviates from the experience of authoring normal CSS.
+除非你将组件分布在不同的文件（比如用 [CSS Modules](https://github.com/gajus/react-css-modules)），否则在 React 中，你通常会通过使用 CSS-in-JS 方案来限定 CSS 作用域。有非常多的类似的方案，每一个方案都有自己的缺点。但这些方案的一个通病就是，像悬停状态，媒介查询，还有伪类选择器这些功能，要么需要很重的依赖来实现 CSS 已有的功能，要么就干脆不支持。如果不做仔细的优化，CSS-in-JS 方案还会带来不少运行时的性能开销。最重要的是，它偏离了开发普通 CSS 的体验。
 
 Vue on the other hand, gives you full access to CSS within [single-file components](single-file-components.html):
 而 Vue 可以让你在 [单文件组件](single-file-components.html) 中完全掌控 CSS 的作用域：
@@ -230,11 +221,11 @@ Vue on the other hand, gives you full access to CSS within [single-file componen
 </style>
 ```
 
-The optional `scoped` attribute automatically scopes this CSS to your component by adding a unique attribute (such as `data-v-1`) to elements and compiling `.list-container:hover` to something like `.list-container[data-v-1]:hover`.
-可选的 `scoped` 属性会自动将 CSS 局限在你的组件里，它会给元素加上一个唯一的属性（比如 `data-v-1`），然后将 `.list-container:hover` 编译成类似 `.list-container[data-v-1]:hover` 的代码。
+The optional `scoped` attribute automatically scopes this CSS to your component by adding a unique attribute (such as `data-v-21e5b78`) to elements and compiling `.list-container:hover` to something like `.list-container[data-v-21e5b78]:hover`.
+可选的 `scoped` 属性会自动将 CSS 局限在你的组件里，它会给元素加上一个唯一的属性（比如 `data-v-21e5b78`），然后将 `.list-container:hover` 编译成类似 `.list-container[data-v-21e5b78]:hover` 的代码。
 
-Finally, just as with HTML, you also have the option of writing your CSS using any preprocessors (or postprocessors) you'd like. This allows you to perform design-centric operations such as color manipulation during your build process, rather than importing specialized JavaScript libraries that would increase the size of your build and complexity of your application.
-最后，就像 HTML 一样，你也可以选择用预处理器（或者后处理器）来编写你的 CSS。这样你就可以在构建阶段做一些设计方面的操作，比如选择色彩，而不需要引入专门的 JavaScript 库。这样可以减小构建的体积，降低应用的复杂度。
+Finally, just as with HTML, you also have the option of writing your CSS using any preprocessors (or post-processors) you'd like, allowing you to leverage existing libraries in those ecosystems. You can also perform design-centric operations such as color manipulation during your build process, rather than importing specialized JavaScript libraries that would increase the size of your build and complexity of your application.
+最后，就像 HTML 一样，你也可以选择用预处理器（或者后处理器）来编写你的 CSS，这样你就可以利用那些生态系统中的已有库。你还可以在构建阶段做一些设计方面的操作，比如选择色彩，而不需要引入专门的 JavaScript 库。这样可以减小构建的体积，降低应用的复杂度。
 
 ### 规模 (Scale)
 
@@ -261,8 +252,8 @@ It's important to note though that many of these limitations are intentional des
 
 #### 小规模使用 (Scaling Down)
 
-React is renowned for its steep learning curve. Before you can really get started, you need to know about JSX and probably ES2015+, since many examples use React's class syntax. You also have to learn about build systems, because although you could technically use Babel Standalone to live-compile your code, it's not recommended for production.
-React 难上手是出了名的。在你能够开始之前，你需要先了解 JSX，可能还要一点 ES2015+，因为许多 React 的示例代码都使用了 class 语法。你还需要学习构建系统，虽然技术上你可以只使用 Babel 来热编译你的代码，但在生产环境这并不是很好的做法。
+React is renowned for its steep learning curve. Before you can really get started, you need to know about JSX and probably ES2015+, since many examples use React's class syntax. You also have to learn about build systems, because although you could technically use Babel Standalone to live-compile your code in the browser, it's absolutely not suitable for production.
+React 难上手是出了名的。在你能够开始之前，你需要先了解 JSX，可能还要一点 ES2015+，因为许多 React 的示例代码都使用了 class 语法。你还需要学习构建系统，虽然技术上，你可以只使用 Babel 来在浏览器总热编译你的代码，但这种做法绝对不适合生产环境。
 
 While Vue scales up just as well as, if not better than React, it also scales down just as well as jQuery. That's right - all you have to do is drop a single script tag into a page:
 如果说在大规模使用时，Vue 做的跟 React 一样好，那么小规模使用时 Vue 可以做得像 jQuery 一样好。没错，你只需要把一个 script 标签加到页面中就可以了：
