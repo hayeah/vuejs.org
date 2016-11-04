@@ -56,8 +56,11 @@ $ npm install vue
 
 ### 独立版本和运行时版本 (Standalone vs. Runtime-only Build)
 
-There are two builds available, the standalone build and the runtime-only build.
-Vue.js 有两个版本：独立版本和运行时版本。
+There are two builds available, the standalone build and the runtime-only build. The difference being that the former includes the **template compiler** and the latter does not.
+Vue.js 有两个版本：独立版本和运行时版本。它们的区别在于，独立版本包含**模版编译器**，而运行时版本不包含。
+
+The template compiler is responsible for compiling Vue template strings into pure JavaScript render functions. If you want to use the `template` option, then you need the compiler.
+模版编译器负责将 Vue 的模版字符串编译成纯 JavaScript 渲染函数。如果你想使用 `template` 选项，那么你就需要模版编译器。
 
 - The standalone build includes the compiler and supports the `template` option. **It also relies on the presence of browser APIs so you cannot use it for server-side rendering.**
 独立版本包含了模版编译器，支持 `tempate` 选项。**它依赖浏览器的 API，所以你不能在服务器端渲染中使用它。**
@@ -107,6 +110,8 @@ $ cd my-project
 $ npm install
 $ npm run dev
 ```
+
+<p class="tip">The CLI assumes prior knowledge of Node.js and the associated build tools. If you are new to Vue or front-end build tools, we strongly suggest going through the <a href="/guide">guide</a> without any build tools before using the CLI.<br>要使用命令行工具，你需要了解 Node.js 以及相关的构建工具。如果你对 Vue 或者前端构建工具还不太了解，我们强烈建议你在使用命令行工具之前，先阅读不使用任何构建工具的 <a href="/guide">教程</a>。</p>
 
 ## 开发版本 (Dev Build)
 
