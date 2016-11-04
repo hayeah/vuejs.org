@@ -409,11 +409,27 @@ There are usually two cases where it's tempting to mutate a prop:
 The proper answer to these use cases are:
 这些场景的正确解决方式时：
 
-1. Define a local data property that uses the prop's initial value as its initial value;
+1. Define a local data property that uses the prop's initial value as its initial value:
 定义一个本地数据属性，它的初始值就是属性的初始值；
 
-2. Define a computed property that is computed from the prop's value.
+  ``` js
+  props: ['initialCounter'],
+  data: function () {
+    return { counter: this.initialCounter }
+  }
+  ```
+
+2. Define a computed property that is computed from the prop's value:
 定义一个用基于属性值计算的计算属性。
+
+  ``` js
+  props: ['size'],
+  computed: {
+    normalizedSize: function () {
+      return this.size.trim().toLowerCase()
+    }
+  }
+  ```
 
 <p class="tip">Note that objects and arrays in JavaScript are passed by reference, so if the prop is an array or object, mutating the object or array itself inside the child **will** affect parent state.
 要注意，在 JavaScript 中对象和数组时通过引用传递的。如果属性是数组活着对象，在子组件内修改 **会** 影响父组件的状态。</p>
