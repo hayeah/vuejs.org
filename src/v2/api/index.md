@@ -48,7 +48,7 @@ type: api
   The merge strategy receives the value of that option defined on the parent and child instances as the first and second arguments, respectively. The context Vue instance is passed as the third argument.
   合并策略会接受在父实例和子实例中定义的选项值，以它们来分别作为第一和第二个参数。Vue 实例所在的上下文会作为第三个参数传递。
 
-- **另见**：[Custom Option Merging Strategies](/guide/mixins.html#Custom-Option-Merge-Strategies)
+- **另见**：[Custom Option Merging Strategies](../guide/mixins.html#Custom-Option-Merge-Strategies)
 
 ### devtools
 
@@ -166,7 +166,7 @@ type: api
   <p>Walter White aka Heisenberg</p>
   ```
 
-- **另见：** [组件](/guide/components.html)
+- **另见：** [组件](../guide/components.html)
 
 <h3 id="Vue-nextTick">Vue.nextTick( callback, [context] )</h3>
 
@@ -191,8 +191,8 @@ type: api
   })
   ```
 
-- **See also:** [Async Update Queue](/guide/reactivity.html#Async-Update-Queue)
-- **另见：** [异步更新队列](/guide/reactivity.html#异步更新队列)
+- **See also:** [Async Update Queue](../guide/reactivity.html#Async-Update-Queue)
+- **另见：** [异步更新队列](../guide/reactivity.html#异步更新队列)
 
 <h3 id="Vue-set">Vue.set( object, key, value )</h3>
 
@@ -212,7 +212,7 @@ type: api
   **Note the object cannot be a Vue instance, or the root data object of a Vue instance.**
   **注意，这个对象不可以是 Vue 的实例或者 Vue 实例的根对象。**
 
-- **另见：** [深入响应式原理](/guide/reactivity.html)
+- **另见：** [深入响应式原理](../guide/reactivity.html)
 
 <h3 id="Vue-delete">Vue.delete( object, key )</h3>
 
@@ -228,7 +228,7 @@ type: api
   **Note the object cannot be a Vue instance, or the root data object of a Vue instance.**
   **注意，这个对象不可以是 Vue 的实例或者 Vue 实例的根对象。**
 
-- **另见：** [深入响应式原理](/guide/reactivity.html)
+- **另见：** [深入响应式原理](../guide/reactivity.html)
 
 <h3 id="Vue-directive">Vue.directive( id, [definition] )</h3>
 
@@ -264,7 +264,7 @@ type: api
   var myDirective = Vue.directive('my-directive')
   ```
 
-- **另见：** [自定义指令](/guide/custom-directive.html)
+- **另见：** [自定义指令](../guide/custom-directive.html)
 
 <h3 id="Vue-filter">Vue.filter( id, [definition] )</h3>
 
@@ -315,7 +315,7 @@ type: api
   var MyComponent = Vue.component('my-component')
   ```
 
-- **另见：** [组件](/guide/components.html)
+- **另见：** [组件](../guide/components.html)
 
 <h3 id="Vue-use">Vue.use( plugin )</h3>
 
@@ -330,7 +330,7 @@ type: api
   When this method is called on the same plugin multiple times, the plugin will be installed only once.
   即使安装方法在相同的插件上调用多次，该插件也只会被安装一次。
 
-- **另见：** [插件](/guide/plugins.html)
+- **另见：** [插件](../guide/plugins.html)
 
 <h3 id="Vue-mixin">Vue.mixin( mixin )</h3>
 
@@ -342,8 +342,8 @@ type: api
   Apply a mixin globally, which affects every Vue instance created afterwards. This can be used by plugin authors to inject custom behavior into components. **Not recommended in application code**.
   全局应用一个混合，将影响所有 Vue 实例。插件作者可以用它向组件注入自定义逻辑。**不推荐在应用代码中使用。**
 
-- **See also:** [Global Mixins](/guide/mixins.html#Global-Mixin)
-- **另见：** [全局混合](/guide/mixins.html#Global-Mixin)
+- **See also:** [Global Mixins](../guide/mixins.html#Global-Mixin)
+- **另见：** [全局混合](../guide/mixins.html#Global-Mixin)
 
 <h3 id="Vue-compile">Vue.compile( template )</h3>
 
@@ -367,7 +367,7 @@ type: api
   })
   ```
 
-- **另见：** [Render Functions](/guide/render-function.html)
+- **另见：** [Render Functions](../guide/render-function.html)
 
 ## 选项 / 数据 (Options / Data)
 
@@ -423,7 +423,7 @@ type: api
 
   <p class="tip">Note that __you should not use an arrow function with the `data` property__ (e.g. `data: () => { return { a: this.myProp }}`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.myProp` will be undefined.<br>注意，__你不应该用箭头函数给 `data` 属性赋值__（比如 `data: () => { return { a: this.myProp }}`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.myProp` 的值会是 undefined。</p>
 
-- **另见:** [深入响应式原理](/guide/reactivity.html)
+- **另见:** [深入响应式原理](../guide/reactivity.html)
 
 ### props
 
@@ -465,7 +465,7 @@ type: api
   })
   ```
 
-- **另见:** [Props](/guide/components.html#Props)
+- **另见:** [Props](../guide/components.html#Props)
 
 ### propsData
 
@@ -539,8 +539,8 @@ type: api
   ```
 
 - **另见:**
-  - [Computed Properties](/guide/computed.html)
-  - [计算属性](/guide/computed.html)
+  - [Computed Properties](../guide/computed.html)
+  - [计算属性](../guide/computed.html)
 
 ### methods
 
@@ -569,8 +569,8 @@ type: api
   vm.a // 2
   ```
 
-- **See also:** [Methods and Event Handling](/guide/events.html)
-- **另见:** [方法与事件处理器](/guide/events.html)
+- **See also:** [Methods and Event Handling](../guide/events.html)
+- **另见:** [方法与事件处理器](../guide/events.html)
 
 ### watch
 
@@ -639,8 +639,8 @@ type: api
   The provided element merely serves as a mounting point. Unlike in Vue 1.x, the mounted element will be replaced with Vue-generated DOM in all cases. It is therefore not recommended to mount the root instance to `<html>` or `<body>`.
   提供的元素仅仅作为一个挂载点。 不同于 Vue 1.x， Vue 2.x 在任何情况下，被挂载的元素会被 Vue 生成的 DOM 替换掉。因此不建议把根实例挂载在 `<html>` 或 `<body>`。</p>
 
-- **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见：** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **另见：** [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
 
 ### template
 
@@ -659,10 +659,10 @@ type: api
   从安全角度出发，你应该只使用你能信赖的 Vue 模版。永远不用使用用户生成的内容作为你的模版。</p>
 
 - **另见：**
-  - [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-  - [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
-  - [Content Distribution](/guide/components.html#Content-Distribution-with-Slots)
-  - [内容分发](/guide/components.html#Content-Distribution-with-Slots)
+  - [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+  - [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
+  - [Content Distribution](../guide/components.html#Content-Distribution-with-Slots)
+  - [内容分发](../guide/components.html#Content-Distribution-with-Slots)
 
 ### render
 
@@ -678,8 +678,8 @@ type: api
     如果组件是一个函数式组件, render 函数也接收一个额外的参数 `context`，它会为缺少实例的函数式组件提供上下文数据。
 
   - **另见：**
-    - [Render Functions](/guide/render-function)
-    - [渲染函数](/guide/render-function)
+    - [Render Functions](../guide/render-function)
+    - [渲染函数](../guide/render-function)
 
 ## 选项 / 生命周期钩子 (Options / Lifecycle Hooks)
 
@@ -696,8 +696,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   Called synchronously after the instance has just been initialized, before data observation and event/watcher setup.
   在实例初始化之前同步调用。此时数据观察还没开始，事件和监听器也还没设置。
 
-- **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
 
 ### created
 
@@ -709,8 +709,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the `$el` property will not be available yet.
   在实例创建之后同步调用。此时实例已经结束解析选项，这意味着已建立：数据绑定，计算属性，方法，监听器/事件回调。但是还没有开始挂载，所以 `$el` 还不存在。
 
-- **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
 
 ### beforeMount
 
@@ -725,8 +725,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   **This hook is not called during server-side rendering.**
   **这钩子在服务端渲染的时候不会被调用**
 
-- **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
 
 ### mounted
 
@@ -743,8 +743,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   **This hook is not called during server-side rendering.**
   **这钩子在服务端渲染的时候不会被调用**
 
-- **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
 
 ### beforeUpdate
 
@@ -762,8 +762,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   **This hook is not called during server-side rendering.**
   **这钩子在服务端渲染的时候不会被调用**
 
-- **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
 
 ### updated
 
@@ -781,8 +781,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   **This hook is not called during server-side rendering.**
   **这钩子在服务端渲染的时候不会被调用**
 
-- **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
 
 ### activated
 
@@ -799,7 +799,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 - **另见:**
   - [Built-in Components - keep-alive](#keep-alive)
-  - [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
+  - [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
 
 ### deactivated
 
@@ -816,7 +816,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 - **另见:**
   - [Built-in Components - keep-alive](#keep-alive)
-  - [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
+  - [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
 
 ### beforeDestroy
 
@@ -831,8 +831,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   **This hook is not called during server-side rendering.**
   **这钩子在服务端渲染的时候不会被调用**
 
-- **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
 
 ### destroyed
 
@@ -847,8 +847,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   **This hook is not called during server-side rendering.**
   **这钩子在服务端渲染的时候不会被调用**
 
-- **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
 
 ## 选项 / 资源 (Options / Assets)
 
@@ -863,10 +863,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   一个哈希表，包含了对 Vue 实例可见的指令。
 
 - **另见：**
-  - [Custom Directives](/guide/custom-directive.html)
-  - [自定义指令](/guide/custom-directive.html)
-  - [Assets Naming Convention](/guide/components.html#Assets-Naming-Convention)
-  - [资源命名约定](/guide/components.html#Assets-Naming-Convention)
+  - [Custom Directives](../guide/custom-directive.html)
+  - [自定义指令](../guide/custom-directive.html)
+  - [Assets Naming Convention](../guide/components.html#Assets-Naming-Convention)
+  - [资源命名约定](../guide/components.html#Assets-Naming-Convention)
 
 ### filters
 
@@ -894,8 +894,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   一个哈希表，包含了对 Vue 实例可见的组件。
 
 - **另见：**
-  - [Components](/guide/components.html)
-  - [组件](/guide/components.html)
+  - [Components](../guide/components.html)
+  - [组件](../guide/components.html)
 
 ## 选项 / 杂项 (Options / Misc)
 
@@ -941,7 +941,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   // -> 2
   ```
 
-- **另见：** [Mixins](/guide/mixins.html)
+- **另见：** [Mixins](../guide/mixins.html)
 
 ### name
 
@@ -1019,8 +1019,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   Causes a component to be stateless (no `data`) and instanceless (no `this` context). They are simply a `render` function that returns virtual nodes making them much cheaper to render.
   使组件变成一个无状态（没有 `data`），无实例（没有 `this` 上下文）的函数化组件 这导致使用 `render` 函数把它们渲染成虚拟节点的时候变得更加高效。
 
-- **See also:** [Functional Components](/guide/render-function.html#Functional-Components)
-- **另见：** [函数化组件](/guide/render-function.html#Functional-Components)
+- **See also:** [Functional Components](../guide/render-function.html#Functional-Components)
+- **另见：** [函数化组件](../guide/render-function.html#Functional-Components)
 
 ##  实例属性 (Instance Properties)
 
@@ -1115,11 +1115,11 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Details:**
 - **详情：**
 
-  Used to access content [distributed by slots](/guide/components.html#Content-Distribution-with-Slots). Each [named slot](/guide/components.html#Named-Slots) has its own corresponding property (e.g. the contents of `slot="foo"` will be found at `vm.$slots.foo`). The `default` property contains any nodes not included in a named slot.
-  用来访问 [用 slot 分发](/guide/components.html#Content-Distribution-with-Slots) 的内容。每一个 [命名 slot](/guide/components.html#Named-Slots) 都有对应的属性（比如 `slot="foo"` 的内容就是在 `vm.$slots.foo`）。`default` 属性包含了一个命名 slot 中没有的节点。
+  Used to access content [distributed by slots](../guide/components.html#Content-Distribution-with-Slots). Each [named slot](../guide/components.html#Named-Slots) has its own corresponding property (e.g. the contents of `slot="foo"` will be found at `vm.$slots.foo`). The `default` property contains any nodes not included in a named slot.
+  用来访问 [用 slot 分发](/guide/components.html#Content-Distribution-with-Slots) 的内容。每一个 [命名 slot](../guide/components.html#Named-Slots) 都有对应的属性（比如 `slot="foo"` 的内容就是在 `vm.$slots.foo`）。`default` 属性包含了一个命名 slot 中没有的节点。
 
-  Accessing `vm.$slots` is most useful when writing a component with a [render function](/guide/render-function.html).
-  当你在用 [render 函数](/guide/render-function.html) 来编写一个组件时，访问 `vm.$slots` 时最为有用的。
+  Accessing `vm.$slots` is most useful when writing a component with a [render function](../guide/render-function.html).
+  当你在用 [render 函数](../guide/render-function.html) 来编写一个组件时，访问 `vm.$slots` 时最为有用的。
 
 - **示例：**：
 
@@ -1157,10 +1157,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **另见：**
   - [`<slot>` Component](#slot)
   - [`<slot>` 组件](#slot)
-  - [Content Distribution with Slots](/guide/components.html#Content-Distribution-with-Slots)
-  - [使用 slot 分发内容](/guide/components.html#Content-Distribution-with-Slots)
-  - [Render Functions](/guide/render-function.html)
-  - [Render 函数](/guide/render-function.html)
+  - [Content Distribution with Slots](../guide/components.html#Content-Distribution-with-Slots)
+  - [使用 slot 分发内容](../guide/components.html#Content-Distribution-with-Slots)
+  - [Render Functions](../guide/render-function.html)
+  - [Render 函数](../guide/render-function.html)
 
 ### vm.$refs
 
@@ -1175,9 +1175,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   一个对象，包含了注册过 `ref` 的子组件。
 
 - **另见：**
-  - [Child Component Refs](/guide/components.html#Child-Component-Refs)
-  - [子组件索引](/guide/components.html#Child-Component-Refs)
-  - [ref](#ref)
+  - [Child Component Refs](../guide/components.html#Child-Component-Refs)
+  - [子组件索引](../guide/components.html#Child-Component-Refs)
   - [ref](#ref)
 
 ### vm.$isServer
@@ -1192,8 +1191,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   Whether the current Vue instance is running on the server.
   当前 Vue 实例是否运行在服务器端。
 
-- **See also:** [Server-Side Rendering](/guide/ssr.html)
-- **另见：** [服务器端渲染](/guide/ssr.html)
+- **See also:** [Server-Side Rendering](../guide/ssr.html)
+- **另见：** [服务器端渲染](../guide/ssr.html)
 
 ## 实例方法 ／ 数据 (Instance Methods / Data)
 
@@ -1424,8 +1423,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
 - **另见:**
-  - [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-  - [Server-Side Rendering](/guide/ssr.html)
+  - [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+  - [Server-Side Rendering](../guide/ssr.html)
 
 <h3 id="vm-forceUpdate">vm.$forceUpdate()</h3>
 
@@ -1472,8 +1471,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 - **另见:**
   - [Vue.nextTick](#Vue-nextTick)
-  - [Async Update Queue](/guide/reactivity.html#Async-Update-Queue)
-  - [异步更新队列](/guide/reactivity.html#Async-Update-Queue)
+  - [Async Update Queue](../guide/reactivity.html#Async-Update-Queue)
+  - [异步更新队列](../guide/reactivity.html#Async-Update-Queue)
 
 <h3 id="vm-destroy">vm.$destroy()</h3>
 
@@ -1488,8 +1487,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   <p class="tip">In normal use cases you shouldn't have to call this method yourself. Prefer controlling the lifecycle of child components in a data-driven fashion using `v-if` and `v-for`.</p>
   <p class="tip">在正常使用情况下，你不应该自己调用这个方法。更好地控制子组件的生命周期，是以数据驱动的方式使用 `v-if` 和 `v-for`。</p>
 
-- **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **See also:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](../guide/instance.html#Lifecycle-Diagram)
 
 ## 指令 (Directives)
 
@@ -1513,8 +1512,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   <span>{{msg}}</span>
   ```
 
-- **See also:** [Data Binding Syntax - interpolations](/guide/syntax.html#Text)
-- **另见:** [数据绑定语法 - 插值](/guide/syntax.html#Text)
+- **See also:** [Data Binding Syntax - interpolations](../guide/syntax.html#Text)
+- **另见:** [数据绑定语法 - 插值](../guide/syntax.html#Text)
 
 ### v-html
 
@@ -1536,8 +1535,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   <div v-html="html"></div>
   ```
 
-- **See also:** [Data Binding Syntax - interpolations](/guide/syntax.html#Raw-HTML)
-- **另见:** [数据绑定语法 —— 插值](/guide/syntax.html#Raw-HTML)
+- **See also:** [Data Binding Syntax - interpolations](../guide/syntax.html#Raw-HTML)
+- **另见:** [数据绑定语法 —— 插值](../guide/syntax.html#Raw-HTML)
 
 ### v-if
 
@@ -1552,9 +1551,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   This directive triggers transitions when its condition changes.
   当指令条件改变将触发转换。
 
-
-- **See also:** [Conditional Rendering - v-if](/guide/conditional.html)
-- **另见:** [条件渲染 - v-if](/guide/conditional.html)
+- **See also:** [Conditional Rendering - v-if](../guide/conditional.html)
+- **另见:** [条件渲染 - v-if](../guide/conditional.html)
 
 ### v-show
 
@@ -1569,8 +1567,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   This directive triggers transitions when its condition changes.
   当条件改变时，该指令将触发转换。
 
-- **See also:** [Conditional Rendering - v-show](/guide/conditional.html#v-show)
-- **另见:** [条件渲染 - v-show](/guide/conditional.html#v-show)
+- **See also:** [Conditional Rendering - v-show](../guide/conditional.html#v-show)
+- **另见:** [条件渲染 - v-show](../guide/conditional.html#v-show)
 
 ### v-else
 
@@ -1594,10 +1592,9 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   </div>
   ```
 
-- **See also:**
-  - [Conditional Rendering - v-else](/guide/conditional.html#v-else)
 - **另见:**
-  - [条件渲染 - v-else](/guide/conditional.html#v-else)
+  - [Conditional Rendering - v-else](../guide/conditional.html#v-else)
+  - [条件渲染 - v-else](../guide/conditional.html#v-else)
 
 ### v-for
 
@@ -1637,10 +1634,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   `v-for` 的详细用法可以在下面链接的教程里找到。
 
 - **另见:**
-  - [List Rendering](/guide/list.html)
-  - [列表渲染](/guide/list.html)
-  - [key](/guide/list.html#key)
-  - [键](/guide/list.html#key)
+  - [List Rendering](../guide/list.html)
+  - [列表渲染](../guide/list.html)
+  - [key](../guide/list.html#key)
+  - [键](../guide/list.html#key)
 
 ### v-on
 
@@ -1733,10 +1730,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
 - **另见:**
-  - [Methods and Event Handling](/guide/events.html)
-  - [方法与事件处理器](/guide/events.html)
-  - [Components - Custom Events](/guide/components.html#Custom-Events)
-  - [组件 —— 自定义事件](/guide/components.html#Custom-Events)
+  - [Methods and Event Handling](../guide/events.html)
+  - [方法与事件处理器](../guide/events.html)
+  - [Components - Custom Events](../guide/components.html#Custom-Events)
+  - [组件 —— 自定义事件](../guide/components.html#Custom-Events)
 
 ### v-bind
 
@@ -1805,10 +1802,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
 - **另见:**
-  - [Class and Style Bindings](/guide/class-and-style.html)
-  - [Class 和 Style 绑定](/guide/class-and-style.html)
-  - [Components - Component Props](/guide/components.html#Props)
-  - [组件 Props](/guide/components.html#Props)
+  - [Class and Style Bindings](../guide/class-and-style.html)
+  - [Class 和 Style 绑定](../guide/class-and-style.html)
+  - [Components - Component Props](../guide/components.html#Props)
+  - [组件 Props](../guide/components.html#Props)
 
 ### v-model
 
@@ -1827,10 +1824,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - 组件
 
 - **修饰符:**
-  - [`.lazy`](/guide/forms.html#lazy) - listen to `change` events instead of `input`
-  - [`.lazy`](/guide/forms.html#lazy) - 监听 `change` 事件而不是`input`事件
-  - [`.number`](/guide/forms.html#number) - cast input string to numbers
-  - [`.number`](/guide/forms.html#number) - 将输入的字符串转换成数值
+  - [`.lazy`](../guide/forms.html#lazy) - listen to `change` events instead of `input`
+  - [`.lazy`](../guide/forms.html#lazy) - 监听 `change` 事件而不是`input`事件
+  - [`.number`](../guide/forms.html#number) - cast input string to numbers
+  - [`.number`](../guide/forms.html#number) - 将输入的字符串转换成数值
   - [`.trim`](/guild/forms.html#trim) - trim input
   - [`.trim`](/guild/forms.html#trim) - 去除输入内容的首位空格
 
@@ -1840,10 +1837,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   在组件或表单控件上创建一个双向绑定。下面链接的教程中有更详细的用法。
 
 - **另见:**
-  - [Form Input Bindings](/guide/forms.html)
-  - [表单控件绑定](/guide/forms.html)
-  - [Components - Form Input Components using Custom Events](/guide/components.html#Form-Input-Components-using-Custom-Events)
-  - [组件 —— 表单控件组件使用自定义事件](/guide/components.html#Form-Input-Components-using-Custom-Events)
+  - [Form Input Bindings](../guide/forms.html)
+  - [表单控件绑定](../guide/forms.html)
+  - [Components - Form Input Components using Custom Events](../guide/components.html#Form-Input-Components-using-Custom-Events)
+  - [组件 —— 表单控件组件使用自定义事件](../guide/components.html#Form-Input-Components-using-Custom-Events)
 
 ### v-pre
 
@@ -1919,12 +1916,11 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   </ul>
   ```
 
-
 - **另见:**
-  - [Data Binding Syntax - interpolations](/guide/syntax.html#Text)
-  - [数据绑定语法 —— 插值](/guide/syntax.html#Text)
-  - [Components - Cheap Static Components with v-once](/guide/components.html#Cheap-Static-Components-with-v-once)
-  - [组件 —— 使用v-once的轻量级静态组件](/guide/components.html#Cheap-Static-Components-with-v-once)
+  - [Data Binding Syntax - interpolations](../guide/syntax.html#Text)
+  - [数据绑定语法 —— 插值](../guide/syntax.html#Text)
+  - [Components - Cheap Static Components with v-once](../guide/components.html#Cheap-Static-Components-with-v-once)
+  - [组件 —— 使用v-once的轻量级静态组件](../guide/components.html#Cheap-Static-Components-with-v-once)
 
 ## 特殊属性 (Special Attributes)
 
@@ -1992,7 +1988,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   An important note about the ref registration timing: because the refs themselves are created as a result of the render function, you cannot access them on the initial render - they don't exist yet! `$refs` is also non-reactive, therefore you should not attempt to use it in templates for data-binding.
   需要注意的一点是关于 ref 的注册时间点： 因为 refs 自身是作为 render 函数执行完后所创造的一个结果值，所以开发者不能再初始 render 时去使用它们，因为 refs 还不存在。`$refs` 也是不可交互的，因此开发者不要尝试在模板中为了数据绑定去使用它。
 
-- **另见：** [Child Component Refs](/guide/components.html#Child-Component-Refs)
+- **另见：** [Child Component Refs](../guide/components.html#Child-Component-Refs)
 
 ### slot
 
@@ -2005,7 +2001,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   For detailed usage, see the guide section linked below.
   想知道更详细的用法，可参考以下链接
 
-- **另见：**[Named Slots](/guide/components.html#Named-Slots)
+- **另见：**[Named Slots](../guide/components.html#Named-Slots)
 
 ## 内置组件 (Built-In Components)
 
@@ -2032,8 +2028,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   <component :is="$options.components.child"></component>
   ```
 
-- **See also:** [Dynamic Components](/guide/components.html#Dynamic-Components)
-- **另见：** [动态组件](/guide/components.html#Dynamic-Components)
+- **See also:** [Dynamic Components](../guide/components.html#Dynamic-Components)
+- **另见：** [动态组件](../guide/components.html#Dynamic-Components)
 
 ### transition
 
@@ -2106,8 +2102,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   }).$mount('#transition-demo')
   ```
 
-- **See also:** [Transitions: Entering, Leaving, and Lists](/guide/transitions.html)
-- **另见：** [过渡： 进入，离开，和列表](/guide/transitions.html)
+- **See also:** [Transitions: Entering, Leaving, and Lists](../guide/transitions.html)
+- **另见：** [过渡： 进入，离开，和列表](../guide/transitions.html)
 
 ### transition-group
 
@@ -2142,8 +2138,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   </transition-group>
   ```
 
-- **See also:** [Transitions: Entering, Leaving, and Lists](/guide/transitions.html)
-- **另见：** [过渡： 进入，离开，和列表](/guide/transitions.html)
+- **See also:** [Transitions: Entering, Leaving, and Lists](../guide/transitions.html)
+- **另见：** [过渡： 进入，离开，和列表](../guide/transitions.html)
 
 ### keep-alive
 
@@ -2184,8 +2180,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   <p class="tip">`<keep-alive>` does not work with functional components because they do not have instances to be cached.
   `<keep-alive>` 在函数化组件中不会生效。因为它根本就没有实例可以被缓存。</p>
 
-- **See also:** [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
-- **另见：** [动态组件 - keep-alive](/guide/components.html#keep-alive)
+- **See also:** [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
+- **另见：** [动态组件 - keep-alive](../guide/components.html#keep-alive)
 
 ### slot
 
@@ -2201,8 +2197,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   For detailed usage, see the guide section linked below.
   有关详细用法，参见下面的指南部分。
 
-- **See also:** [Content Distribution with Slots](/guide/components.html#Content-Distribution-with-Slots)
-- **另见：** [使用 Slots 内容分发](/guide/components.html#Content-Distribution-with-Slots)
+- **See also:** [Content Distribution with Slots](../guide/components.html#Content-Distribution-with-Slots)
+- **另见：** [使用 Slots 内容分发](../guide/components.html#Content-Distribution-with-Slots)
 
 ## VNode 接口 (VNode Interface)
 

@@ -337,6 +337,5 @@ var watchExampleVM = new Vue({
 In this case, using the `watch` option allows us to perform an asynchronous operation (accessing an API), limit how often we perform that operation, and set intermediary states until we get a final answer. None of that would be possible with a computed property.
 在这种情况下，使用 `watch` 选项允许我们执行一个异步操作（访问一个API），限制我们执行这个操作，并设置等待状态直到我们得到一个最终的答案。这是任何一个计算属性做不到的。
 
-In addition to the `watch` option, you can also use the imperative [vm.$watch API](/api/#vm-watch).
-除了 `watch` 选项之外，你也可以使用这个命令[vm.$watch API](/api/#vm-watch)。
-
+In addition to the `watch` option, you can also use the imperative [vm.$watch API](../api/#vm-watch).
+除了 `watch` 选项之外，你也可以使用这个命令[vm.$watch API](../api/#vm-watch)。

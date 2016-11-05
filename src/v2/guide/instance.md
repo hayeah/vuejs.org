@@ -19,8 +19,8 @@ var vm = new Vue({
 Although not strictly associated with the [MVVM pattern](https://en.wikipedia.org/wiki/Model_View_ViewModel), Vue's design was no doubt inspired by it. As a convention, we often use the variable `vm` (short for ViewModel) to refer to our Vue instances.
 Vue 虽然和 [MVVM 模式](https://en.wikipedia.org/wiki/Model_View_ViewModel)没有什么紧密的联系，但的确受到了它的启发。作为约定，我们通常用 `vm` (ViewModel 的缩写) 来表示 Vue 实例。
 
-When you instantiate a Vue instance, you need to pass in an **options object** which can contain options for data, template, element to mount on, methods, lifecycle callbacks and more. The full list of options can be found in the [API reference](/api).
-在实例化 Vue 时，需要传入一个**选项对象**，它可以包含数据、模板、挂载元素、方法、生命周期钩子等选项。全部的选项可以在 [API 文档](/api)中查看。
+When you instantiate a Vue instance, you need to pass in an **options object** which can contain options for data, template, element to mount on, methods, lifecycle callbacks and more. The full list of options can be found in the [API reference](../api).
+在实例化 Vue 时，需要传入一个**选项对象**，它可以包含数据、模板、挂载元素、方法、生命周期钩子等选项。全部的选项可以在 [API 文档](../api)中查看。
 
 The `Vue` constructor can be extended to create reusable **component constructors** with pre-defined options:
 通过扩展 `Vue` 构造函数，我们可以创建自定义的 **组件构造函数**：
@@ -90,8 +90,8 @@ vm.$watch('a', function (newVal, oldVal) {
 
 <p class="tip">Don't use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) on an instance property or callback (e.g. `vm.$watch('a', newVal => this.myMethod())`). As arrow functions are bound to the parent context, `this` will not be the Vue instance as you'd expect and `this.myMethod` will be undefined.</p>
 
-Consult the [API reference](/api) for the full list of instance properties and methods.
-参考 [API 文档](/api)查看全部的实例属性与方法。
+Consult the [API reference](../api) for the full list of instance properties and methods.
+参考 [API 文档](../api)查看全部的实例属性与方法。
 
 ## 实例生命周期 (Instance Lifecycle)
 

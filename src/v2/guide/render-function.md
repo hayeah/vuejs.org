@@ -90,8 +90,8 @@ Vue.component('anchored-heading', {
 })
 ```
 
-Much simpler! Sort of. The code is shorter, but also requires greater familiarity with Vue instance properties. In this case, you have to know that when you pass children without a `slot` attribute into a component, like the `Hello world!` inside of `anchored-heading`, those children are stored on the component instance at `$slots.default`. If you haven't already, **it's recommended to read through the [instance properties API](/api/#vm-slots) before diving into render functions.**
-简单多了吧！代码精简了许多，但是需要对 Vue 的实例属性有更为熟悉。在这个例子中，你需要知道当不使用 `slot` 属性向组件传递子元素时，比如 `anchored-heading` 中的 `Hello world!`，这些子元素会被存储在组件实例的 `$slots.default` 中。如果你对此不太了解， **在深入渲染函数之前建议阅读[实例属性 API](/api/#vm-slots)。**
+Much simpler! Sort of. The code is shorter, but also requires greater familiarity with Vue instance properties. In this case, you have to know that when you pass children without a `slot` attribute into a component, like the `Hello world!` inside of `anchored-heading`, those children are stored on the component instance at `$slots.default`. If you haven't already, **it's recommended to read through the [instance properties API](../api/#vm-slots) before diving into render functions.**
+简单多了吧！代码精简了许多，但是需要对 Vue 的实例属性有更为熟悉。在这个例子中，你需要知道当不使用 `slot` 属性向组件传递子元素时，比如 `anchored-heading` 中的 `Hello world!`，这些子元素会被存储在组件实例的 `$slots.default` 中。如果你对此不太了解， **在深入渲染函数之前建议阅读[实例属性 API](../api/#vm-slots)。**
 
 ## `createElement` 参数 (`createElement` Arguments)
 

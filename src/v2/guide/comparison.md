@@ -265,8 +265,8 @@ While Vue scales up just as well as, if not better than React, it also scales do
 Then you can start writing Vue code and even ship the minified version to production without feeling guilty or having to worry about performance problems.
 然后你就可以开始写 Vue 代码，甚至可以把最小化的版本直接推到生产环境，完全不需要担心性能问题。
 
-Since you don't need to know about JSX, ES2015, or build systems to get started with Vue, it also typically takes developers less than a day reading [the guide](/guide) to learn enough to build non-trivial applications.
-要上手 Vue，你不需要了解 JSX，ES2015 或者构建系统。，通常你只需要花不到一天来阅读 [教程](/guide)，就可以开始写一个实际应用。
+Since you don't need to know about JSX, ES2015, or build systems to get started with Vue, it also typically takes developers less than a day reading [the guide](./) to learn enough to build non-trivial applications.
+要上手 Vue，你不需要了解 JSX，ES2015 或者构建系统。，通常你只需要花不到一天来阅读 [教程](./)，就可以开始写一个实际应用。
 
 ### 原生渲染 (Native Rendering)
 
@@ -348,8 +348,12 @@ Vue 相对 Angular 2 而言更加中立，它为不同的构建系统提供了�
 
 ### 学习曲线 (Learning Curve)
 
+<<<<<<< HEAD:src/guide/comparison.md
 To get started with Vue, all you need is familiarity with HTML and ES5 JavaScript (i.e. plain JavaScript). With these basic skills, you can start building non-trivial applications within less than a day of reading [the guide](/guide).
 要上手 Vue，你只需要熟悉 HTML 和 ES5 （也就是普通的 JavaScript）。有了这些基本知识，花上不到一天来阅读 [教程](/guide)，你就可以开始开发了。
+=======
+To get started with Vue, all you need is familiarity with HTML and ES5 JavaScript (i.e. plain JavaScript). With these basic skills, you can start building non-trivial applications within less than a day of reading [the guide](./).
+>>>>>>> 0e2023b... scope version-specific pages:src/v2/guide/comparison.md
 
 Angular 2's learning curve is much steeper. Even without TypeScript, their [Quickstart guide](https://angular.io/docs/js/latest/quickstart.html) starts out with an app that uses ES2015 JavaScript, NPM with 18 dependencies, 4 files, and over 3,000 words to explain it all - just to say Hello World. It's an understatement to say that [Vue's Hello World](https://jsfiddle.net/chrisvfritz/50wL7mdz/) is considerably simpler. It's so trivial in fact, that we don't even dedicate a whole page in the guide to it.
 Angular 2 的学习曲线则要陡峭的多。即使是有 TypeScript 的帮助，它们的 [上手教程](https://angular.io/docs/js/latest/quickstart.html) 也还是使用了 ES2015，拥有 18 个 NPM 依赖，4个文件，以及超过 3000 个英文单词来解释，而这仅仅是为了写 Hello World 程序而已。相比之下，[Vue 的 Hello World 程序](https://jsfiddle.net/chrisvfritz/50wL7mdz/) 就超级简单，我们甚至都没有花费教程里的篇幅来介绍它。

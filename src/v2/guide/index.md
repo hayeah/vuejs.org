@@ -20,11 +20,11 @@ The easiest way to try out Vue.js is using the [JSFiddle Hello World example](ht
 要尝试 Vue.js，最简单的方式就是使用 [JSFiddle 的 Hello World 示例](https://jsfiddle.net/chrisvfritz/50wL7mdz/)。你可以在另一个标签页打开这个页面，然后跟着本教程一步一步地学习一些基本示例。或者，你也可以简单地创建一个包含 Vue 的 `.html` 文件：
 
 ``` html
-<script src="https://unpkg.com/vue/dist/vue.js">
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
 ```
 
-The [Installation](/guide/installation.html) page provides more options of installing Vue. Note that we **do not** recommend beginners to start with `vue-cli`, especially if you are not yet familiar with Node.js-based build tools.
-教程的[安装](/guide/installation.html)一节提供了更多安装 Vue 的选项。要注意，我们**不**推荐初学者使用 `vue-cli`，特别是那些不熟悉 Node.js 构建工具的开发者。
+The [Installation](installation.html) page provides more options of installing Vue. Note that we **do not** recommend beginners to start with `vue-cli`, especially if you are not yet familiar with Node.js-based build tools.
+教程的[安装](installation.html)一节提供了更多安装 Vue 的选项。要注意，我们**不**推荐初学者使用 `vue-cli`，特别是那些不熟悉 Node.js 构建工具的开发者。
 
 ## 声明式渲染 (Declarative Rendering)
 
@@ -302,8 +302,8 @@ Now you can compose it in another component's template:
 </ul>
 ```
 
-But this would render the same text for every todo, which is not super interesting. We should be able to pass data from the parent scope into child components. Let's modify the component definition to make it accept a [prop](/guide/components.html#Props):
-不过这会将每一个 todo 都渲染成同样的文本，看起来不是一个特别有趣的应用场景。我们应该能够将数据从父级作用域传递到子组件。让我们修改一下组件的定义，让它接收一个[属性](/guide/components.html#Props)：
+But this would render the same text for every todo, which is not super interesting. We should be able to pass data from the parent scope into child components. Let's modify the component definition to make it accept a [prop](components.html#Props):
+不过这会将每一个 todo 都渲染成同样的文本，看起来不是一个特别有趣的应用场景。我们应该能够将数据从父级作用域传递到子组件。让我们修改一下组件的定义，让它接收一个[属性](components.html#Props)：
 
 ``` js
 Vue.component('todo-item', {
@@ -377,8 +377,8 @@ var app7 = new Vue({
 This is just a contrived example, but we have managed to separate our app into two smaller units, and the child is reasonably well-decoupled from the parent via the props interface. We can now further improve our `<todo-item>` component with more complex template and logic without affecting the parent app.
 这只是一个虚构的示例，不过我们已经成功地将应用分离成两个小的单元，而子元素也通过属性接口，很好地与父组件分离开来。我们可以进一步完善 `<todo-item>` 部件，使用更复杂的模版和逻辑，而不需要担心对父组件产生影响。
 
-In a large application, it is necessary to divide the whole app into components to make development manageable. We will talk a lot more about components [later in the guide](/guide/components.html), but here's an (imaginary) example of what an app's template might look like with components:
-在一个大型应用中，要提高开发的可控性，将整个应用拆分成小的组件是非常必要的。我们会在教程[后面的章节](/guide/components.html)对组件进行详细讲解。下面是一个虚构的示例，它是一个使用了组件的应用模版：
+In a large application, it is necessary to divide the whole app into components to make development manageable. We will talk a lot more about components [later in the guide](components.html), but here's an (imaginary) example of what an app's template might look like with components:
+在一个大型应用中，要提高开发的可控性，将整个应用拆分成小的组件是非常必要的。我们会在教程[后面的章节](components.html)对组件进行详细讲解。下面是一个虚构的示例，它是一个使用了组件的应用模版：
 
 ``` html
 <div id="app">

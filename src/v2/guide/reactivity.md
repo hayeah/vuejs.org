@@ -62,8 +62,8 @@ Sometimes you may want to assign a number of properties to an existing object, f
 this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })
 ```
 
-There are also a few array-related caveats, which were discussed earlier in the [list rendering section](/guide/list.html#Caveats).
-还有一些数组相关的问题，之前已经在[列表渲染章节](/guide/list.html#)中讨论过了。
+There are also a few array-related caveats, which were discussed earlier in the [list rendering section](list.html#Caveats).
+还有一些数组相关的问题，之前已经在[列表渲染章节](list.html#Caveats)中讨论过了。
 
 ## 声明响应式属性 (Declaring Reactive Properties)
 

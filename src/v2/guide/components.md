@@ -258,8 +258,8 @@ In Vue.js, the parent-child component relationship can be summarized as **props 
 Every component instance has its own **isolated scope**. This means you cannot (and should not) directly reference parent data in a child component's template. Data can be passed down to child components using **props**.
 每个组件实例都有自己 **独立的作用域** ，这意味着你不能并且不该在子组件的模板里直接引用父组件的数据。由父组件向子组件传递数据可以通过 **prop** 来完成。
 
-A prop is a custom attribute for passing information from parent components. A child component needs to explicitly declare the props it expects to receive using the [`props` option](/api/#props):
-属性就是用来从父组件传递信息的自定义属性。子组件需要显式地用 [`props` 选项](/api/#props) 来明确声明它要接收的属性：
+A prop is a custom attribute for passing information from parent components. A child component needs to explicitly declare the props it expects to receive using the [`props` option](../api/#props):
+属性就是用来从父组件传递信息的自定义属性。子组件需要显式地用 [`props` 选项](../api/#props) 来明确声明它要接收的属性：
 
 ``` js
 Vue.component('child', {
@@ -506,8 +506,8 @@ We have learned that the parent can pass data down to the child using props, but
 
 ### 使用 `v-on` 绑定自定义事件 (Using `v-on` with Custom Events)
 
-Every Vue instance implements an [events interface](/api/#Instance-Methods-Events), which means it can:
-Vue 实例实现了 [事件接口](/api/#Instance-Methods-Events)，这意味着它可以：
+Every Vue instance implements an [events interface](../api/#Instance-Methods-Events), which means it can:
+Vue 实例实现了 [事件接口](../api/#Instance-Methods-Events)，这意味着它可以：
 
 - Listen to an event using `$on(eventName)`
 通过 `$on(eventName)` 监听事件
@@ -749,8 +749,8 @@ bus.$on('id-selected', function (id) {
 })
 ```
 
-In more complex cases, you should consider employing a dedicated [state-management pattern](/guide/state-management.html).
-如果是更复杂的场景，就要考虑引入专用的 [状态管理模式](/guide/state-management.html)了。
+In more complex cases, you should consider employing a dedicated [state-management pattern](state-management.html).
+如果是更复杂的场景，就要考虑引入专用的 [状态管理模式](state-management.html)了。
 
 ## 使用插槽分发内容 (Content Distribution with Slots)
 
@@ -988,8 +988,8 @@ If you want to keep the switched-out components in memory so that you can preser
 </keep-alive>
 ```
 
-Check out more details on `<keep-alive>` in the [API reference](/api/#keep-alive).
-更多细节请参考 [api 手册](/api/#keep-alive) 中的 `<keep-alive>` 部分。
+Check out more details on `<keep-alive>` in the [API reference](../api/#keep-alive).
+更多细节请参考 [api 手册](../api/#keep-alive) 中的 `<keep-alive>` 部分。
 
 ## 杂项 (Misc)
 

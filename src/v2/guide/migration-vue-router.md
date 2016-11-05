@@ -503,8 +503,8 @@ Use [`beforeEnter`](http://router.vuejs.org/en/advanced/navigation-guards.html#p
 
 ### `deactivate` <sup>移除 (removed)</sup>
 
-Use the component's [`beforeDestroy`](/api/#beforeDestroy) or [`destroyed`](/api/#destroyed) hooks instead.
-用组件的 [`beforeDestroy`](/api/#beforeDestroy) 或 [`destroyed`](/api/#destroyed) 钩子取代。
+Use the component's [`beforeDestroy`](../api/#beforeDestroy) or [`destroyed`](../api/#destroyed) hooks instead.
+用组件的 [`beforeDestroy`](../api/#beforeDestroy) 或 [`destroyed`](../api/#destroyed) 钩子取代。
 
 {% raw %}
 <div class="upgrade-path">

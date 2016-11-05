@@ -794,8 +794,8 @@ Vue 的过渡效果系统已经发生了大幅度的改变，它现在使用 `<t
 
 ### 可重用的 `Vue.transition` (`Vue.transition` for Reusable Transitions)<sup>取代 (replaced)</sup>
 
-With the new transition system, you can now just [use components for reusable transitions](/guide/transitions.html#Reusable-Transitions).
-在新的过渡效果系统中，你只能[使用组件来重用过渡效果](/guide/transitions.html#Reusable-Transitions).
+With the new transition system, you can now just [use components for reusable transitions](transitions.html#Reusable-Transitions).
+在新的过渡效果系统中，你只能[使用组件来重用过渡效果](transitions.html#Reusable-Transitions).
 
 {% raw %}
 <div class="upgrade-path">
@@ -848,8 +848,8 @@ Vue.config.keyCodes.f1 = 112
 The problem is event flows that depend on a component's tree structure can be hard to reason about and very brittle when the tree becomes large. It simply doesn't scale well and we don't want to set you up for pain later. `$dispatch` and `$broadcast` also do not solve communication between sibling components.
 它们的问题在于，当组件树变得巨大时，事件流变得很难推理。原来的做法很难规模化，而我们不想给你挖坑。还有，`$dispatch` 和 `$broadcast` 无法解决兄弟组件间的通信问题。
 
-One of the most common uses for these methods is to communicate between a parent and its direct children. In these cases, you can actually [listen to an `$emit` from a child with `v-on`](http://vuejs.org/guide/components.html#Form-Input-Components-using-Custom-Events). This allows you to keep the convenience of events with added explicitness.
-这些方法最常用的情景就是父子组件间的通信。而要处理这些问题，你实际上可以[在有 `v-on` 的子组件中监听 `$emit`](http://vuejs.org/guide/components.html#Form-Input-Components-using-Custom-Events)。这既可以保留事件的便利性，同时代码也更加明确。
+One of the most common uses for these methods is to communicate between a parent and its direct children. In these cases, you can actually [listen to an `$emit` from a child with `v-on`](components.html#Form-Input-Components-using-Custom-Events). This allows you to keep the convenience of events with added explicitness.
+这些方法最常用的情景就是父子组件间的通信。而要处理这些问题，你实际上可以[在有 `v-on` 的子组件中监听 `$emit`](components.html#Form-Input-Components-using-Custom-Events)。这既可以保留事件的便利性，同时代码也更加明确。
 
 However, when communicating between distant descendants/ancestors, `$emit` won't help you. Instead, the simplest possible upgrade would be to use a centralized event hub. This has the added benefit of allowing you to communicate between components no matter where they are in the component tree - even between siblings! Because Vue instances implement an event emitter interface, you can actually use an empty Vue instance for this purpose.
 不过，如果进行通信的组件隔了很多代，那么 `$emit` 也帮不了你。最简单的做法是，使用一个集中的事件中心。它给你带来的好处就是让不同的组件可以进行通信，无论它们在组件树中处于什么位置 —— 即使是在兄弟组件之间！因为 Vue 实例实现了一个事件触发器的接口，你可以用一个空的 Vue 实例来达到这个目的。
@@ -1344,8 +1344,8 @@ computed: {
 
 ### HTML 插值 (HTML Interpolation)<sup>移除 (removed)</sup>
 
-HTML interpolations (`{% raw %}{{{ foo }}}{% endraw %}`) have been removed in favor of the [`v-html` directive](/api/#v-html).
-HTML 插值（`{% raw %}{{{ foo }}}{% endraw %}`）已经被移除，你应该使用 [`v-html` 指令](/api/#v-html)。
+HTML interpolations (`{% raw %}{{{ foo }}}{% endraw %}`) have been removed in favor of the [`v-html` directive](../api/#v-html).
+HTML 插值（`{% raw %}{{{ foo }}}{% endraw %}`）已经被移除，你应该使用 [`v-html` 指令](../api/#v-html)。
 
 {% raw %}
 <div class="upgrade-path">
@@ -1356,8 +1356,8 @@ HTML 插值（`{% raw %}{{{ foo }}}{% endraw %}`）已经被移除，你应该�
 
 ### 一次性绑定 (One-Time Bindings)<sup>取代 (replaced)</sup>
 
-One time bindings (`{% raw %}{{* foo }}{% endraw %}`) have been replaced by the new [`v-once` directive](/api/#v-once).
-一次性绑定（`{% raw %}{{* foo }}{% endraw %}`）已经被用新的 [`v-once` 指令](/api/#v-once)。
+One time bindings (`{% raw %}{{* foo }}{% endraw %}`) have been replaced by the new [`v-once` directive](../api/#v-once).
+一次性绑定（`{% raw %}{{* foo }}{% endraw %}`）已经被用新的 [`v-once` 指令](../api/#v-once)。
 
 {% raw %}
 <div class="upgrade-path">
@@ -1385,8 +1385,8 @@ If you were previously relying on `vm.$watch` to do something with the DOM after
 
 ### `vm.$set` <sup>改动 (changed)</sup>
 
-`vm.$set` is now just an alias for [`Vue.set`](/api/#Vue-set).
-`vm.$set` 现在仅仅是 [`Vue.set`](/api/#Vue-set) 的别名。
+`vm.$set` is now just an alias for [`Vue.set`](../api/#Vue-set).
+`vm.$set` 现在仅仅是 [`Vue.set`](../api/#Vue-set) 的别名。
 
 {% raw %}
 <div class="upgrade-path">
@@ -1397,8 +1397,8 @@ If you were previously relying on `vm.$watch` to do something with the DOM after
 
 ### `vm.$delete` <sup>改动 (changed)</sup>
 
-`vm.$delete` is now just an alias for [`Vue.delete`](/api/#Vue-delete).
-`vm.$delete` 现在仅仅是 [`Vue.delete`](/api/#Vue-delete) 的别名。
+`vm.$delete` is now just an alias for [`Vue.delete`](../api/#Vue-delete).
+`vm.$delete` 现在仅仅是 [`Vue.delete`](../api/#Vue-delete) 的别名。
 
 {% raw %}
 <div class="upgrade-path">
@@ -1663,8 +1663,8 @@ Async is now required for rendering performance.
 
 ### `Vue.config.delimiters` <sup>取代 (replaced)</sup>
 
-This has been reworked as a [component-level option](/api/#delimiters). This allows you to use alternative delimiters within your app without breaking 3rd-party components.
-这已经被修改为[组件级的选项](/api/#delimiters)。这可以让你在应用内使用替代的分隔符，而不会影响第三方组件。
+This has been reworked as a [component-level option](../api/#delimiters). This allows you to use alternative delimiters within your app without breaking 3rd-party components.
+这已经被修改为[组件级的选项](../api/#delimiters)。这可以让你在应用内使用替代的分隔符，而不会影响第三方组件。
 
 {% raw %}
 <div class="upgrade-path">
@@ -1713,8 +1713,8 @@ Use components instead.
 
 ### `Vue.partial` <sup>移除 (removed)</sup>
 
-Partials have been removed in favor of more explicit data flow between components, using props. Unless you're using a partial in a performance-critical area, the recommendation is to simply use a [normal component](components.html) instead. If you were dynamically binding the `name` of a partial, you can use a [dynamic component](http://vuejs.org/guide/components.html#Dynamic-Components).
-partial 已经被移除，你应该使用属性来让组件间的数据流更加明晰。除非你在追求性能的场合使用 partial，否则你应该就用[普通组件](components.html)。如果你之前动态绑定了 partial 的 `name`，你可以使用[动态组件](http://vuejs.org/guide/components.html#Dynamic-Components)。
+Partials have been removed in favor of more explicit data flow between components, using props. Unless you're using a partial in a performance-critical area, the recommendation is to simply use a [normal component](components.html) instead. If you were dynamically binding the `name` of a partial, you can use a [dynamic component](components.html#Dynamic-Components).
+partial 已经被移除，你应该使用属性来让组件间的数据流更加明晰。除非你在追求性能的场合使用 partial，否则你应该就用[普通组件](components.html)。如果你之前动态绑定了 partial 的 `name`，你可以使用[动态组件](components.html#Dynamic-Components)。
 
 If you happen to be using partials in a performance-critical part of your app, then you should upgrade to [functional components](render-function.html#Functional-Components). They must be in a plain JS/JSX file (rather than in a `.vue` file) and are stateless and instanceless, just like partials. This makes rendering extremely fast.
 如果你刚好是在应用中追求性能的部分使用 partial，那么你应该升级到[函数式组件](render-function.html#Functional-Components)。它们应该被放在一个 JS/JSX 文件里（而不是一个 `.vue` 文件），而且应该是像 partial 一样无状态，不需要实例化的。这会让渲染变的超级快。

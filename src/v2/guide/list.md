@@ -222,8 +222,8 @@ new Vue({ el: '#range' })
 
 ### 组件中使用 v-for (Components and v-for)
 
-> This section assumes knowledge of [Components](/guide/components.html). Feel free to skip it and come back later.
-> 阅读这个段落你需要了解[组件](/guide/components.html)的知识。如果你还不了解组件，可以先跳过这个段落，之后再回头看。
+> This section assumes knowledge of [Components](components.html). Feel free to skip it and come back later.
+> 阅读这个段落你需要了解[组件](components.html)的知识。如果你还不了解组件，可以先跳过这个段落，之后再回头看。
 
 You can directly use `v-for` on a custom component, like any normal element:
 你可以直接在自定义组件上使用 `v-for`，就像在普通元素上一样：

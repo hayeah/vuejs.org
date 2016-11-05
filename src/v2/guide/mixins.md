@@ -116,8 +116,8 @@ new Vue({
 // -> "hello!"
 ```
 
-<p class="tip">Use global mixins sparsely and carefully, because it affects every single Vue instance created, including third party components. In most cases, you should only use it for custom option handling like demonstrated in the example above. It's also a good idea to ship them as [Plugins](/guide/plugins.html) to avoid duplicate application.
-慎用全局混合，因为它影响到每个创建的 Vue 实例，包括第三方组件。在大多数情况下，它应当只用于自定义选项，就像上面示例一样。把他收入[Plugins](/guide/plugins.html) 去避免重复的应用也是不错的选择。</p>
+<p class="tip">Use global mixins sparsely and carefully, because it affects every single Vue instance created, including third party components. In most cases, you should only use it for custom option handling like demonstrated in the example above. It's also a good idea to ship them as [Plugins](plugins.html) to avoid duplicate application.
+慎用全局混合，因为它影响到每个创建的 Vue 实例，包括第三方组件。在大多数情况下，它应当只用于自定义选项，就像上面示例一样。把他收入[Plugins](plugins.html) 去避免重复的应用也是不错的选择。</p>
 
 ## 自定义选项合并策略 (Custom Option Merge Strategies)
 

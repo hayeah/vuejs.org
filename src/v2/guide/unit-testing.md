@@ -125,8 +125,8 @@ describe('MyComponent', () => {
 
 ## 断言异步更新 (Asserting Asynchronous Updates)
 
-Since Vue [performs DOM updates asynchronously](/guide/reactivity.html#Async-Update-Queue), assertions on DOM updates resulting from state change will have to be made in a `Vue.nextTick` callback:
-由于 Vue [异步执行 DOM 更新](/guide/reactivity.html#Async-Update-Queue)，对状态变化引起的 DOM 更新的断言，需要放在一个 `Vue.nextTick` 的回调里。
+Since Vue [performs DOM updates asynchronously](reactivity.html#Async-Update-Queue), assertions on DOM updates resulting from state change will have to be made in a `Vue.nextTick` callback:
+由于 Vue [异步执行 DOM 更新](reactivity.html#Async-Update-Queue)，对状态变化引起的 DOM 更新的断言，需要放在一个 `Vue.nextTick` 的回调里。
 
 ``` js
 // Inspect the generated HTML after a state update

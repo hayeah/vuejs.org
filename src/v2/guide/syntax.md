@@ -10,8 +10,8 @@ Vue.js 使用基于 HTML 的模板语法，它可以声明式地绑定渲染的 
 Under the hood, Vue compiles the templates into Virtual DOM render functions. Combined with the reactivity system, Vue is able to intelligently figure out the minimal amount of components to re-render and apply the minimal amount of DOM manipulations when the app state changes.
 引擎之下，Vue 把模板编译成虚拟的 DOM render 方法。结合响应式系统，当应用状态改变时，Vue 可以智能地计算出需要重新渲染的最少组件，并进行最少量的 DOM 修改。
 
-If you are familiar with Virtual DOM concepts and prefer the raw power of JavaScript, you can also [directly write render functions](/guide/render-function.html) instead of templates, with optional JSX support.
-如果你熟悉虚拟 DOM 概念，而且更喜欢原生 JavsScript，你也可以使用可选的 JSX 替代模板来[直接写 render 方法](/guide/render-function.html)。
+If you are familiar with Virtual DOM concepts and prefer the raw power of JavaScript, you can also [directly write render functions](render-function.html) instead of templates, with optional JSX support.
+如果你熟悉虚拟 DOM 概念，而且更喜欢原生 JavsScript，你也可以使用可选的 JSX 替代模板来[直接写 render 方法](render-function.html)。
 
 ## 插值 (Interpolations)
 
@@ -27,8 +27,8 @@ The most basic form of data binding is text interpolation using the "Mustache" s
 The mustache tag will be replaced with the value of the `msg` property on the corresponding data object. It will also be updated whenever the data object's `msg` property changes.
 mustache 标签会被相应数据对象的 `msg` 属性的值替换。每当数据对象的 `msg` 属性变化时它也会更新。
 
-You can also perform one-time interpolations that do not update on data change by using the [v-once directive](/api/#v-once), but keep in mind this will also affect any binding on the same node:
-你也可以用 [v-once 指令](/api/#v-once) 实现单次插值，之后的数据变化不会再更新插值，但注意这会影响这个节点上的所有绑定。
+You can also perform one-time interpolations that do not update on data change by using the [v-once directive](../api/#v-once), but keep in mind this will also affect any binding on the same node:
+你也可以用 [v-once 指令](../api/#v-once) 实现单次插值，之后的数据变化不会再更新插值，但注意这会影响这个节点上的所有绑定。
 
 ``` html
 <span v-once>This will never change: {{ msg }}</span>
@@ -52,8 +52,8 @@ The contents are inserted as plain HTML - data bindings are ignored. Note that y
 
 ### 属性 (Attributes)
 
-Mustaches cannot be used inside HTML attributes, instead use a [v-bind directive](/api/#v-bind):
-Mustaches 标签不能用在 HTML 属性内，使用 [v-bind 指令](/api/#v-bind) 替代：
+Mustaches cannot be used inside HTML attributes, instead use a [v-bind directive](../api/#v-bind):
+Mustaches 标签不能用在 HTML 属性内，使用 [v-bind 指令](../api/#v-bind) 替代：
 
 ``` html
 <div v-bind:id="dynamicId"></div>
@@ -106,8 +106,8 @@ Vue.js 允许定义过滤器用于格式化文本，添加在 **mustache 插值*
 {{ message | capitalize }}
 ```
 
-<p class="tip">Vue 2.x filters can only be used inside mustache bindings. To achieve the same behavior inside directive bindings, you should use [Computed properties](/guide/computed.html) instead.
-Vue 2.x 过滤器只能用在 mustache 绑定中，如果想在指令绑定中实现相同的行为，你应该用[计算属性](/guide/computed.html)替代。</p>
+<p class="tip">Vue 2.x filters can only be used inside mustache bindings. To achieve the same behavior inside directive bindings, you should use [Computed properties](computed.html) instead.
+Vue 2.x 过滤器只能用在 mustache 绑定中，如果想在指令绑定中实现相同的行为，你应该用[计算属性](computed.html)替代。</p>
 
 The filter function always receives the expression's value as the first argument.
 过滤方法始终接收表达式的值作为第一个参数。

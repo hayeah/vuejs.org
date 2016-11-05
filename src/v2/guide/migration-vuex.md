@@ -60,8 +60,8 @@ This gives you more complete control over the reactive properties you'd like to 
 
 ## store 的事件分发器 (Store's Event Emitter) <sup>移除 (removed)</sup>
 
-The store instance no longer exposes the event emitter interface (`on`, `off`, `emit`). If you were previously using the store as a global event bus, [see this section](http://vuejs.org/guide/migration.html#dispatch-and-broadcast-removed) for migration instructions.
-store 实例不会再提供事件分发器的接口（`on`，`off`，`emit`）。如果你之前使用 store 来作为全局的事件中心，可以参考[教程的这一节]((http://vuejs.org/guide/migration.html#dispatch-and-broadcast-removed)，其中有相关的迁移指引。
+The store instance no longer exposes the event emitter interface (`on`, `off`, `emit`). If you were previously using the store as a global event bus, [see this section](migration.html#dispatch-and-broadcast-removed) for migration instructions.
+store 实例不会再提供事件分发器的接口（`on`，`off`，`emit`）。如果你之前使用 store 来作为全局的事件中心，可以参考[教程的这一节]((migration.html#dispatch-and-broadcast-removed)，其中有相关的迁移指引。
 
 Instead of using this interface to watch events emitted by the store itself (e.g. `store.on('mutation', callback)`), a new method `store.subscribe` is introduced. Typical usage inside a plugin would be:
 为了替代原有的接口（比如 `store.on('mutation', callback)`)，我们引入了一个新的方法 `store.subscribe`。这个方法的典型使用场景，就是在插件中使用：

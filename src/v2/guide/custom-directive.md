@@ -115,9 +115,8 @@ Directive hooks are passed these arguments:
   - **modifiers**: An object containing modifiers, if any. For example in `v-my-directive.foo.bar`, the modifiers object would be `{ foo: true, bar: true }`.
   **modifiers**: 一个包含修饰符（如果有）的对象。比如在 `v-my-directive.foo.bar` 中，修饰符对象就是 `{ foo: true, bar: true }`。
 
-- **vnode**: The virtual node produced by Vue's compiler. See the [VNode API](/api/#VNode-Interface) for full details.
-**vnode**: Vue 的编译器生成的虚拟节点。详情参考 [VNode API](/api/#VNode-Interface)。
-
+- **vnode**: The virtual node produced by Vue's compiler. See the [VNode API](../api/#VNode-Interface) for full details.
+**vnode**: Vue 的编译器生成的虚拟节点。详情参考 [VNode API](../api/#VNode-Interface)。
 - **oldVnode**: The previous virtual node, only available in the `update` and `componentUpdated` hooks.
 **oldVnode**: 上一个虚拟节点， 仅在 `update` 和 `componentUpdated` 事件中提供。
 

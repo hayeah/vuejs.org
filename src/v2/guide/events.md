@@ -248,8 +248,8 @@ Here's the full list of key modifier aliases:
 - left
 - right
 
-You can also [define custom key modifier aliases](/api/#keyCodes) via the global `config.keyCodes` object:
-你也可以通过全局的 `config.keyCodes` 对象来[自定义按键修饰符别名](/api/#keyCodes)：
+You can also [define custom key modifier aliases](../api/#keyCodes) via the global `config.keyCodes` object:
+你也可以通过全局的 `config.keyCodes` 对象来[自定义按键修饰符别名](../api/#keyCodes)：
 
 ``` js
 // enable v-on:keyup.f1
