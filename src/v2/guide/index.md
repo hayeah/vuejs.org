@@ -14,7 +14,7 @@ If you are an experienced frontend developer and want to know how Vue compares t
 
 ## 上手 (Getting Started)
 
-<p class="tip">The official guide assumes intermediate level front-end knowledge of HTML, CSS and JavaScript. If you are totally new to front-end development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.<br>这个官方教程会假设你已经拥有 HTML，CSS 和 JavaScript 的中级水平。如果你是一个没有太多经验的前端开发者，你不应该选一个像 Vue 这样的框架来入门——先去学习基础知识，然后再回来吧！如果你有其它框架的使用经验，它们会有帮助，但对于学习 Vue 来说不是必需的。</p>
+<p class="tip">The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.<br>这个官方教程会假设你已经拥有 HTML，CSS 和 JavaScript 的中级水平。如果你是一个没有太多经验的前端开发者，你不应该选一个像 Vue 这样的框架来入门——先去学习基础知识，然后再回来吧！如果你有其它框架的使用经验，它们会有帮助，但对于学习 Vue 来说不是必需的。</p>
 
 The easiest way to try out Vue.js is using the [JSFiddle Hello World example](https://jsfiddle.net/chrisvfritz/50wL7mdz/). Feel free to open it in another tab and follow along as we go through some basic examples. Or, you can simply create an `.html` file and include Vue with:
 要尝试 Vue.js，最简单的方式就是使用 [JSFiddle 的 Hello World 示例](https://jsfiddle.net/chrisvfritz/50wL7mdz/)。你可以在另一个标签页打开这个页面，然后跟着本教程一步一步地学习一些基本示例。或者，你也可以简单地创建一个包含 Vue 的 `.html` 文件：
