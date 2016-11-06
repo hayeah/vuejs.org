@@ -1210,9 +1210,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 - **用法：**
 
-  Watch an expression or a computed function on the Vue instance for changes. The callback gets called with the new value and the old value. The expression can be a single keypath or any valid binding expressions.
-  观察 Vue 实例变化的一个表达式或计算函数。回调的参数为新值和旧值。表达式可以是某个键路径或任意合法绑定表达式。
-
+  Watch an expression or a computed function on the Vue instance for changes. The callback gets called with the new value and the old value. The expression only accepts simple dot-delimited paths. For more complex expression, use a function instead.
+  观察 Vue 实例变化的一个表达式或计算函数。回调的参数为新值和旧值。表达式只可以是用 `.` 分隔的路径。如果要使用更复杂的表达式，你应该使用一个函数。
 
 <p class="tip">Note: when mutating (rather than replacing) an Object or an Array, the old value will be the same as new value because they reference the same Object/Array. Vue doesn't keep a copy of the pre-mutate value.
 注意：在修改（不是替换）对象或数组时，旧值将与新值相同，因为他们索引同一个对象／数组。Vue 不会保留修改之前值的副本。</p>
@@ -1224,13 +1223,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   // keypath
   // 键路径
   vm.$watch('a.b.c', function (newVal, oldVal) {
-    // do something
-    // 做点什么
-  })
-
-  // expression
-  // 表达式
-  vm.$watch('a + b', function (newVal, oldVal) {
     // do something
     // 做点什么
   })
