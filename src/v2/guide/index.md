@@ -292,12 +292,8 @@ Now you can compose it in another component's template:
 
 ``` html
 <ul>
-  <!--
-  Create an instance of the todo-item component
-  -->
-  <!--
-  创建一个 todo-item 组件的实例
-  -->
+  <!-- Create an instance of the todo-item component -->
+  <!-- 创建一个 todo-item 组件的实例 -->
   <todo-item></todo-item>
 </ul>
 ```
@@ -323,14 +319,10 @@ Now we can pass the todo into each repeated component using `v-bind`:
 ``` html
 <div id="app-7">
   <ol>
-    <!--
-    Now we provide each todo-item with the todo object
-    it's representing, so that its content can be dynamic
-    -->
-    <!--
-    现在我们给每一个 todo-item 一个 todo 对象，这样 todo-item 的内容就是动态的了
-    -->
-    <todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
+    <!-- Now we provide each todo-item with the todo object    -->
+    <!-- it's representing, so that its content can be dynamic -->
+    <!-- 现在我们给每一个 todo-item 一个 todo 对象，这样 todo-item 的内容就是动态的了 -->
+    <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
   </ol>
 </div>
 ```
@@ -339,13 +331,14 @@ Vue.component('todo-item', {
   props: ['todo'],
   template: '<li>{{ todo.text }}</li>'
 })
+
 var app7 = new Vue({
   el: '#app-7',
   data: {
-    todos: [
-      { text: '学习 JavaScript' },
-      { text: '学习 Vue' },
-      { text: '写一个很棒的应用' }
+    groceryList: [
+      { text: '蔬菜' },
+      { text: '芝士' },
+      { text: '其它食物' }
     ]
   }
 })
@@ -353,7 +346,7 @@ var app7 = new Vue({
 {% raw %}
 <div id="app-7" class="demo">
   <ol>
-    <todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
+    <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
   </ol>
 </div>
 <script>
@@ -364,10 +357,10 @@ Vue.component('todo-item', {
 var app7 = new Vue({
   el: '#app-7',
   data: {
-    todos: [
-      { text: '学习 JavaScript' },
-      { text: '学习 Vue' },
-      { text: '写一个很棒的应用' }
+    groceryList: [
+      { text: '蔬菜' },
+      { text: '芝士' },
+      { text: '其它食物' }
     ]
   }
 })
