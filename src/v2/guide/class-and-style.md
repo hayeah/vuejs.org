@@ -167,7 +167,7 @@ When `isActive` is truthy, the rendered HTML will be:
 当 `isActive` 为真时，渲染出来的 HTML 会是：
 
 ``` html
-<div class="foo bar active"></div>
+<p class="foo bar active"></p>
 ```
 
 ## 绑定行内样式 (Binding Inline Styles)
