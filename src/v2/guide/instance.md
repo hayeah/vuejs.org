@@ -20,10 +20,10 @@ Although not strictly associated with the [MVVM pattern](https://en.wikipedia.or
 Vue 虽然和 [MVVM 模式](https://en.wikipedia.org/wiki/Model_View_ViewModel)没有什么紧密的联系，但的确受到了它的启发。作为约定，我们通常用 `vm` (ViewModel 的缩写) 来表示 Vue 实例。
 
 When you instantiate a Vue instance, you need to pass in an **options object** which can contain options for data, template, element to mount on, methods, lifecycle callbacks and more. The full list of options can be found in the [API reference](../api).
-在实例化 Vue 时，需要传入一个**选项对象**，它可以包含数据、模板、挂载元素、方法、生命周期钩子等选项。全部的选项可以在 [API 文档](../api)中查看。
+要实例化一个 Vue 实例，我们需要给构造函数传入一个**选项对象**，它可以包含数据、模板、挂载元素、方法、生命周期钩子等选项。你可以在 [API 文档](../api)中查看所有的选项。
 
 The `Vue` constructor can be extended to create reusable **component constructors** with pre-defined options:
-通过扩展 `Vue` 构造函数，我们可以创建自定义的 **组件构造函数**：
+通过扩展 `Vue` 构造函数，我们可以创建自定义的**组件构造函数**：
 
 ``` js
 var MyComponent = Vue.extend({
@@ -33,12 +33,12 @@ var MyComponent = Vue.extend({
 
 // all instances of `MyComponent` are created with
 // the pre-defined extension options
-// 所有的 `MyComponent` 实例都将用预定义的扩展选项被创建
+// Vue 会用预定义的扩展选项创建所有的 `MyComponent` 实例
 var myComponentInstance = new MyComponent()
 ```
 
 Although it is possible to create extended instances imperatively, most of the time it is recommended to compose them declaratively in templates as custom elements. We will talk about [the component system](components.html) in detail later. For now, you just need to know that all Vue components are essentially extended Vue instances.
-在创建扩展实例时，大部分情况下你应该使用声明式而不是命令式的方法，也就是在模版中将它们声明为自定义元素。我们将在后面详细说明[组件系统](components.html)。现在你只需知道所有的 Vue 组件其实都是被扩展的 Vue 实例。
+在大部分情况下，你应该声明式而不是命令式地创建扩展实例，也就是在模版中将它们声明为自定义元素。我们将在后面对[组件系统](components.html)进行详细说明。现在你只需知道所有的 Vue 组件其实都是被扩展的 Vue 实例。
 
 ## 属性与方法 (Properties and Methods)
 
@@ -88,12 +88,13 @@ vm.$watch('a', function (newVal, oldVal) {
 })
 ```
 
-<p class="tip">Don't use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) on an instance property or callback (e.g. `vm.$watch('a', newVal => this.myMethod())`). As arrow functions are bound to the parent context, `this` will not be the Vue instance as you'd expect and `this.myMethod` will be undefined.</p>
+<p class="tip">Don't use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) on an instance property or callback (e.g. `vm.$watch('a', newVal => this.myMethod())`). As arrow functions are bound to the parent context, `this` will not be the Vue instance as you'd expect and `this.myMethod` will be undefined.
+不要在实例的属性上或者回调中使用[箭头函数](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)（比如 `vm.$watch('a', newVal => this.myMethod())`）。因为箭头函数会绑定父级上下文，所以箭头函数中的 `this` 不会绑定到 Vue 实例，而 `this.myMethod` 会是 `undefined`。</p>
 
 Consult the [API reference](../api) for the full list of instance properties and methods.
 参考 [API 文档](../api)查看全部的实例属性与方法。
 
-## 实例生命周期 (Instance Lifecycle)
+## 实例的生命周期钩子 (Instance Lifecycle)
 
 Each Vue instance goes through a series of initialization steps when it is created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and update the DOM when data changes. Along the way, it will also invoke some **lifecycle hooks**, which give us the opportunity to execute custom logic. For example, the `created` hook is called after the instance is created:
 Vue 实例在创建时有一系列初始化步骤——例如，建立数据观察，编译模板，挂载 DOM 实例，数据变化时更新 DOM。在此过程中，它也将调用一些**生命周期钩子**，这样我们就可以执行一些自定义逻辑。例如 `created` 钩子会在实例创建后被调用：
@@ -113,7 +114,7 @@ var vm = new Vue({
 ```
 
 There are also other hooks which will be called at different stages of the instance's lifecycle, for example `mounted`, `updated`, and `destroyed`. All lifecycle hooks are called with their `this` context pointing to the Vue instance invoking it. You may have been wondering where the concept of "controllers" lives in the Vue world and the answer is: there are no controllers. Your custom logic for a component would be split among these lifecycle hooks.
-在实例生命周期的不同阶段，还会调用其它的钩子，如 `mounted`、 `updated`、`destroyed`。钩子的 `this` 指向调用它的 Vue 实例。你可能会问，Vue 里面没有“控制器”吗？答案是，没有。组件的自定义逻辑会分布在这些生命周期的钩子中。
+在实例生命周期的不同阶段，还会调用其它的钩子，如 `mounted`、 `updated`、`destroyed`。钩子的 `this` 指向调用它的 Vue 实例。你可能会问，Vue 里面没有“控制器”吗？的确没有。组件的自定义逻辑会分布在这些生命周期的钩子中。
 
 ## 生命周期图示 (Lifecycle Diagram)
 
