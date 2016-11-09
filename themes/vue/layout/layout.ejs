@@ -93,7 +93,7 @@
           FastClick.attach(document.body)
 
             var paragraphs = document.querySelectorAll('.content p, .content li');
-            var headers = document.querySelectorAll('.content h1, .content h2, .content h3');
+            var headers = document.querySelectorAll('.content h1, .content h2, .content h3, .content h4');
 
             // parse the file and manipulate DOM
             var processParagraphs = function(ele) {
@@ -109,8 +109,8 @@
 
                 var a = ele.querySelector('a');
                 var contents = ele.textContent.split(/[\(\)]/);
-                if (isH3) ele.parentNode.title = contents[1];
-                else ele.title = contents[1];
+                if (isH3) ele.parentNode.title = contents[1] || '';
+                else ele.title = contents[1] || '';
                 ele.textContent = contents[0];
             }
 
