@@ -151,7 +151,7 @@ new Vue({
 {% endraw %}
 
 Sometimes we also need to access the original DOM event in an inline statement handler. You can pass it into a method using the special `$event` variable:
-有时我们也需要在一个内联处理器中得到原始的 DOM 事件。你可以用特殊的 `$evet` 变量将它传递给方法：
+有时我们也需要在一个内联处理器中得到原始的 DOM 事件。你可以用特殊的 `$event` 变量将它传递给方法：
 
 ``` html
 <button v-on:click="warn('Form cannot be submitted yet.', $event)">Submit</button>
