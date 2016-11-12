@@ -242,7 +242,7 @@ new Vue({
 ### 将组件组合使用 (Composing Components)
 
 Components are meant to be used together, most commonly in parent-child relationships: component A may use component B in its own template. They inevitably need to communicate to one another: the parent may need to pass data down to the child, and the child may need to inform the parent of something that happened in the child. However, it is also very important to keep the parent and the child as decoupled as possible via a clearly-defined interface. This ensures each component's code can be written and reasoned about in relative isolation, thus making them more maintainable and potentially easier to reuse.
-组件本来就是组合使用的，其中特别常见的就是父子关系：组件 A 在自己的模版中使用组件 B。这样，组件间不可避免地需要进行通信：父组件可能需要向下给子组件传递数据，子组件可能需要通知父组件子组件里发生了什么事。不过很重要的一点是，父子组件间要尽可能地通过一个清晰定义的接口来解耦。这样可以确保每个组件的代码都是在相对对立的环境中编写和推理，使得组件更容易维护和复用。
+组件本来就是组合使用的，其中特别常见的就是父子关系：组件 A 在自己的模版中使用组件 B。这样，组件间不可避免地需要进行通信：父组件可能需要向下给子组件传递数据，子组件可能需要通知父组件子组件里发生了什么事。不过很重要的一点是，父子组件间要尽可能地通过一个清晰定义的接口来解耦。这样可以确保每个组件的代码都是在相对独立的环境中编写和推理，使得组件更容易维护和复用。
 
 In Vue.js, the parent-child component relationship can be summarized as **props down, events up**. The parent passes data down to the child via **props**, and the child sends messages to the parent via **events**. Let's see how they work next.
 在 Vue.js 中，父子组件间的通信可以简单概括为 **通过属性向下通信，通过事件向上通信** 。父组件通过 **props** 向子组件传递数据，子组件通过 **events** 向父组件发送消息。来看一下它们的工作原理：
@@ -256,7 +256,7 @@ In Vue.js, the parent-child component relationship can be summarized as **props 
 ### 使用属性传递数据 (Passing Data with Props)
 
 Every component instance has its own **isolated scope**. This means you cannot (and should not) directly reference parent data in a child component's template. Data can be passed down to child components using **props**.
-每个组件实例都有自己 **独立的作用域** ，这意味着你不能并且不该在子组件的模板里直接引用父组件的数据。由父组件向子组件传递数据可以通过 **prop** 来完成。
+每个组件实例都有自己 **独立的作用域** ，这意味着你不能并且不该在子组件的模板里直接引用父组件的数据。由父组件向子组件传递数据可以通过 **属性** 来完成。
 
 A prop is a custom attribute for passing information from parent components. A child component needs to explicitly declare the props it expects to receive using the [`props` option](../api/#props):
 属性就是用来从父组件传递信息的自定义属性。子组件需要显式地用 [`props` 选项](../api/#props) 来明确声明它要接收的属性：
@@ -407,7 +407,7 @@ There are usually two cases where it's tempting to mutate a prop:
 属性作为原始值被传递进来，它需要经过变形来进一步使用。
 
 The proper answer to these use cases are:
-这些场景的正确解决方式时：
+这些场景的正确解决方式是：
 
 1. Define a local data property that uses the prop's initial value as its initial value:
 定义一个本地数据属性，它的初始值就是属性的初始值；
@@ -432,7 +432,7 @@ The proper answer to these use cases are:
   ```
 
 <p class="tip">Note that objects and arrays in JavaScript are passed by reference, so if the prop is an array or object, mutating the object or array itself inside the child **will** affect parent state.
-要注意，在 JavaScript 中对象和数组时通过引用传递的。如果属性是数组活着对象，在子组件内修改 **会** 影响父组件的状态。</p>
+要注意，在 JavaScript 中对象和数组是通过引用传递的。如果属性是数组或者对象，在子组件内修改 **会** 影响父组件的状态。</p>
 
 ### 属性校验 (Prop Validation)
 
