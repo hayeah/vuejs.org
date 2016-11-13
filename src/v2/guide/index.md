@@ -291,11 +291,11 @@ Now you can compose it in another component's template:
 现在你可以在另一个组件的模版里使用 `todo-item`：
 
 ``` html
-<ul>
+<ol>
   <!-- Create an instance of the todo-item component -->
   <!-- 创建一个 todo-item 组件的实例 -->
   <todo-item></todo-item>
-</ul>
+</ol>
 ```
 
 But this would render the same text for every todo, which is not super interesting. We should be able to pass data from the parent scope into child components. Let's modify the component definition to make it accept a [prop](components.html#Props):
