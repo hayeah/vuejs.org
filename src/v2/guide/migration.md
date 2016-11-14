@@ -979,8 +979,8 @@ methods: {
 }
 ```
 
-For more on the advantages of this strategy, see [the example here with `v-model`](#v-model-with-debounce-removed).
-这个策略的更多优点，可以参考[这个使用 `v-model` 的示例](#v-model-with-debounce-removed)。
+For more on the advantages of this strategy, see [the example here with `v-model`](#debounce-Param-Attribute-for-v-model-removed).
+这个策略的更多优点，可以参考[这个使用 `v-model` 的示例](#debounce-Param-Attribute-for-v-model-removed)。
 
 #### 取代 `limitBy` 过滤器 (Replacing the `limitBy` Filter)
 
