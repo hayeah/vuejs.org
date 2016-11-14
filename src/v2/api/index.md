@@ -1965,7 +1965,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   使用 ref 属性来注册一个元素和子组件的引用。该引用被挂载到父组件的 `$refs` 对象下。如果在一个原生 DOM 元素上使用 ref ，该引用将会变成该元素；如果在一个子元素上使用 ref ,这个引用会变成该组件的实例：
 
   ``` html
-  <!-- vm.$refs.p will the DOM node -->
+  <!-- vm.$refs.p will be the DOM node -->
   <!-- vm.$refs.p 将会变成 DOM 节点 -->
   <p ref="p">hello</p>
 
