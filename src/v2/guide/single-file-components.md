@@ -6,8 +6,8 @@ order: 19
 
 ## 介绍 (Introduction)
 
-In many Vue projects, global components will be defined using `Vue.component`, followed by `new Vue({ el: '#container '})` to target a container element in the body of every page.
-在很多 Vue 项目中，全局组件都是通过 `Vue.component` 来定义的，然后用 `new Vue({ el: '#container '})` 在每一页指定一个容器元素。
+In many Vue projects, global components will be defined using `Vue.component`, followed by `new Vue({ el: '#container' })` to target a container element in the body of every page.
+在很多 Vue 项目中，全局组件都是通过 `Vue.component` 来定义的，然后用 `new Vue({ el: '#container' })` 在每一页指定一个容器元素。
 
 This can work very well for small to medium-sized projects, where JavaScript is only used to enhance certain views. In more complex projects however, or when your frontend is entirely driven by JavaScript, these disadvantages become apparent:
 这种方式在中小型项目中没有问题，因为在这些项目中 JavaScript 只是用来增强某些视图而已。不过在更复杂的项目中，或者当你的整个前端都是由 JavaScript 驱动时，以下缺点就会变得很明显：

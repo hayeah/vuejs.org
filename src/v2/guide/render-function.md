@@ -6,7 +6,7 @@ order: 15
 
 ## 基础 (Basics)
 
-Vue recommends using templates to build your HTML in the vast majority of cases. There are situations however, where you really need the full programmatic power of JavaScript. That's where you can use the **render  function**, a closer-to-the-compiler alternative to templates.
+Vue recommends using templates to build your HTML in the vast majority of cases. There are situations however, where you really need the full programmatic power of JavaScript. That's where you can use the **render function**, a closer-to-the-compiler alternative to templates.
 在绝大多数情况下，Vue 建议使用模板（template）来构建你的 HTML。然而在一些情况下，你真的需要 JavaScript 的编程能力。此时你就可以使用 **渲染函数**——一个更接近于编译器的选择(closer-to-the-compiler alternative)。
 
 Let's dive into a simple example where a `render` function would be practical. Say you want to generate anchored headings:
