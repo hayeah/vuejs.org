@@ -1140,7 +1140,7 @@ If your component isn't passed content via `slot` elements, you can even make it
 Again, this _only_ works within string templates, as self-closing custom elements are not valid HTML and your browser's native parser will not understand them.
 再次重申，这种模式 _只_ 适用于字符串模板，浏览器的原生解析器无法理解自闭合的元素，它们是无效的 HTML 。
 
-### 递归组件 (Recursive Component)
+### 递归组件 (Recursive Components)
 
 Components can recursively invoke themselves in their own template. However, they can only do so with the `name` option:
 组件在它的模板内可以递归地调用自己，不过，只有当它有 `name` 选项时才可以：
@@ -1168,6 +1168,48 @@ template: '<div><stack-overflow></stack-overflow></div>'
 
 A component like the above will result in a "max stack size exceeded" error, so make sure recursive invocation is conditional (i.e. uses a `v-if` that will eventually be `false`).
 上面组件会导致一个错误 “max stack size exceeded”，所以要确保递归调用有终止条件（比如使用一个最终会为 `false` 的 `v-if` 指令）。
+
+### Circular References Between Components
+
+Let's say you're building a file directory tree, like in Finder or File Explorer. You might have a `tree-folder` component with this template:
+
+``` html
+<p>
+  <span>{{ folder.name }}</span>
+  <tree-folder-contents :children="folder.children"/>
+</p>
+```
+
+Then a `tree-folder-contents` component with this template:
+
+``` html
+<ul>
+  <li v-for="child in children">
+    <tree-folder v-if="child.children" :folder="child"/>
+    <span v-else>{{ child.name }}</span>
+  </li>
+</ul>
+```
+
+When you look closely, you'll see that these components will actually be each other's descendent _and_ ancestor in the render tree - a paradox! When registering components globally with `Vue.component`, this paradox is resolved for you automatically. If that's you, you can stop reading here.
+
+However, if you're requiring/importing components using a __module system__, e.g. via Webpack or Browserify, you'll get an error:
+
+```
+Failed to mount component: template or render function not defined.
+```
+
+To explain what's happening, I'll call our components A and B. The module system sees that it needs A, but first A needs B, but B needs A, but A needs B, etc, etc. It's stuck in a loop, not knowing how to fully resolve either component without first resolving the other. To fix this, we need to give the module system a point at which it can say, "A needs B _eventually_, but there's no need to resolve B first."
+
+In our case, I'll make that point the `tree-folder` component. We know the child that creates the paradox is the `tree-folder-contents` component, so we'll wait until the `beforeCreate` lifecycle hook to register it:
+
+``` js
+beforeCreate: function () {
+  this.$options.components.TreeFolderContents = require('./tree-folder-contents.vue')
+}
+```
+
+Problem solved!
 
 ### 内联模板 (Inline Templates)
 
